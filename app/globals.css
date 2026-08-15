@@ -7,10 +7,12 @@
   --md-sys-color-surface-container: #272830;
   --md-sys-color-surface-container-highest: #31323b;
   --md-sys-color-outline-variant: #44464f;
-  --md-sys-color-primary: #146b32;
-  --md-sys-color-on-primary: #e8f8ea;
-  --md-sys-color-primary-container: #072411;
-  --md-sys-color-on-primary-container: #e8f8ea;
+  --md-sys-color-primary: #36a3ff;
+  --md-sys-color-on-primary: #002544;
+  --md-sys-color-primary-container: #003258;
+  --md-sys-color-on-primary-container: #d6ecff;
+  --md-sys-color-secondary-container: #c5e4ff;
+  --md-sys-color-on-secondary-container: #002544;
   --md-sys-color-hero-rain: #ffffff;
   --md-sys-color-hero-rain-fade: rgb(0 0 0 / 0.04);
   --md-sys-opacity-hero-rain: 0.28;
@@ -31,6 +33,10 @@
   --md-sys-typescale-display-small-line-height: 2.75rem;
   --md-sys-typescale-display-small-weight: 700;
   --md-sys-typescale-display-small-tracking: 0;
+  --md-sys-typescale-headline-large-size: 2rem;
+  --md-sys-typescale-headline-large-line-height: 2.5rem;
+  --md-sys-typescale-headline-large-weight: 700;
+  --md-sys-typescale-headline-large-tracking: 0;
   --md-sys-typescale-headline-small-size: 1.5rem;
   --md-sys-typescale-headline-small-line-height: 2rem;
   --md-sys-typescale-headline-small-weight: 400;
@@ -75,6 +81,8 @@
   --color-on-primary: var(--md-sys-color-on-primary);
   --color-primary-container: var(--md-sys-color-primary-container);
   --color-on-primary-container: var(--md-sys-color-on-primary-container);
+  --color-secondary-container: var(--md-sys-color-secondary-container);
+  --color-on-secondary-container: var(--md-sys-color-on-secondary-container);
   --radius-sm: var(--md-sys-shape-corner-small);
   --radius-md: var(--md-sys-shape-corner-medium);
   --radius-lg: var(--md-sys-shape-corner-large);
@@ -88,6 +96,15 @@
   font-weight: var(--md-sys-typescale-display-small-weight);
   line-height: var(--md-sys-typescale-display-small-line-height);
   letter-spacing: var(--md-sys-typescale-display-small-tracking);
+  font-optical-sizing: auto;
+}
+
+.md-typescale-headline-large {
+  font-family: var(--font-serif);
+  font-size: var(--md-sys-typescale-headline-large-size);
+  font-weight: var(--md-sys-typescale-headline-large-weight);
+  line-height: var(--md-sys-typescale-headline-large-line-height);
+  letter-spacing: var(--md-sys-typescale-headline-large-tracking);
   font-optical-sizing: auto;
 }
 
@@ -133,6 +150,32 @@
   letter-spacing: var(--md-sys-typescale-label-large-tracking);
 }
 
+.md-assist-chip-filled {
+  display: inline-flex;
+  align-items: center;
+  height: 2rem;
+  padding-inline: 1rem;
+  border-radius: var(--md-sys-shape-corner-full);
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-assist-chip-filled:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-secondary-container) 8%,
+    var(--md-sys-color-secondary-container)
+  );
+}
+
+.md-assist-chip-filled:active {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-secondary-container) 10%,
+    var(--md-sys-color-secondary-container)
+  );
+}
+
 .md-filter-chip {
   display: inline-flex;
   align-items: center;
@@ -166,15 +209,15 @@
 
 .md-filter-chip[aria-current='page'] {
   border-radius: var(--md-sys-shape-expressive-chip-selected);
-  background-color: var(--md-sys-color-primary);
-  color: var(--md-sys-color-on-primary);
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
 }
 
 .md-filter-chip[aria-current='page']:hover {
   background-color: color-mix(
     in srgb,
-    var(--md-sys-color-on-primary) 8%,
-    var(--md-sys-color-primary)
+    var(--md-sys-color-on-secondary-container) 8%,
+    var(--md-sys-color-secondary-container)
   );
 }
 
@@ -182,8 +225,8 @@
   border-radius: var(--md-sys-shape-expressive-chip-pressed);
   background-color: color-mix(
     in srgb,
-    var(--md-sys-color-on-primary) 10%,
-    var(--md-sys-color-primary)
+    var(--md-sys-color-on-secondary-container) 10%,
+    var(--md-sys-color-secondary-container)
   );
 }
 
