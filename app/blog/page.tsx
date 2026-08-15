@@ -54,12 +54,16 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                   <FilledCard
                     href={`/blog/${article.slug}`}
                     image={article.image}
+                    tags={article.tags.map((tag) => ({
+                      href: `/blog?tag=${tag}`,
+                      label: getTagLabel(tag),
+                    }))}
                   >
-                    <h2 className="md-typescale-title-large text-on-surface">
+                    <h2 className="md-typescale-headline-large text-pretty text-on-surface">
                       {article.title}
                     </h2>
                     {article.summary ? (
-                      <p className="md-typescale-body-medium mt-3 line-clamp-3 text-on-surface-variant">
+                      <p className="md-typescale-body-medium mt-4 line-clamp-3 text-on-surface-variant">
                         {article.summary}
                       </p>
                     ) : null}
