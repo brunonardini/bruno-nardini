@@ -3,7 +3,7 @@ slug: como-escrever-uma-user-story-matadora
 title: Como escrever uma user story matadora
 description: Como escrever uma user story matadora
 tags: [agile]
-image: /img/scrum_board.jpg
+image: /img/features/scrum_board.jpg
 ---
 
 Escrever uma user story é muito mais do que descrever uma tarefa usando uma receita, ela é a base para construção e evolução de um produto usando metodologia ágil (Scrum, Kanban, etc), então saber criá-la da maneira certa é fundamental para a criação de valor na sua entrega.

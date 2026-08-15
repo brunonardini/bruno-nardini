@@ -2,7 +2,7 @@
 slug: compose-providers
 title: Como resolver o encadeamento de providers no React
 description: Técnica para construir resolver o encadeamento de providers no React
-image: /img/hadouken.jpg
+image: /img/features/hadouken.jpg
 tags: [frontend, react]
 ---
 
