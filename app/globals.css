@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+:root {
+  --md-sys-color-surface: #1f2028;
+  --md-sys-color-on-surface: #e4e3ea;
+  --md-sys-color-surface-container: #272830;
+
+  --md-sys-typescale-title-large-size: 1.375rem;
+  --md-sys-typescale-title-large-line-height: 1.75rem;
+  --md-sys-typescale-title-large-weight: 400;
+  --md-sys-typescale-title-large-tracking: 0;
+
+  --background: var(--md-sys-color-surface);
+  --foreground: var(--md-sys-color-on-surface);
+}
+
+@theme inline {
+  --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
+  --font-serif:
+    var(--font-newsreader), ui-serif, Georgia, 'Times New Roman', serif;
+  --font-mono:
+    var(--font-jetbrains-mono), ui-monospace, 'Cascadia Code', Menlo, Consolas,
+    monospace;
+  --color-surface: var(--md-sys-color-surface);
+  --color-on-surface: var(--md-sys-color-on-surface);
+  --color-surface-container: var(--md-sys-color-surface-container);
+}
+
+.md-typescale-title-large {
+  font-family: var(--font-serif);
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  letter-spacing: var(--md-sys-typescale-title-large-tracking);
+  font-optical-sizing: auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+  font-variant-ligatures: none;
+  font-size: 0.95em;
+  tab-size: 2;
+}
