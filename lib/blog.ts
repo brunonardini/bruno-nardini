@@ -6,13 +6,18 @@ const BLOG_DIR = path.join(process.cwd(), 'blog');
 const MARKDOWN_FILENAME_RE = /^(\d{4}-\d{2}-\d{2})-(.+)\.md$/;
 const TRUNCATE_RE = /<!--\s*truncate\s*-->/i;
 
-export type ArticleListItem = {
+type ArticleBase = {
   slug: string;
   title: string;
   tags: string[];
 };
 
-export type LocalArticle = ArticleListItem & {
+export type ArticleListItem = ArticleBase & {
+  image?: string;
+  summary: string;
+};
+
+export type LocalArticle = ArticleBase & {
   external: false;
   publishedAt: string;
   description?: string;
@@ -21,7 +26,7 @@ export type LocalArticle = ArticleListItem & {
   content: string;
 };
 
-export type ExternalArticle = ArticleListItem & {
+export type ExternalArticle = ArticleBase & {
   external: true;
   publishedAt: string;
   image?: string;
@@ -34,7 +39,13 @@ export type Article = LocalArticle | ExternalArticle;
 export async function getArticles(): Promise<ArticleListItem[]> {
   const articles = await loadAllArticles();
 
-  return articles.map(({ slug, title, tags }) => ({ slug, title, tags }));
+  return articles.map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    tags: article.tags,
+    image: article.image,
+    summary: toPlainText(article.external ? article.summary : article.excerpt),
+  }));
 }
 
 export async function getArticle(slug: string): Promise<Article | null> {
@@ -100,6 +111,17 @@ function loadExternalArticles(): ExternalArticle[] {
     url: post.link,
     summary: post.summary,
   }));
+}
+
+function toPlainText(value: string): string {
+  return value
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_~#>]+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function excerptFrom(content: string, description?: string): string {
