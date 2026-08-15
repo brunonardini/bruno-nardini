@@ -1,0 +1,40 @@
+---
+description: Material Design 3 is the project's only design system
+alwaysApply: true
+---
+
+# Design System: Material Design 3
+
+This project uses **[Material Design 3](https://m3.material.io/)** as the only design system. All UI, layout, motion, and visual decisions must follow M3 — not Material 2, not an ad-hoc style.
+
+## Source of truth
+
+Before creating or restyling UI, read the matching page on [m3.material.io](https://m3.material.io/):
+
+- Foundations: tokens, accessibility, interaction states, layout
+- Styles: [color](https://m3.material.io/styles/color/overview), [typography](https://m3.material.io/styles/typography/overview), [shape](https://m3.material.io/styles/shape/overview), [elevation](https://m3.material.io/styles/elevation/overview), [motion](https://m3.material.io/styles/motion/overview), [icons](https://m3.material.io/styles/icons/overview)
+- Components: use the official M3 component (name, variants, anatomy) instead of inventing one
+
+## Stack
+
+- Next.js + React + Tailwind v4
+- Express M3 with CSS tokens (`--md-sys-*`) and custom React components
+- Do **not** install `@material/web` unless the user explicitly asks (maintenance mode; not a React library)
+
+## Typefaces (do not replace)
+
+Font families are already defined in `app/globals.css`. Reuse them; never introduce Roboto or other M3 default typefaces.
+
+- **Titles** (display / headline / title): `var(--font-serif)` / `font-serif`
+- **Body** (body / label): `var(--font-sans)` / `font-sans`
+- **Code**: `var(--font-mono)` / `font-mono`
+
+M3 typescale tokens may set size, weight, line-height, and tracking only. `--md-sys-typescale-*-font` and `--md-ref-typeface-*` must point at those same CSS variables.
+
+## Hard rules
+
+- Color, type, shape, and elevation come from tokens — never raw one-off hex/px in components
+- Pair every fill with its `on-*` color (accessible contrast)
+- Elevation is primarily **tonal surface**, not drop shadows
+- Interactive elements need M3 states: enabled, hovered, focused, pressed, disabled
+- Prefer M3 names in code (`TopAppBar`, `FilledCard`, `FilledTonalButton`) so the mapping stays obvious
