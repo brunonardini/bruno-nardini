@@ -1,4 +1,5 @@
 import { Hero } from '@/components/hero';
+import { Intro } from '@/components/intro';
 import { getArticles } from '@/lib/blog';
 
 export default async function Home() {
@@ -8,6 +9,7 @@ export default async function Home() {
   return (
     <main>
       <Hero latest={latest} articles={more.slice(0, 3)} />
+      <Intro />
     </main>
   );
 }
