@@ -31,7 +31,7 @@ export function ArticleList({
               label: getTagLabel(tag),
             }))}
           >
-            <h2 className="md-typescale-headline-large text-pretty text-on-surface">
+            <h2 className="md-typescale-headline-large md-typescale-title-large-sm text-pretty text-on-surface">
               {article.title}
             </h2>
             {article.summary ? (
