@@ -20,9 +20,19 @@ export function ArticleList({
   }
 
   return (
-    <ul className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-14">
-      {articles.map((article) => (
-        <li key={article.slug}>
+    <ul
+      key={articles.map((article) => article.slug).join('|')}
+      className="article-list grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-14"
+      data-phase="enter"
+    >
+      {articles.map((article, index) => (
+        <li
+          key={article.slug}
+          className="article-list-item"
+          style={{
+            ['--article-list-index' as string]: Math.min(index, 5),
+          }}
+        >
           <FilledCard
             href={`/blog/${article.slug}`}
             image={article.image}
