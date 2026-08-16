@@ -15,7 +15,7 @@ export function TagFilters({ activeTag, allHref, tagHref }: TagFiltersProps) {
       <ul className="flex flex-wrap gap-2">
         <li>
           <FilterChip href={allHref} selected={!activeTag}>
-            Recentes
+            Todos
           </FilterChip>
         </li>
         {tags.map((tag) => (
