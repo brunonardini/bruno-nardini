@@ -26,11 +26,13 @@ export default async function Home({ searchParams }: HomePageProps) {
       <Intro />
       <section aria-label="Artigos" className="bg-surface text-on-surface">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:py-16">
-          <TagFilters
-            activeTag={activeTag}
-            allHref="/"
-            tagHref={(slug) => `/?tag=${slug}`}
-          />
+          <div id="artigos" className="scroll-target">
+            <TagFilters
+              activeTag={activeTag}
+              allHref="/"
+              tagHref={(slug) => `/?tag=${slug}`}
+            />
+          </div>
           <ArticleList
             articles={visibleArticles}
             tagHref={(tag) => `/?tag=${tag}`}

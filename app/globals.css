@@ -18,6 +18,7 @@
   --md-sys-color-hero-rain: #ffffff;
   --md-sys-color-hero-rain-fade: rgb(0 0 0 / 0.04);
   --md-sys-opacity-hero-rain: 0.28;
+  --md-sys-size-top-app-bar: 4rem;
 
   --md-sys-shape-corner-small: 0.5rem;
   --md-sys-shape-corner-medium: 0.75rem;
@@ -281,13 +282,52 @@
   );
 }
 
+.md-tonal-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  padding-inline: 1.5rem;
+  border-radius: var(--md-sys-shape-corner-full);
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+}
+
+.md-tonal-button:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 8%,
+    var(--md-sys-color-surface-container)
+  );
+}
+
+.md-tonal-button:active {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 10%,
+    var(--md-sys-color-surface-container)
+  );
+}
+
 .hero-surface {
+  min-height: calc(100dvh - var(--md-sys-size-top-app-bar));
   background-color: var(--md-sys-color-primary-container);
   background-image: linear-gradient(
     to bottom,
     var(--md-sys-color-primary-container),
     var(--md-sys-color-primary)
   );
+}
+
+.scroll-target {
+  scroll-margin-top: var(--md-sys-size-top-app-bar);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .hero-rain {
