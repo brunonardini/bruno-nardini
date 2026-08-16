@@ -1,3 +1,4 @@
+import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
 import type { Metadata } from 'next';
 import { JetBrains_Mono, Lexend, Newsreader } from 'next/font/google';
@@ -38,7 +39,8 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     >
       <body>
         <Navbar />
-        {children}
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );

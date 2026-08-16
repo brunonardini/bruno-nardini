@@ -1,7 +1,8 @@
+import { ExternalLinkBadge } from '@/components/external-link-badge';
 import { FilledCard } from '@/components/filled-card';
 import { MatrixRain } from '@/components/matrix-rain';
 import { ScrollToButton } from '@/components/scroll-to-button';
-import type { ArticleListItem } from '@/lib/blog';
+import { getArticleHref, type ArticleListItem } from '@/lib/blog';
 import { getTagLabel } from '@/lib/tags';
 
 type HeroProps = {
@@ -28,13 +29,15 @@ export function Hero({ latest, articles }: HeroProps) {
           <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-10">
             <div className="overflow-hidden rounded-md bg-surface-container text-on-surface">
               <FilledCard
-                href={`/blog/${latest.slug}`}
+                href={getArticleHref(latest)}
+                external={latest.external}
                 image={latest.image}
                 tags={toArticleTags(latest.tags)}
                 flushMedia
               >
                 <h1 className="md-typescale-headline-large md-typescale-title-large-sm text-pretty text-on-surface">
-                  {latest.title}
+                  {latest.title}{' '}
+                  {latest.external ? <ExternalLinkBadge /> : null}
                 </h1>
                 {latest.summary ? (
                   <p className="md-typescale-body-medium mt-4 line-clamp-3 text-on-surface-variant">
@@ -53,13 +56,15 @@ export function Hero({ latest, articles }: HeroProps) {
                       className="overflow-hidden rounded-md bg-surface-container text-on-surface"
                     >
                       <FilledCard
-                        href={`/blog/${article.slug}`}
+                        href={getArticleHref(article)}
+                        external={article.external}
                         image={article.image}
                         tags={toArticleTags(article.tags)}
                         orientation="horizontal"
                       >
                         <h2 className="md-typescale-title-large text-pretty text-on-surface">
-                          {article.title}
+                          {article.title}{' '}
+                          {article.external ? <ExternalLinkBadge /> : null}
                         </h2>
                         {article.summary ? (
                           <p className="md-typescale-body-medium mt-4 line-clamp-3 text-on-surface-variant md:hidden">

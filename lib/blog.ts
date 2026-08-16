@@ -15,6 +15,8 @@ type ArticleBase = {
 export type ArticleListItem = ArticleBase & {
   image?: string;
   summary: string;
+  external: boolean;
+  url?: string;
 };
 
 export type LocalArticle = ArticleBase & {
@@ -45,7 +47,15 @@ export async function getArticles(): Promise<ArticleListItem[]> {
     tags: article.tags,
     image: article.image,
     summary: toPlainText(article.external ? article.summary : article.excerpt),
+    external: article.external,
+    url: article.external ? article.url : undefined,
   }));
+}
+
+export function getArticleHref(article: ArticleListItem): string {
+  return article.external && article.url
+    ? article.url
+    : `/blog/${article.slug}`;
 }
 
 export async function getArticle(slug: string): Promise<Article | null> {

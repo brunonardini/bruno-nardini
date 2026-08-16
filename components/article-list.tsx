@@ -1,5 +1,6 @@
+import { ExternalLinkBadge } from '@/components/external-link-badge';
 import { FilledCard } from '@/components/filled-card';
-import type { ArticleListItem } from '@/lib/blog';
+import { getArticleHref, type ArticleListItem } from '@/lib/blog';
 import { getTagLabel } from '@/lib/tags';
 
 type ArticleListProps = {
@@ -34,7 +35,8 @@ export function ArticleList({
           }}
         >
           <FilledCard
-            href={`/blog/${article.slug}`}
+            href={getArticleHref(article)}
+            external={article.external}
             image={article.image}
             tags={article.tags.map((tag) => ({
               href: tagHref(tag),
@@ -42,7 +44,7 @@ export function ArticleList({
             }))}
           >
             <h2 className="md-typescale-headline-large md-typescale-title-large-sm text-pretty text-on-surface">
-              {article.title}
+              {article.title} {article.external ? <ExternalLinkBadge /> : null}
             </h2>
             {article.summary ? (
               <p className="md-typescale-body-medium mt-4 line-clamp-3 text-on-surface-variant">
