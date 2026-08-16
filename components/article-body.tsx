@@ -1,5 +1,6 @@
+import rehypeShiki from '@shikijs/rehype';
 import Link from 'next/link';
-import Markdown from 'react-markdown';
+import { MarkdownAsync } from 'react-markdown';
 import type { Components } from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
@@ -40,16 +41,26 @@ const markdownComponents: Components = {
   },
 };
 
-export function ArticleBody({ content }: ArticleBodyProps) {
+export async function ArticleBody({ content }: ArticleBodyProps) {
   return (
     <div className="article-body">
-      <Markdown
+      <MarkdownAsync
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
+        rehypePlugins={[
+          rehypeRaw,
+          [
+            rehypeShiki,
+            {
+              theme: 'dracula',
+              defaultLanguage: 'text',
+              fallbackLanguage: 'text',
+            },
+          ],
+        ]}
         components={markdownComponents}
       >
         {toRenderableMarkdown(content)}
-      </Markdown>
+      </MarkdownAsync>
     </div>
   );
 }
