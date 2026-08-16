@@ -2,7 +2,7 @@
 slug: como-ser-contratado-como-desenvolvedor-senior
 title: Como ser contratado como desenvolvedor sênior
 description: Como ser contratado como desenvolvedor sênior
-tags: [news, talks, career]
+tags: [notes, talks, career]
 ---
 
 No dia 12/05/2015 às 20:00 será exibida minha palestra intitulada “Como ser contratado como desenvolvedor Sênior”.

@@ -2,7 +2,7 @@
 slug: site-nardini-academy-com-novo-layout
 title: Site Nardini Academy com novo layout
 description: Site Nardini Academy com novo layout
-tags: [news]
+tags: [notes]
 ---
 
 Depois de muitas semanas remodelando o novo site, ficou pronto!

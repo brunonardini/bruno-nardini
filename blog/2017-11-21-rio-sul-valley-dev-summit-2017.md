@@ -2,7 +2,7 @@
 slug: rio-sul-valley-dev-summit-2017
 title: Rio Sul Valley – Dev Summit 2017
 description: Rio Sul Valley Dev Summit 2017
-tags: [news, talks]
+tags: [notes, talks]
 image: /img/features/672cd2a0-d063-436a-9d7c-b019ed219950-768x845.jpeg
 ---
 

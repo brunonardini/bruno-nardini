@@ -2,7 +2,7 @@
 slug: resumo-do-rupy-brazil-2013
 title: Resumo do RuPy Brazil 2013
 description: Resumo do RuPy Brazil 2013
-tags: [news, talks]
+tags: [notes, talks]
 ---
 
 No dia 29/11/13, em São José dos Campos (SP), ocorreu a edição de 2013 do RuPy Conference Brazil e estive lá marcando presença. Este ano teve 3 trilhas: Ruby, Python e JavaScript.

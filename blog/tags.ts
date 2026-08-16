@@ -5,10 +5,10 @@ export type BlogTag = {
 };
 
 export const BLOG_TAGS = {
-  news: {
-    label: 'Novidades',
-    permalink: '/news',
-    description: 'Novidades',
+  notes: {
+    label: 'Notas',
+    permalink: '/notes',
+    description: 'Experiências, ideias e outros assuntos pelo caminho',
   },
   agile: {
     label: 'Processos Ágeis',
