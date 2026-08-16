@@ -3,7 +3,7 @@ slug: notificacoes-toast-react-e-redux
 title: Notificações, Toast, React e Redux
 description: Notificações, Toast, React e Redux
 tags: [frontend, react]
-image: /img/blue_bg_react.png
+image: /img/features/blue_bg_react.png
 ---
 
 A missão era simples: enviar uma **mensagem não bloqueante** de sucesso ou erro em resposta a uma **requisição assíncrona**. Seria simples se não fosse pelas palavras em negrito, pois me deparei com várias questões de arquitetura do projeto que está em [React](https://reactjs.org/) com [Redux](https://redux.js.org/), e ao pesquisar a melhor solução eu vi vários artigos em blog inconformados com o problema e dando suas sugestões de como deveria ficar, só que nenhuma dessas soluções me deixou confortável. Então neste artigo eu trago uma alternativa, expondo passo a passo as questões levantadas e as decisões tomadas para implementar essa solução.

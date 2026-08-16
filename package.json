@@ -1,56 +1,35 @@
 {
   "name": "bruno-nardini",
-  "version": "1.1.3",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "cypress:wait": "wait-on http://localhost:3000",
-    "format:check": "prettier --check .",
-    "format:write": "prettier --write .",
-    "type:check": "tsc"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "type:check": "tsc --noEmit",
+    "format": "prettier --check .",
+    "format:write": "prettier --write ."
   },
   "dependencies": {
-    "@docusaurus/core": "3.5.2",
-    "@docusaurus/preset-classic": "3.5.2",
-    "@docusaurus/theme-live-codeblock": "^3.5.2",
-    "@mdx-js/react": "^3.0.0",
-    "@svgr/webpack": "^6.1.2",
-    "clsx": "^2.0.0",
-    "file-loader": "^6.2.0",
-    "prism-react-renderer": "^2.3.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-icons": "^4.3.1"
+    "@shikijs/rehype": "^3.23.0",
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "shiki": "^3.23.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.5.2",
-    "@docusaurus/tsconfig": "3.5.2",
-    "@docusaurus/types": "3.5.2",
-    "cypress": "^13.14.1",
-    "prettier": "3.3.3",
-    "typescript": "~5.5.2",
-    "wait-on": "^8.0.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 5 safari version"
-    ]
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
+    "prettier": "3.9.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

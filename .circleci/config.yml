@@ -1,11 +1,8 @@
 version: 2.1
 
-orbs:
-  cypress: cypress-io/cypress@3.3.1
-
 aliases:
   - &docker_image
-    - image: cimg/node:20.17.0-browsers
+    - image: cimg/node:24.19.0
 
   - &current_workspace
     attach_workspace: { at: '.' }
@@ -34,14 +31,23 @@ jobs:
     steps:
       - checkout
       - *current_workspace
-      - run: npm run format:check
+      - run: npm run format
+
+  check-lint:
+    docker: *docker_image
+    steps:
+      - checkout
+      - *current_workspace
+      - run: npm run lint
+
+  check-build:
+    docker: *docker_image
+    steps:
+      - checkout
+      - *current_workspace
+      - run: npm run build
 
 workflows:
-  test-e2e:
-    jobs:
-      - cypress/run:
-          cypress-command: npm run cypress:wait && npm run cypress:run
-          start-command: npm start
   validations:
     jobs:
       - install-dependencies
@@ -49,5 +55,11 @@ workflows:
           requires:
             - install-dependencies
       - check-format:
+          requires:
+            - install-dependencies
+      - check-lint:
+          requires:
+            - install-dependencies
+      - check-build:
           requires:
             - install-dependencies

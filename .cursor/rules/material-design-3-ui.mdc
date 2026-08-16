@@ -1,0 +1,54 @@
+---
+description: Apply Material Design 3 tokens and components in UI files
+globs: **/*.{tsx,jsx,css}
+alwaysApply: false
+---
+
+# M3 UI implementation
+
+Map visuals to M3 tokens. Put new tokens in `app/globals.css` (`@theme` / `:root`), not as magic numbers in JSX.
+
+## Color (`--md-sys-color-*`)
+
+Use roles, not hex: `primary` / `on-primary` / `primary-container`, `secondary*`, `tertiary*`, `error*`, `surface`, `on-surface`, `on-surface-variant`, `surface-container[-low|high|…]`, `outline`, `outline-variant`.
+
+```tsx
+// ❌ BAD
+<button className="bg-[#1f2028] text-white rounded-md shadow-lg">Save</button>
+
+// ✅ GOOD — Filled button: primary + on-primary, shape full, label-large
+<button className="bg-[var(--md-sys-color-primary)] text-[var(--md-sys-color-on-primary)] rounded-[var(--md-sys-shape-corner-full)] px-6 py-2.5">
+  Save
+</button>
+```
+
+## Type
+
+Font families live in `app/globals.css` (`--font-serif`, `--font-sans`, `--font-mono`). Do not change or duplicate them.
+
+| Role | Font | Use |
+|---|---|---|
+| Display / Headline / Title | `var(--font-serif)` / `font-serif` | Headings, app bar, card titles |
+| Body / Label | `var(--font-sans)` / `font-sans` | Paragraphs, buttons, nav, chips |
+| Code | `var(--font-mono)` / `font-mono` | `code`, `pre`, kbd |
+
+`--md-sys-typescale-*` may set size, weight, line-height, and tracking. Any `*-font` token must be `var(--font-serif)`, `var(--font-sans)`, or `var(--font-mono)`.
+
+## Shape & elevation
+
+- Shape scale: `none` 0, `extra-small` 4, `small` 8, `medium` 12, `large` 16, `extra-large` 28, `full`
+- Cards → medium; dialogs → extra-large; buttons/chips → full
+- Depth via `surface-container-*`. Shadows only when a surface sits on busy content
+
+## Component mapping (this blog)
+
+| UI | M3 component |
+|---|---|
+| Site header | [Top app bar](https://m3.material.io/components/top-app-bar/overview) |
+| Post list item | [Card](https://m3.material.io/components/cards/overview) (outlined or filled) |
+| Primary action | Filled button |
+| Secondary action | Outlined or text button |
+| Tags | Filter / assist [chips](https://m3.material.io/components/chips/overview) |
+| Code block | Surface container + `font-mono`; not a Card unless it is interactive |
+
+Do not mix Material 2 (heavy FAB-as-brand, ink ripples as identity, elevation-only shadows, 4dp “cards everywhere”).

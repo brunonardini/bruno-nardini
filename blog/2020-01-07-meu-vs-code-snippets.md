@@ -3,7 +3,7 @@ slug: meu-vs-code-snippets
 title: Meu VS Code snippets
 description: Meu VS Code snippets
 tags: [frontend, backend]
-image: /img/shortcut.jpg
+image: /img/features/shortcut.jpg
 ---
 
 Code snippets são blocos de códigos dinâmicos e reutilizáveis. Você pode usar extensões que já possuem vários snippets prontos e você pode criar para aqueles seus códigos que você digita repetitivamente.

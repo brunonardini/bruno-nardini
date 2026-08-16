@@ -3,7 +3,7 @@ slug: como-fazer-o-daily-scrum-stand-up-meetings-de-forma-mais-produtiva
 title: Como fazer o Daily Scrum (Stand Up Meetings) de forma mais produtiva
 description: Como fazer o Daily Scrum (Stand Up Meetings) de forma mais produtiva
 tags: [agile]
-image: /img/daily-scrum.jpg
+image: /img/features/daily-scrum.jpg
 ---
 
 As reuniões diárias, conhecidas no XP como “Reuniões em Pé” (Stand Up Mettings) e no Scrum como “Scrum Diário” (Daily Scrum) são práticas bem simples e comumente adotadas, mas o que mais presenciei nas empresas foram monólogos entediantes feitos por um grupo de pessoas, sem valor nenhum, apenas mais um ritual burocrático sem sentido. Neste artigo vou dar sugestões de como trazer os benefícios prometidos, deixando o Daily mais produtivo.
