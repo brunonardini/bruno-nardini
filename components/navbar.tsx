@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 function useScrolled() {
@@ -19,6 +20,8 @@ function useScrolled() {
 
 export function Navbar() {
   const scrolled = useScrolled();
+  const pathname = usePathname();
+  const isBlog = pathname.startsWith('/blog');
 
   return (
     <header
@@ -42,6 +45,13 @@ export function Navbar() {
           <span className="md-typescale-title-large truncate">
             Bruno Nardini
           </span>
+        </Link>
+        <Link
+          href="/blog"
+          aria-current={isBlog ? 'page' : undefined}
+          className="md-typescale-label-large ml-auto inline-flex h-10 items-center rounded-sm px-3 text-on-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface"
+        >
+          Artigos
         </Link>
       </nav>
     </header>
