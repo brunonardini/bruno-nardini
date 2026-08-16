@@ -2,7 +2,7 @@
 slug: a-diferenca-entre-o-foco-no-problema-e-o-foco-na-solucao
 title: A diferença entre o foco no problema e o foco na solução
 description: A diferença entre o foco no problema e o foco na solução
-tags: [entrepreneurship, agile]
+tags: [management, agile]
 ---
 
 Para resolver um problema é preciso saber onde focar para obter melhores soluções. Quando se foca no problema, você pode achar uma solução, mas esta solução pode gerar novos problemas, mantendo este foco, pode acabar criando uma cascata infinita de problemas. Ao focar na solução do problema, você pode resolver o problema sem efeitos colaterais e ficar livre para dar atenção ao que interessa.

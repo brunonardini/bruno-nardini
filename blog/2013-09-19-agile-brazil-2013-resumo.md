@@ -2,7 +2,7 @@
 slug: agile-brazil-2013-resumo
 title: Agile Brazil 2013 – Resumo
 description: Resumo do Agile Brazil 2013
-tags: [notes, agile, business-management]
+tags: [notes, agile, management]
 ---
 
 Resumo das palestras que assisti no Agile Brazil 2013:

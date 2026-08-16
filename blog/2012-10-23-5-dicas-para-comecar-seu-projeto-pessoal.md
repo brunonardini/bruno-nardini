@@ -2,7 +2,7 @@
 slug: 5-dicas-para-comecar-seu-projeto-pessoal
 title: 5 dicas para começar seu projeto pessoal
 description: 5 dicas para começar seu projeto pessoal
-tags: [entrepreneurship, project-management]
+tags: [management]
 ---
 
 Muito dos profissionais de TI possuem o costume de trabalhar em projetos em casa no seu tempo livre, só que alguns ficam só na vontade e outros tentam e não conseguem dar continuidade.

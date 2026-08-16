@@ -2,7 +2,7 @@
 slug: modelo-institucional-de-forma-pratica-e-simples
 title: Modelo institucional de forma prática e simples
 description: Resumo do modelo institucional de forma prática e simples
-tags: [entrepreneurship, business-management]
+tags: [management]
 ---
 
 ![Modelo institucional](/img/modelo_institucional.jpg)

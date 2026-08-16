@@ -15,20 +15,10 @@ export const BLOG_TAGS = {
     permalink: '/agile',
     description: 'Processos Ágeis',
   },
-  entrepreneurship: {
-    label: 'Empreendedorismo',
-    permalink: '/entrepreneurship',
-    description: 'Empreendedorismo',
-  },
-  'business-management': {
-    label: 'Gestão de Empresas',
-    permalink: '/business-management',
-    description: 'Gestão de Empresas',
-  },
-  'project-management': {
-    label: 'Gestão de Projetos',
-    permalink: '/project-management',
-    description: 'Gestão de Projetos',
+  management: {
+    label: 'Gestão',
+    permalink: '/management',
+    description: 'Gestão, produto, projetos e organizações',
   },
   'design-patterns': {
     label: 'Padrões de Projeto',
