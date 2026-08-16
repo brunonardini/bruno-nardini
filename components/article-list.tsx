@@ -44,7 +44,14 @@ export function ArticleList({
             }))}
           >
             <h2 className="md-typescale-headline-large md-typescale-title-large-sm text-pretty text-on-surface">
-              {article.title} {article.external ? <ExternalLinkBadge /> : null}
+              <span
+                className={
+                  article.external ? 'md-external-link-title' : undefined
+                }
+              >
+                {article.title}
+              </span>
+              {article.external ? <ExternalLinkBadge /> : null}
             </h2>
             {article.summary ? (
               <p className="md-typescale-body-medium mt-4 line-clamp-3 text-on-surface-variant">

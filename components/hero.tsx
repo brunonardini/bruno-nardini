@@ -36,7 +36,13 @@ export function Hero({ latest, articles }: HeroProps) {
                 flushMedia
               >
                 <h1 className="md-typescale-headline-large md-typescale-title-large-sm text-pretty text-on-surface">
-                  {latest.title}{' '}
+                  <span
+                    className={
+                      latest.external ? 'md-external-link-title' : undefined
+                    }
+                  >
+                    {latest.title}
+                  </span>
                   {latest.external ? <ExternalLinkBadge /> : null}
                 </h1>
                 {latest.summary ? (
@@ -63,7 +69,15 @@ export function Hero({ latest, articles }: HeroProps) {
                         orientation="horizontal"
                       >
                         <h2 className="md-typescale-title-large text-pretty text-on-surface">
-                          {article.title}{' '}
+                          <span
+                            className={
+                              article.external
+                                ? 'md-external-link-title'
+                                : undefined
+                            }
+                          >
+                            {article.title}
+                          </span>
                           {article.external ? <ExternalLinkBadge /> : null}
                         </h2>
                         {article.summary ? (
