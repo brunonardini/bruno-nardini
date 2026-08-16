@@ -106,6 +106,6 @@ Trocar para o Redux não irá resolver este problema em questão, porque o Redux
 
 Quando eu estava na faculdade, lá no começo da internet, eu vi um código de um amigo que estava com esse encadeamento gigantesco, e fiz essa brincadeira:
 
-![Code Hadouken MEME](/img/hadouken.jpg)
+![Code Hadouken MEME](/img/features/hadouken.jpg)
 
 Na época nem existia o conceito de MEME, mas acabou sendo usado até hoje. =)
