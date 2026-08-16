@@ -1,10 +1,10 @@
 import { ArticleBody } from '@/components/article-body';
+import { FilterChip } from '@/components/filter-chip';
 import { CopyLinkButton } from '@/components/copy-link-button';
 import { getArticle, getArticles } from '@/lib/blog';
 import { getTagLabel } from '@/lib/tags';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 
 type ArticlePageProps = {
@@ -65,15 +65,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </h1>
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
             {article.tags.length > 0 ? (
-              <ul className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <ul className="flex flex-wrap items-center gap-2">
                 {article.tags.map((tag) => (
                   <li key={tag}>
-                    <Link
-                      href={`/blog?tag=${tag}`}
-                      className="md-typescale-body-medium text-on-surface-variant focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface hover:text-on-surface active:text-on-surface"
-                    >
+                    <FilterChip href={`/blog?tag=${tag}`}>
                       {getTagLabel(tag)}
-                    </Link>
+                    </FilterChip>
                   </li>
                 ))}
               </ul>
