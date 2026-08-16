@@ -7,12 +7,6 @@ type ScrollToButtonProps = {
   children: ReactNode;
 };
 
-function easeInOutCubic(progress: number) {
-  return progress < 0.5
-    ? 4 * progress * progress * progress
-    : 1 - (2 - 2 * progress) ** 3 / 2;
-}
-
 function scrollToSection(id: string) {
   const element = document.getElementById(id);
   if (!element) {
@@ -28,22 +22,21 @@ function scrollToSection(id: string) {
   window.history.pushState(null, '', `#${id}`);
 
   if (reduceMotion) {
-    window.scrollTo(0, target);
+    window.scrollTo({ top: target, behavior: 'instant' });
     return;
   }
 
   const start = window.scrollY;
   const distance = target - start;
-  const duration = Math.min(1100, Math.max(560, Math.abs(distance) * 0.5));
-  let startTime: number | null = null;
+  const duration = Math.min(800, Math.max(400, Math.abs(distance) * 0.4));
+  const startTime = performance.now();
 
   const step = (time: number) => {
-    if (startTime === null) {
-      startTime = time;
-    }
-
     const progress = Math.min(1, (time - startTime) / duration);
-    window.scrollTo(0, start + distance * easeInOutCubic(progress));
+    window.scrollTo({
+      top: start + distance * progress,
+      behavior: 'instant',
+    });
 
     if (progress < 1) {
       window.requestAnimationFrame(step);
