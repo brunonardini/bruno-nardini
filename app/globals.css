@@ -21,7 +21,9 @@
   --md-sys-size-top-app-bar: 4rem;
   --md-sys-motion-duration-short1: 50ms;
   --md-sys-motion-duration-short3: 150ms;
+  --md-sys-motion-duration-short4: 200ms;
   --md-sys-motion-duration-medium1: 250ms;
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
   --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
   --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
   --md-sys-motion-distance-small: 0.5rem;
@@ -316,8 +318,22 @@
   );
 }
 
+.md-top-app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: transparent;
+  color: var(--md-sys-color-on-surface);
+}
+
+.md-top-app-bar[data-scrolled='true'] {
+  background-color: var(--md-sys-color-surface);
+}
+
 .hero-surface {
-  min-height: calc(100dvh - var(--md-sys-size-top-app-bar));
+  min-height: 100dvh;
+  margin-top: calc(-1 * var(--md-sys-size-top-app-bar));
+  padding-top: var(--md-sys-size-top-app-bar);
   background-color: var(--md-sys-color-primary-container);
   background-image: linear-gradient(
     to bottom,
@@ -333,6 +349,11 @@
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+
+  .md-top-app-bar {
+    transition: background-color var(--md-sys-motion-duration-short4)
+      var(--md-sys-motion-easing-standard);
   }
 
   .article-list[data-phase='enter'] .article-list-item {

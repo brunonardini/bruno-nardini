@@ -24,11 +24,7 @@ export function Navbar() {
   const isBlog = pathname.startsWith('/blog');
 
   return (
-    <header
-      className={`sticky top-0 z-50 text-on-surface ${
-        scrolled ? 'bg-surface-container' : 'bg-surface'
-      }`}
-    >
+    <header className="md-top-app-bar" data-scrolled={scrolled}>
       <nav aria-label="Principal" className="flex h-16 items-center px-4">
         <Link
           href="/"
