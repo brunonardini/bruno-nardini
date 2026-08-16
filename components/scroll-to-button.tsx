@@ -13,7 +13,8 @@ function scrollToSection(id: string) {
     return;
   }
 
-  const margin = Number.parseFloat(getComputedStyle(element).scrollMarginTop) || 0;
+  const margin =
+    Number.parseFloat(getComputedStyle(element).scrollMarginTop) || 0;
   const target = element.getBoundingClientRect().top + window.scrollY - margin;
   const reduceMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)',
@@ -57,11 +58,7 @@ export function ScrollToButton({ targetId, children }: ScrollToButtonProps) {
       }}
     >
       {children}
-      <svg
-        className="md-outlined-button-icon"
-        viewBox="0 0 24 24"
-        aria-hidden
-      >
+      <svg className="md-outlined-button-icon" viewBox="0 0 24 24" aria-hidden>
         <path
           fill="currentColor"
           d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"

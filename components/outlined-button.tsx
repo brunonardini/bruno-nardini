@@ -20,11 +20,7 @@ export function OutlinedButton({
       }`}
     >
       {children}
-      <svg
-        className="md-outlined-button-icon"
-        viewBox="0 0 24 24"
-        aria-hidden
-      >
+      <svg className="md-outlined-button-icon" viewBox="0 0 24 24" aria-hidden>
         <path
           fill="currentColor"
           d="M12 4 10.59 5.41 16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"

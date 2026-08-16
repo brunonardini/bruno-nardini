@@ -25,10 +25,16 @@ export function Intro() {
               Olá, eu sou o Nardini
             </h2>
             <p className="md-typescale-body-large mt-4 text-pretty text-on-surface-variant">
-            A mudança é inerente à carreira que escolhemos. Engenharia de software é uma área movida por inovação, e isso significa passar boa parte do tempo aprendendo, questionando o que já sabemos e, muitas vezes, nos sentindo novamente como iniciantes diante de algo pouco familiar.
-            <br />
-            <br />
-            Este blog é uma das formas que encontrei de organizar meus aprendizados, compartilhar experiências e trocar conhecimento sobre os desafios que encontro pelo caminho.
+              A mudança é inerente à carreira que escolhemos. Engenharia de
+              software é uma área movida por inovação, e isso significa passar
+              boa parte do tempo aprendendo, questionando o que já sabemos e,
+              muitas vezes, nos sentindo novamente como iniciantes diante de
+              algo pouco familiar.
+              <br />
+              <br />
+              Este blog é uma das formas que encontrei de organizar meus
+              aprendizados, compartilhar experiências e trocar conhecimento
+              sobre os desafios que encontro pelo caminho.
             </p>
           </div>
         </div>
