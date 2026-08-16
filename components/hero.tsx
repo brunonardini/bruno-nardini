@@ -32,7 +32,7 @@ export function Hero({ latest, articles }: HeroProps) {
                 tags={toArticleTags(latest.tags)}
                 flushMedia
               >
-                <h1 className="md-typescale-headline-large text-pretty text-on-surface">
+                <h1 className="md-typescale-headline-large md-typescale-title-large-sm text-pretty text-on-surface">
                   {latest.title}
                 </h1>
                 {latest.summary ? (

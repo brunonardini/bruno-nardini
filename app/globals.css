@@ -110,6 +110,15 @@
   font-optical-sizing: auto;
 }
 
+@media (max-width: 47.9375rem) {
+  .md-typescale-title-large-sm {
+    font-size: var(--md-sys-typescale-title-large-size);
+    font-weight: var(--md-sys-typescale-title-large-weight);
+    line-height: var(--md-sys-typescale-title-large-line-height);
+    letter-spacing: var(--md-sys-typescale-title-large-tracking);
+  }
+}
+
 .md-typescale-headline-small {
   font-family: var(--font-serif);
   font-size: var(--md-sys-typescale-headline-small-size);
