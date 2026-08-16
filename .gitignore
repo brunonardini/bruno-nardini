@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+# Temporary filter for local configuration
+.npmrc
+
 # testing
 /coverage
 
