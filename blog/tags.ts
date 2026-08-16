@@ -20,10 +20,10 @@ export const BLOG_TAGS = {
     permalink: '/management',
     description: 'Gestão, produto, projetos e organizações',
   },
-  'design-patterns': {
-    label: 'Padrões de Projeto',
-    permalink: '/design-patterns',
-    description: 'Padrões de Projeto',
+  architecture: {
+    label: 'Arquitetura',
+    permalink: '/architecture',
+    description: 'Arquitetura de software, DDD, padrões e design de sistemas',
   },
   web: {
     label: 'WEB',
