@@ -31,7 +31,11 @@ export const metadata: Metadata = {
   description: 'Blog sobre desenvolvimento web e tecnologia',
 };
 
-export default function RootLayout({ children }: LayoutProps<'/'>) {
+type RootLayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="pt-BR"
