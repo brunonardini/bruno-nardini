@@ -27,6 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://brunonardini.com.br'),
   title: 'Bruno Nardini Blog',
   description: 'Blog sobre desenvolvimento web e tecnologia',
 };
