@@ -58,13 +58,7 @@ const TOPIC_LINKS = [
   { label: 'Processos Ágeis', href: '/blog?tag=agile' },
 ] as const;
 
-function FooterLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: ReactNode;
-}) {
+function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
@@ -108,7 +102,7 @@ export function Footer() {
               Bruno Nardini
             </p>
             <p className="md-typescale-body-medium mt-3 text-pretty text-on-surface-variant">
-              Engenharia de software, ensino e o que vou aprendendo no caminho.
+              Engenharia de software, ideias e aprendizados pelo caminho.
             </p>
             <nav aria-label="Redes sociais" className="mt-5">
               <ul className="flex items-center gap-1">
