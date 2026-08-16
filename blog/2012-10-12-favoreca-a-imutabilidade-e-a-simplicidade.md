@@ -2,7 +2,7 @@
 slug: favoreca-a-imutabilidade-e-a-simplicidade
 title: Favoreça a imutabilidade e a simplicidade
 description: Favoreça a imutabilidade e a simplicidade
-tags: [backend, design-patterns]
+tags: [web, design-patterns]
 ---
 
 Existem várias vantagens em utilizar a imutabilidade. Uma vantagem muito forte é a otimização de memória, a própria API da linguagem Java usa a imutabilidade como uma vantagem para fazer cache e reaproveitamento de instâncias.

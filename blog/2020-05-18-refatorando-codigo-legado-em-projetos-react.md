@@ -2,7 +2,7 @@
 slug: refatorando-codigo-legado-em-projetos-react
 title: Refatorando código legado em projetos React
 description: Refatorando código legado em projetos React
-tags: [frontend, react]
+tags: [web]
 image: /img/medium/1_DH1WAfrSGFbYKoBv8rjnfw.jpeg
 ---
 

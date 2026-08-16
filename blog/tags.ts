@@ -30,20 +30,15 @@ export const BLOG_TAGS = {
     permalink: '/project-management',
     description: 'Gestão de Projetos',
   },
-  backend: {
-    label: 'Back-end',
-    permalink: '/backend',
-    description: 'Back-end',
-  },
-  frontend: {
-    label: 'Front-end',
-    permalink: '/frontend',
-    description: 'Front-end',
-  },
   'design-patterns': {
     label: 'Padrões de Projeto',
     permalink: '/design-patterns',
     description: 'Padrões de Projeto',
+  },
+  web: {
+    label: 'WEB',
+    permalink: '/web',
+    description: 'WEB',
   },
   mobile: {
     label: 'Mobile',
@@ -54,11 +49,6 @@ export const BLOG_TAGS = {
     label: 'Palestras',
     permalink: '/talks',
     description: 'Palestras',
-  },
-  react: {
-    label: 'React',
-    permalink: '/react',
-    description: 'React',
   },
   career: {
     label: 'Carreira',

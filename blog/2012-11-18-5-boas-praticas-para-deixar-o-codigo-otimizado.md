@@ -2,7 +2,7 @@
 slug: 5-boas-praticas-para-deixar-o-codigo-otimizado
 title: 5 boas práticas para deixar o código otimizado
 description: 5 boas práticas para deixar o código otimizado
-tags: [backend]
+tags: [web]
 ---
 
 Seu programa é lento? Seu código demora a ser executado? Seu aplicativo ocasiona estouro de memória? Então acabaram seus problemas!

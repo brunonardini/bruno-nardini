@@ -2,7 +2,7 @@
 slug: como-testar-excecoes-no-java
 title: Como testar exceções no Java
 description: Como testar exceções no Java
-tags: [backend]
+tags: [web]
 ---
 
 Há várias formas de testar se um método irá lançar um exceção que funcionam, porém, quando o teste não passa, o programador fica perdido e precisa utilizar do debug para ver onde está o problema. Isso não é uma boa prática, pois a mensagem do teste deve ser suficientemente clara. Mostrarei uma forma eficaz de se testar uma exceção no Java.

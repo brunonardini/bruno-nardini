@@ -2,7 +2,7 @@
 slug: padrao-de-projetos-para-rotas
 title: Padrão de projetos para Rotas
 description: Padrão de projetos para Rotas
-tags: [frontend, react]
+tags: [web]
 image: /img/features/routes.jpg
 ---
 

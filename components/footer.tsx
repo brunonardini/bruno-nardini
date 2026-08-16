@@ -51,8 +51,7 @@ const NAV_LINKS = [
 ] as const;
 
 const TOPIC_LINKS = [
-  { label: 'Front-end', href: '/blog?tag=frontend' },
-  { label: 'Back-end', href: '/blog?tag=backend' },
+  { label: 'WEB', href: '/blog?tag=web' },
   { label: 'Mobile', href: '/blog?tag=mobile' },
   { label: 'Carreira', href: '/blog?tag=career' },
   { label: 'Processos Ágeis', href: '/blog?tag=agile' },
