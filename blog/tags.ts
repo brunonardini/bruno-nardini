@@ -5,20 +5,10 @@ export type BlogTag = {
 };
 
 export const BLOG_TAGS = {
-  notes: {
-    label: 'Notas',
-    permalink: '/notes',
-    description: 'Experiências, ideias e outros assuntos pelo caminho',
-  },
   engineering: {
     label: 'Engenharia',
     permalink: '/engineering',
     description: 'Engenharia de software, práticas e decisões técnicas',
-  },
-  management: {
-    label: 'Gestão',
-    permalink: '/management',
-    description: 'Gestão, produto, projetos e organizações',
   },
   architecture: {
     label: 'Arquitetura',
@@ -28,22 +18,32 @@ export const BLOG_TAGS = {
   web: {
     label: 'WEB',
     permalink: '/web',
-    description: 'WEB',
+    description: 'Desenvolvimento WEB',
   },
   mobile: {
     label: 'Mobile',
     permalink: '/mobile',
-    description: 'Mobile',
+    description: 'Desenvolvimento e arquitetura de aplicações mobile',
   },
   talks: {
     label: 'Palestras',
     permalink: '/talks',
     description: 'Palestras',
   },
+  management: {
+    label: 'Gestão',
+    permalink: '/management',
+    description: 'Gestão, produto, projetos e organizações',
+  },
   career: {
     label: 'Carreira',
     permalink: '/career',
-    description: 'Carreira',
+    description: 'Carreira, liderança técnica e desenvolvimento profissional',
+  },
+  notes: {
+    label: 'Notas',
+    permalink: '/notes',
+    description: 'Experiências, ideias e outros assuntos pelo caminho',
   },
 } as const satisfies Record<string, BlogTag>;
 

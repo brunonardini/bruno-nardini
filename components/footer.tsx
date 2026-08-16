@@ -51,10 +51,10 @@ const NAV_LINKS = [
 ] as const;
 
 const TOPIC_LINKS = [
-  { label: 'WEB', href: '/blog?tag=web' },
-  { label: 'Mobile', href: '/blog?tag=mobile' },
-  { label: 'Carreira', href: '/blog?tag=career' },
+  { label: 'Arquitetura', href: '/blog?tag=architecture' },
   { label: 'Engenharia', href: '/blog?tag=engineering' },
+  { label: 'Carreira', href: '/blog?tag=career' },
+  { label: 'WEB', href: '/blog?tag=web' },
 ] as const;
 
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
