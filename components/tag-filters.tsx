@@ -5,16 +5,26 @@ type TagFiltersProps = {
   activeTag?: string;
   allHref: string;
   tagHref: (slug: string) => string;
+  scrollToTop?: boolean;
 };
 
-export function TagFilters({ activeTag, allHref, tagHref }: TagFiltersProps) {
+export function TagFilters({
+  activeTag,
+  allHref,
+  tagHref,
+  scrollToTop = false,
+}: TagFiltersProps) {
   const tags = getTags();
 
   return (
     <nav aria-label="Categorias">
       <ul className="flex flex-wrap gap-2">
         <li>
-          <FilterChip href={allHref} selected={!activeTag}>
+          <FilterChip
+            href={allHref}
+            selected={!activeTag}
+            scrollToTop={scrollToTop}
+          >
             Todos
           </FilterChip>
         </li>
@@ -23,6 +33,7 @@ export function TagFilters({ activeTag, allHref, tagHref }: TagFiltersProps) {
             <FilterChip
               href={tagHref(tag.slug)}
               selected={activeTag === tag.slug}
+              scrollToTop={scrollToTop}
             >
               {tag.label}
             </FilterChip>

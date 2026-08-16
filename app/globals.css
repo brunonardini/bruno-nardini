@@ -318,6 +318,83 @@
   );
 }
 
+.md-segmented-button {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.md-segmented-button-segment {
+  position: relative;
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding-inline: 0.75rem;
+  border-block: 0.0625rem solid var(--md-sys-color-outline-variant);
+  border-inline-end: 0.0625rem solid var(--md-sys-color-outline-variant);
+  background-color: transparent;
+  color: var(--md-sys-color-on-surface);
+  transition:
+    background-color var(--md-sys-motion-duration-short4)
+      var(--md-sys-motion-easing-standard),
+    color var(--md-sys-motion-duration-short4)
+      var(--md-sys-motion-easing-standard);
+}
+
+.md-segmented-button-segment:first-child {
+  border-inline-start: 0.0625rem solid var(--md-sys-color-outline-variant);
+  border-start-start-radius: var(--md-sys-shape-corner-full);
+  border-end-start-radius: var(--md-sys-shape-corner-full);
+}
+
+.md-segmented-button-segment:last-child {
+  border-start-end-radius: var(--md-sys-shape-corner-full);
+  border-end-end-radius: var(--md-sys-shape-corner-full);
+}
+
+.md-segmented-button-segment:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 8%,
+    transparent
+  );
+}
+
+.md-segmented-button-segment:active {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 10%,
+    transparent
+  );
+}
+
+.md-segmented-button-segment:focus-visible {
+  z-index: 1;
+}
+
+.md-segmented-button-segment[aria-current='page'] {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-segmented-button-segment[aria-current='page']:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-secondary-container) 8%,
+    var(--md-sys-color-secondary-container)
+  );
+}
+
+.md-segmented-button-segment[aria-current='page']:active {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-secondary-container) 10%,
+    var(--md-sys-color-secondary-container)
+  );
+}
+
 .md-outlined-button {
   display: inline-flex;
   align-items: center;
