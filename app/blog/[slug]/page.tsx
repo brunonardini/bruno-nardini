@@ -76,7 +76,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </ul>
             ) : null}
             <time
-              className="md-typescale-body-medium text-on-surface-variant"
+              className="md-typescale-body-small text-on-surface-variant"
               dateTime={article.publishedAt}
             >
               {formatPublishedAt(article.publishedAt)}

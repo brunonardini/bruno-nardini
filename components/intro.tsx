@@ -24,7 +24,7 @@ export function Intro() {
             >
               Olá, eu sou o Nardini
             </h2>
-            <p className="md-typescale-body-large mt-4 text-pretty text-on-surface-variant">
+            <p className="md-typescale-body-large mt-4 text-pretty text-on-surface">
               A mudança é inerente à carreira que escolhemos. Engenharia de
               software é uma área movida por inovação, e isso significa passar
               boa parte do tempo aprendendo, questionando o que já sabemos e,

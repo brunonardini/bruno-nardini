@@ -10,7 +10,7 @@ export function BlogSidebar({ activeTag }: BlogSidebarProps) {
       <h1 className="md-typescale-display-small text-pretty text-on-surface">
         Tech Blog
       </h1>
-      <p className="md-typescale-body-large mt-4 text-pretty text-on-surface-variant">
+      <p className="md-typescale-body-large mt-4 text-pretty text-on-surface">
         Ideias e experiências sobre engenharia de software, arquitetura,
         tecnologia, carreira e tudo o que aprendemos construindo produtos.
       </p>

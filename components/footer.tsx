@@ -140,7 +140,7 @@ export function Footer() {
           <FooterNav title="Assuntos" links={TOPIC_LINKS} />
         </div>
 
-        <p className="md-typescale-body-medium mt-10 border-t border-outline-variant pt-6 text-on-surface-variant">
+        <p className="md-typescale-body-small mt-10 border-t border-outline-variant pt-6 text-on-surface-variant">
           Copyright © {year} Bruno Nardini.
         </p>
       </div>

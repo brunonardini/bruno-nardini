@@ -5,7 +5,7 @@
 
   --md-sys-color-surface: #1f2028;
   --md-sys-color-on-surface: #f4f4f8;
-  --md-sys-color-on-surface-variant: #c5c6ce;
+  --md-sys-color-on-surface-variant: #d4d5dd;
   --md-sys-color-surface-container: #272830;
   --md-sys-color-surface-container-highest: #31323b;
   --md-sys-color-outline-variant: #44464f;
@@ -68,13 +68,17 @@
   --md-sys-typescale-title-small-weight: 700;
   --md-sys-typescale-title-small-tracking: 0.00625rem;
   --md-sys-typescale-body-large-size: 1rem;
-  --md-sys-typescale-body-large-line-height: 1.5rem;
+  --md-sys-typescale-body-large-line-height: 1.625rem;
   --md-sys-typescale-body-large-weight: 400;
   --md-sys-typescale-body-large-tracking: 0.03125rem;
-  --md-sys-typescale-body-medium-size: 0.875rem;
-  --md-sys-typescale-body-medium-line-height: 1.25rem;
+  --md-sys-typescale-body-medium-size: 0.9375rem;
+  --md-sys-typescale-body-medium-line-height: 1.4375rem;
   --md-sys-typescale-body-medium-weight: 400;
   --md-sys-typescale-body-medium-tracking: 0.015625rem;
+  --md-sys-typescale-body-small-size: 0.8125rem;
+  --md-sys-typescale-body-small-line-height: 1.125rem;
+  --md-sys-typescale-body-small-weight: 400;
+  --md-sys-typescale-body-small-tracking: 0.025rem;
   --md-sys-typescale-label-large-size: 0.875rem;
   --md-sys-typescale-label-large-line-height: 1.25rem;
   --md-sys-typescale-label-large-weight: 500;
@@ -196,6 +200,14 @@
   font-weight: var(--md-sys-typescale-body-medium-weight);
   line-height: var(--md-sys-typescale-body-medium-line-height);
   letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+}
+
+.md-typescale-body-small {
+  font-family: var(--font-sans);
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+  line-height: var(--md-sys-typescale-body-small-line-height);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
 }
 
 .md-typescale-label-large {
