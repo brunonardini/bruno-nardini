@@ -23,7 +23,7 @@ export function FilterChip({
       scroll={false}
       aria-current={selected ? 'page' : undefined}
       className="md-filter-chip md-typescale-label-large focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface"
-      onClick={scrollToTop ? scrollToPageTop : undefined}
+      onClick={scrollToTop ? () => scrollToPageTop() : undefined}
     >
       {children}
     </Link>

@@ -37,7 +37,7 @@ export function SegmentedButton({
       scroll={false}
       aria-current={selected ? 'page' : undefined}
       className="md-segmented-button-segment md-typescale-label-large focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-on-surface"
-      onClick={scrollToPageTop}
+      onClick={() => scrollToPageTop()}
     >
       {children}
     </Link>

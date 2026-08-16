@@ -614,10 +614,6 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-
   .md-top-app-bar {
     transition:
       background-color var(--md-sys-motion-duration-short4)
