@@ -54,7 +54,7 @@ const TOPIC_LINKS = [
   { label: 'WEB', href: '/blog?tag=web' },
   { label: 'Mobile', href: '/blog?tag=mobile' },
   { label: 'Carreira', href: '/blog?tag=career' },
-  { label: 'Processos Ágeis', href: '/blog?tag=agile' },
+  { label: 'Engenharia', href: '/blog?tag=engineering' },
 ] as const;
 
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {

@@ -2,7 +2,7 @@
 slug: como-fazer-o-daily-scrum-stand-up-meetings-de-forma-mais-produtiva
 title: Como fazer o Daily Scrum (Stand Up Meetings) de forma mais produtiva
 description: Como fazer o Daily Scrum (Stand Up Meetings) de forma mais produtiva
-tags: [agile]
+tags: [engineering]
 image: /img/features/daily-scrum.jpg
 ---
 

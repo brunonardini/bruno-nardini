@@ -10,10 +10,10 @@ export const BLOG_TAGS = {
     permalink: '/notes',
     description: 'Experiências, ideias e outros assuntos pelo caminho',
   },
-  agile: {
-    label: 'Processos Ágeis',
-    permalink: '/agile',
-    description: 'Processos Ágeis',
+  engineering: {
+    label: 'Engenharia',
+    permalink: '/engineering',
+    description: 'Engenharia de software, práticas e decisões técnicas',
   },
   management: {
     label: 'Gestão',
