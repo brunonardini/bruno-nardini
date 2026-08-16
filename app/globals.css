@@ -241,6 +241,46 @@
   );
 }
 
+.md-outlined-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  padding-inline: 1.5rem;
+  border: 0.0625rem solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-full);
+  background-color: transparent;
+  color: var(--md-sys-color-on-surface);
+}
+
+.md-outlined-button-large {
+  height: 3.5rem;
+  padding-inline: 2rem;
+}
+
+.md-outlined-button-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  opacity: 0.72;
+}
+
+.md-outlined-button:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 8%,
+    transparent
+  );
+}
+
+.md-outlined-button:active {
+  background-color: color-mix(
+    in srgb,
+    var(--md-sys-color-on-surface) 10%,
+    transparent
+  );
+}
+
 .hero-surface {
   background-color: var(--md-sys-color-primary-container);
   background-image: linear-gradient(

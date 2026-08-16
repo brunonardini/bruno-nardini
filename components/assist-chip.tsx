@@ -12,7 +12,7 @@ const chipClassName =
 export function AssistChip({ href, children }: AssistChipProps) {
   if (href) {
     return (
-      <Link href={href} className={chipClassName}>
+      <Link href={href} scroll={false} className={chipClassName}>
         {children}
       </Link>
     );
