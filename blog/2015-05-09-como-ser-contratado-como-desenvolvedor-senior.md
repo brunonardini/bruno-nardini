@@ -13,4 +13,4 @@ No dia 12/05/2015 às 20:00 será exibida minha palestra intitulada “Como ser 
 
 Lá no site você pode agendar o dia de várias formas, para você não perder nenhum só minuto.
 
-![Palestrante Bruno Nardini](../static/img/11178221_793408930713189_7153173452002144760_n1.jpg)
+![Palestrante Bruno Nardini](/img/content/11178221_793408930713189_7153173452002144760_n1.jpg)

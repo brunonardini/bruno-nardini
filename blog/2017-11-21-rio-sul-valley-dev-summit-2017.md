@@ -10,6 +10,4 @@ Dia 25 de novembro de 2017 participo como palestrante da terceira edição do De
 
 <!--truncate-->
 
-![Palestrante confimado: Bruno Nardini](../static/img/672cd2a0-d063-436a-9d7c-b019ed219950-768x845.jpeg)
-
 Para mais informações sobre o evento: http://riosulvalley.com.br/devsummit/

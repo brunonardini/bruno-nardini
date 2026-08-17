@@ -181,7 +181,7 @@ import { ContainerBreadcrumb } from '../../components';
 
 O resultado é esse para o exemplo acima:
 
-![Breadcrumb](../static/img/breadcrumb.png)
+![Breadcrumb](/img/content/breadcrumb.png)
 
 E cada nó, com exceção do último, é um link para suas respectivas telas.
 

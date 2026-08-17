@@ -11,7 +11,7 @@ Vou resumir algumas palestras que achei interessante. Não dava para assistir to
 
 <!--truncate-->
 
-![Rupy](../static/img/rupy.jpg)
+![Rupy](/img/content/rupy.jpg)
 
 Na foto estou com uma segunda mochila na mão, e dentro dela um fone de ouvido, que ganhei por ser o primeiro a participar com uma pergunta na Mesa Redonda. 😁
 

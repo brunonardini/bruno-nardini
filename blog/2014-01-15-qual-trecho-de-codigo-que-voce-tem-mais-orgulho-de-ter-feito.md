@@ -19,7 +19,7 @@ Já ouvi pessoas contarem com água na boca que seu sistema havia um número gig
 
 O tempo e esforço que se leva para concertar as consequências de um código mal escrito pode ser 3x, 5x, infinita vezes maior que o tempo e esforço que se levaria para cuidar desse mesmo código. Ok, infinito é muito tempo, mais você entendeu a ideia. Fazer teste de unidade ([unit test](http://en.wikipedia.org/wiki/Unit_test)), teste de sistema ([system test](http://en.wikipedia.org/wiki/System_test)), revisão de código ([code review](http://en.wikipedia.org/wiki/Code_review)) , são investimentos para a qualidade de seu produto. Existe também ferramentas de análise de código que ajudam na qualidade, como o [Sonar Qube](http://www.sonarqube.org/) por exemplo.
 
-![Talk is cheap. Show me the code.](../static/img/talk_is_cheap-1024x538.jpg)
+![Talk is cheap. Show me the code.](/img/content/talk_is_cheap-1024x538.jpg)
 
 Se você não está familiarizado com esses processos de desenvolvimento, sugiro que você corra atrás e invista em cursos, livros, trabalhe em projetos livres, mas não deixe de estar sempre buscando evoluir seu conhecimento.
 
