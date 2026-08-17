@@ -114,7 +114,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         {article.image ? (
           <div className="mt-8 px-2 md:px-0">
-            <div className="relative aspect-video overflow-hidden rounded-xl bg-surface-container-highest">
+            <div className="relative aspect-video overflow-hidden rounded-none bg-surface-container-highest md:rounded-xl">
               <Image
                 src={article.image}
                 alt={article.title}
