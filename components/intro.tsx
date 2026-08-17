@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ScrollToButton } from '@/components/scroll-to-button';
 
 export function Intro() {
   return (
@@ -36,6 +37,11 @@ export function Intro() {
               aprendizados, compartilhar experiências e trocar conhecimento
               sobre os desafios que encontro pelo caminho.
             </p>
+            <div className="mt-8 hidden md:block">
+              <ScrollToButton targetId="artigos" className="w-fit">
+                Explore meus artigos
+              </ScrollToButton>
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 
 type ScrollToButtonProps = {
   targetId: string;
+  className?: string;
   children: ReactNode;
 };
 
@@ -47,11 +48,15 @@ function scrollToSection(id: string) {
   window.requestAnimationFrame(step);
 }
 
-export function ScrollToButton({ targetId, children }: ScrollToButtonProps) {
+export function ScrollToButton({
+  targetId,
+  className,
+  children,
+}: ScrollToButtonProps) {
   return (
     <a
       href={`#${targetId}`}
-      className="md-tonal-button md-typescale-label-large w-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface"
+      className={`md-tonal-button md-typescale-label-large focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface ${className ?? 'w-full'}`}
       onClick={(event) => {
         event.preventDefault();
         scrollToSection(targetId);
