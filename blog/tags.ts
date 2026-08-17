@@ -25,11 +25,6 @@ export const BLOG_TAGS = {
     permalink: '/mobile',
     description: 'Desenvolvimento e arquitetura de aplicações mobile',
   },
-  talks: {
-    label: 'Palestras',
-    permalink: '/talks',
-    description: 'Palestras',
-  },
   management: {
     label: 'Gestão',
     permalink: '/management',

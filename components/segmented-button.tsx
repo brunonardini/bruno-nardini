@@ -13,6 +13,7 @@ type SegmentedButtonProps = {
   href: string;
   selected?: boolean;
   scrollToTop?: boolean;
+  title?: string;
   children: ReactNode;
 };
 
@@ -31,12 +32,14 @@ export function SegmentedButton({
   href,
   selected = false,
   scrollToTop = false,
+  title,
   children,
 }: SegmentedButtonProps) {
   return (
     <Link
       href={href}
       scroll={false}
+      title={title}
       aria-current={selected ? 'page' : undefined}
       className="md-segmented-button-segment md-typescale-label-large focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-on-surface"
       onClick={scrollToTop ? () => scrollToPageTop() : undefined}

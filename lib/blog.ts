@@ -131,13 +131,33 @@ function loadExternalArticles(): ExternalArticle[] {
   }));
 }
 
+export function getArticleSummary(article: Article): string {
+  if (article.external) {
+    return toPlainText(article.summary);
+  }
+
+  const excerpt = toPlainText(article.excerpt);
+  if (excerpt && excerpt !== article.title) {
+    return excerpt;
+  }
+
+  const description = article.description
+    ? toPlainText(article.description)
+    : '';
+  if (description && description !== article.title) {
+    return description;
+  }
+
+  return excerpt;
+}
+
 function toArticleListItem(article: Article): ArticleListItem {
   return {
     slug: article.slug,
     title: article.title,
     tags: article.tags,
     image: article.image,
-    summary: toPlainText(article.external ? article.summary : article.excerpt),
+    summary: getArticleSummary(article),
     external: article.external,
     url: article.external ? article.url : undefined,
     publishedAt: article.publishedAt,

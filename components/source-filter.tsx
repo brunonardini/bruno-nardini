@@ -4,10 +4,25 @@ import {
 } from '@/components/segmented-button';
 import type { ArticleSource } from '@/lib/blog-query';
 
-const SOURCE_OPTIONS: { source?: ArticleSource; label: string }[] = [
-  { label: 'Ambos' },
-  { source: 'internal', label: 'No Blog' },
-  { source: 'external', label: 'Externo' },
+const SOURCE_OPTIONS: {
+  source?: ArticleSource;
+  label: string;
+  description: string;
+}[] = [
+  {
+    label: 'Ambos',
+    description: 'Artigos publicados no blog e em outras plataformas',
+  },
+  {
+    source: 'internal',
+    label: 'No Blog',
+    description: 'Artigos publicados neste blog',
+  },
+  {
+    source: 'external',
+    label: 'Externo',
+    description: 'Artigos publicados em outras plataformas',
+  },
 ];
 
 type SourceFilterProps = {
@@ -29,6 +44,7 @@ export function SourceFilter({
           href={href(option.source)}
           selected={activeSource === option.source}
           scrollToTop={scrollToTop}
+          title={option.description}
         >
           {option.label}
         </SegmentedButton>

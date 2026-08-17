@@ -28,6 +28,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = 'https://brunonardini.com.br';
 const OG_TITLE = 'Bruno Nardini - Tech Blog';
+const SITE_IMAGE = {
+  url: `${SITE_URL}/img/logo192.png`,
+  width: 192,
+  height: 192,
+  alt: 'Bruno Nardini',
+  type: 'image/png',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -42,11 +49,20 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
+    locale: 'pt_BR',
     siteName: 'Bruno Nardini',
     url: `${SITE_URL}/`,
     title: OG_TITLE,
     description:
       'Ideias e experiências sobre engenharia de software, arquitetura, tecnologia, carreira e tudo o que aprendemos construindo produtos.',
+    images: [SITE_IMAGE],
+  },
+  twitter: {
+    card: 'summary',
+    title: OG_TITLE,
+    description:
+      'Ideias e experiências sobre engenharia de software, arquitetura, tecnologia, carreira e tudo o que aprendemos construindo produtos.',
+    images: [SITE_IMAGE],
   },
 };
 

@@ -2,7 +2,7 @@ import { ArticleBody } from '@/components/article-body';
 import { ArticleShare } from '@/components/article-share';
 import { CopyLinkButton } from '@/components/copy-link-button';
 import { FilterChip } from '@/components/filter-chip';
-import { getArticle, getArticles } from '@/lib/blog';
+import { getArticle, getArticleSummary, getArticles } from '@/lib/blog';
 import { getTagLabel } from '@/lib/tags';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -29,9 +29,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const description = article.external
-    ? article.summary
-    : (article.description ?? article.excerpt);
+  const description = getArticleSummary(article);
   const url = `/blog/${article.slug}`;
   const images = article.image
     ? [
@@ -58,13 +56,13 @@ export async function generateMetadata({
       locale: 'pt_BR',
       siteName: 'Bruno Nardini',
       publishedTime: `${article.publishedAt}T00:00:00.000Z`,
-      images,
+      ...(images ? { images } : {}),
     },
     twitter: {
       card: images ? 'summary_large_image' : 'summary',
       title: article.title,
       description,
-      images: article.image ? [article.image] : undefined,
+      ...(images ? { images } : {}),
     },
   };
 }
