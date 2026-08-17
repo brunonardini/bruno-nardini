@@ -1,10 +1,12 @@
 import { ArticleBody } from '@/components/article-body';
-import { FilterChip } from '@/components/filter-chip';
+import { ArticleShare } from '@/components/article-share';
 import { CopyLinkButton } from '@/components/copy-link-button';
+import { FilterChip } from '@/components/filter-chip';
 import { getArticle, getArticles } from '@/lib/blog';
 import { getTagLabel } from '@/lib/tags';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 
 type ArticlePageProps = {
@@ -30,11 +32,36 @@ export async function generateMetadata({
   const description = article.external
     ? article.summary
     : (article.description ?? article.excerpt);
+  const url = `/blog/${article.slug}`;
+  const images = article.image
+    ? [
+        {
+          url: article.image,
+          alt: article.title,
+        },
+      ]
+    : undefined;
 
   return {
-    title: `${article.title} | Bruno Nardini Blog`,
+    title: {
+      absolute: article.title,
+    },
     description,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
+      title: article.title,
+      description,
+      url,
+      type: 'article',
+      locale: 'pt_BR',
+      siteName: 'Bruno Nardini',
+      publishedTime: `${article.publishedAt}T00:00:00.000Z`,
+      images,
+    },
+    twitter: {
+      card: images ? 'summary_large_image' : 'summary',
       title: article.title,
       description,
       images: article.image ? [article.image] : undefined,
@@ -87,7 +114,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         {article.image ? (
           <div className="mt-8 px-2 md:px-0">
-            <div className="relative aspect-video overflow-hidden rounded-xl bg-surface-container-highest">
+            <div className="relative aspect-video overflow-hidden rounded-none bg-surface-container-highest md:rounded-xl">
               <Image
                 src={article.image}
                 alt={article.title}
@@ -102,6 +129,28 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         <div className="mx-auto mt-10 max-w-2xl px-4 md:mt-12">
           <ArticleBody content={article.content} />
+          <div className="mt-12">
+            <ArticleShare
+              url={`https://brunonardini.com.br${path}`}
+              title={article.title}
+            />
+            <Link
+              href="/blog"
+              className="md-text-button md-typescale-label-large mt-8 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface"
+            >
+              <svg
+                className="md-text-button-icon"
+                viewBox="0 0 24 24"
+                aria-hidden
+              >
+                <path
+                  fill="currentColor"
+                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                />
+              </svg>
+              Explorar outros artigos
+            </Link>
+          </div>
         </div>
       </article>
     </main>

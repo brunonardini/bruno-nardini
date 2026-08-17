@@ -7,6 +7,12 @@ export type BlogQuery = {
 
 const ARTICLE_SOURCES = new Set<ArticleSource>(['internal', 'external']);
 
+export function readSearchQuery(searchParams: {
+  q?: string | string[];
+}): string {
+  return typeof searchParams.q === 'string' ? searchParams.q.trim() : '';
+}
+
 export function readSourceParam(searchParams: {
   source?: string | string[];
 }): ArticleSource | undefined {
@@ -18,7 +24,7 @@ export function readSourceParam(searchParams: {
     : undefined;
 }
 
-export function buildBlogHref({ tag, source }: BlogQuery = {}): string {
+function buildHref(pathname: string, { tag, source }: BlogQuery = {}): string {
   const params = new URLSearchParams();
 
   if (tag) {
@@ -30,7 +36,20 @@ export function buildBlogHref({ tag, source }: BlogQuery = {}): string {
   }
 
   const query = params.toString();
-  return query ? `/blog?${query}` : '/blog';
+  return query ? `${pathname}?${query}` : pathname;
+}
+
+export function buildBlogHref(query: BlogQuery = {}): string {
+  return buildHref('/blog', query);
+}
+
+export function buildHomeHref(query: BlogQuery = {}): string {
+  return buildHref('/', query);
+}
+
+export function buildSearchHref(query = ''): string {
+  const trimmed = query.trim();
+  return trimmed ? `/busca?q=${encodeURIComponent(trimmed)}` : '/busca';
 }
 
 export function matchesBlogQuery(

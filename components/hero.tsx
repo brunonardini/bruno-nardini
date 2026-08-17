@@ -1,3 +1,4 @@
+import { CompactArticleList } from '@/components/compact-article-list';
 import { ExternalLinkBadge } from '@/components/external-link-badge';
 import { FilledCard } from '@/components/filled-card';
 import { MatrixRain } from '@/components/matrix-rain';
@@ -55,46 +56,13 @@ export function Hero({ latest, articles }: HeroProps) {
 
             <div className="flex flex-col gap-6 md:gap-4">
               {articles.length > 0 ? (
-                <ul className="flex flex-col gap-6 md:gap-4">
-                  {articles.map((article) => (
-                    <li
-                      key={article.slug}
-                      className="overflow-hidden rounded-md bg-surface-container text-on-surface"
-                    >
-                      <FilledCard
-                        href={getArticleHref(article)}
-                        external={article.external}
-                        image={article.image}
-                        tags={toArticleTags(article.tags)}
-                        orientation="horizontal"
-                      >
-                        <h2 className="md-typescale-title-large text-pretty text-on-surface">
-                          <span
-                            className={
-                              article.external
-                                ? 'md-external-link-title'
-                                : undefined
-                            }
-                          >
-                            {article.title}
-                          </span>
-                          {article.external ? <ExternalLinkBadge /> : null}
-                        </h2>
-                        {article.summary ? (
-                          <p className="md-typescale-body-medium mt-4 line-clamp-3 text-on-surface-variant md:hidden">
-                            {article.summary}
-                          </p>
-                        ) : null}
-                      </FilledCard>
-                    </li>
-                  ))}
-                </ul>
+                <CompactArticleList articles={articles} />
               ) : null}
               <nav
                 aria-label="Continuar na página"
                 className="hidden shrink-0 grid-cols-2 gap-3 md:grid"
               >
-                <ScrollToButton targetId="intro">Sobre mim</ScrollToButton>
+                <ScrollToButton targetId="intro">Apresentação</ScrollToButton>
                 <ScrollToButton targetId="artigos">Mais artigos</ScrollToButton>
               </nav>
             </div>

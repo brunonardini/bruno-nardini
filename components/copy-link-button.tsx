@@ -31,7 +31,7 @@ export function CopyLinkButton({ path }: CopyLinkButtonProps) {
   return (
     <button
       type="button"
-      className="md-text-button md-typescale-label-large focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface"
+      className="md-text-button md-typescale-label-large cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface"
       onClick={copyLink}
     >
       <svg className="md-text-button-icon" viewBox="0 0 24 24" aria-hidden>
