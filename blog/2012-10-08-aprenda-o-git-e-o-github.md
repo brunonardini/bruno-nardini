@@ -1,7 +1,7 @@
 ---
 slug: aprenda-o-git-e-o-github
 title: Aprenda o Git e o GitHub
-tags: [agile]
+tags: [architecture]
 ---
 
 Para quem ainda não se familiarizou com o Git, fica a dica de um ótimo curso grátis:

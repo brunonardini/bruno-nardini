@@ -2,7 +2,7 @@
 slug: como-fazer-o-daily-scrum-stand-up-meetings-de-forma-mais-produtiva
 title: Como fazer o Daily Scrum (Stand Up Meetings) de forma mais produtiva
 description: Como fazer o Daily Scrum (Stand Up Meetings) de forma mais produtiva
-tags: [agile]
+tags: [engineering]
 image: /img/features/daily-scrum.jpg
 ---
 
@@ -24,7 +24,7 @@ Essas perguntas parecem fazer sentido e atender seu objetivo, que é ter uma atu
 
 Se o objetivo é acompanhar o sprint, nada mais justo que o daily ser focado nas tarefas, e não no time. Sendo assim, minha sugestão é reunir o time em frente ao Quadro de Tarefas (onde é controlado o progresso das tarefas) e ir perguntando ao time o progresso das tarefas que estão em desenvolvimento.
 
-![Quadro de Tarefas](../static/img/kanban-board-example-1024x563.jpg)
+![Quadro de Tarefas](/img/content/kanban-board-example-1024x563.jpg)
 Imagem 1. _Quadro com as User Stories, pode ser real como um quadro branco com post it, ou virtual como Trello ou JIRA._
 
 Usando o quadro da Imagem 1 como exemplo, o Daily começa da última até a primeira coluna. Então no exemplo começaria pela coluna Deployment Ready, se a tarefa C foi entregue durante o período, fala-se sobre ela, em seguida vai para a coluna UAT, que não tem cartão, então segue para Testing e assim por diante. Uma outra abordagem é começar pelas tarefas de hotfix (correção de bug, tarefa I), depois a tarefa com impendimento (tarefa A) e depois seguir o fluxo das outras.

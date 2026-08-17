@@ -2,7 +2,7 @@
 slug: site-nardini-academy-com-novo-layout
 title: Site Nardini Academy com novo layout
 description: Site Nardini Academy com novo layout
-tags: [news]
+tags: [notes]
 ---
 
 Depois de muitas semanas remodelando o novo site, ficou pronto!
@@ -18,10 +18,10 @@ Também conhecido como “janela visível do browser”, esta é a primeira part
 <table>
     <tr>
         <td>
-            <img src="../static/img/home-01-desktop.png" />
+            <img src="/img/content/home-01-desktop.png" />
         </td>
         <td>
-            <img src="../static/img/home-01-mobile.png" />
+            <img src="/img/content/home-01-mobile.png" />
         </td>
     </tr>
 </table>
@@ -34,7 +34,7 @@ A chamada para ação irá levar o usuário a conhecer o resto do site.
 
 O menu vem logo abaixo da imagem do fold, mas que se fixa no topo assim que ele chega lá. Vi muito esse efeito em novos layouts e gostei muito do resultado que ficou. Tentei deixar o mais limpo e simples possível, somente com a marca e os principais itens do site:
 
-![Menu](../static/img/menu.png)
+![Menu](/img/content/menu.png)
 
 A forma que o menu se encaixa com o resto do layout é bem fluída, ela vai acompanhando o scroll do site. Nas páginas secundárias cumpre o papel de retornar para cada item da página inicial.
 
@@ -42,7 +42,7 @@ A forma que o menu se encaixa com o resto do layout é bem fluída, ela vai acom
 
 Mudei as imagens e a listagem dos cursos. Retirei as bordas e deixei as imagens com cantos arredondados, como cartões, deixou mais limpo e natural a listagem.
 
-![Cursos](../static/img/cursos.png)
+![Cursos](/img/content/cursos.png)
 
 Apesar de eu ter gostado do resultado, futuramente vou condensar a listagem para não ficar muito grande com os novos cursos.
 

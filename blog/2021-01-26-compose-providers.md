@@ -3,7 +3,7 @@ slug: compose-providers
 title: Como resolver o encadeamento de providers no React
 description: Técnica para construir resolver o encadeamento de providers no React
 image: /img/features/hadouken.jpg
-tags: [frontend, react]
+tags: [web]
 ---
 
 Com a introdução do hook `useContext` ficou mais prático de trabalhar com estado global no React, sem a necessidade de usar vários consumers no JSX. Porém, ainda há a necessidade de declarar o Provider dentro JSX, então sem perceber podemos entrar no Provider Hell como este:

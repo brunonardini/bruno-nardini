@@ -2,7 +2,7 @@
 slug: meu-vs-code-snippets
 title: Meu VS Code snippets
 description: Meu VS Code snippets
-tags: [frontend, backend]
+tags: [web]
 image: /img/features/shortcut.jpg
 ---
 

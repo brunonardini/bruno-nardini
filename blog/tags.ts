@@ -5,65 +5,45 @@ export type BlogTag = {
 };
 
 export const BLOG_TAGS = {
-  news: {
-    label: 'Novidades',
-    permalink: '/news',
-    description: 'Novidades',
+  engineering: {
+    label: 'Engenharia',
+    permalink: '/engineering',
+    description: 'Engenharia de software, práticas e decisões técnicas',
   },
-  agile: {
-    label: 'Processos Ágeis',
-    permalink: '/agile',
-    description: 'Processos Ágeis',
+  architecture: {
+    label: 'Arquitetura',
+    permalink: '/architecture',
+    description: 'Arquitetura de software, DDD, padrões e design de sistemas',
   },
-  entrepreneurship: {
-    label: 'Empreendedorismo',
-    permalink: '/entrepreneurship',
-    description: 'Empreendedorismo',
-  },
-  'business-management': {
-    label: 'Gestão de Empresas',
-    permalink: '/business-management',
-    description: 'Gestão de Empresas',
-  },
-  'project-management': {
-    label: 'Gestão de Projetos',
-    permalink: '/project-management',
-    description: 'Gestão de Projetos',
-  },
-  backend: {
-    label: 'Back-end',
-    permalink: '/backend',
-    description: 'Back-end',
-  },
-  frontend: {
-    label: 'Front-end',
-    permalink: '/frontend',
-    description: 'Front-end',
-  },
-  'design-patterns': {
-    label: 'Padrões de Projeto',
-    permalink: '/design-patterns',
-    description: 'Padrões de Projeto',
+  web: {
+    label: 'WEB',
+    permalink: '/web',
+    description: 'Desenvolvimento WEB',
   },
   mobile: {
     label: 'Mobile',
     permalink: '/mobile',
-    description: 'Mobile',
+    description: 'Desenvolvimento e arquitetura de aplicações mobile',
   },
   talks: {
     label: 'Palestras',
     permalink: '/talks',
     description: 'Palestras',
   },
-  react: {
-    label: 'React',
-    permalink: '/react',
-    description: 'React',
+  management: {
+    label: 'Gestão',
+    permalink: '/management',
+    description: 'Gestão, produto, projetos e organizações',
   },
   career: {
     label: 'Carreira',
     permalink: '/career',
-    description: 'Carreira',
+    description: 'Carreira, liderança técnica e desenvolvimento profissional',
+  },
+  notes: {
+    label: 'Notas',
+    permalink: '/notes',
+    description: 'Experiências, ideias e outros assuntos pelo caminho',
   },
 } as const satisfies Record<string, BlogTag>;
 

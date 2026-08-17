@@ -2,7 +2,7 @@
 slug: como-escrever-uma-user-story-matadora
 title: Como escrever uma user story matadora
 description: Como escrever uma user story matadora
-tags: [agile]
+tags: [engineering]
 image: /img/features/scrum_board.jpg
 ---
 

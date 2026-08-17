@@ -2,7 +2,7 @@
 slug: tdd-esta-morto
 title: TDD está morto?
 description: TDD está morto? Neste post darei minha contribuição para a discussão e ajudarei a esclarecer alguns pontos cegos.
-tags: [agile]
+tags: [engineering, architecture]
 ---
 
 Recentemente o David Heinemeier Hansson (DHH) publicou um post com o polêmico título [“TDD is dead. Long live testing.”](http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html) (TDD está morto. Longa vida ao teste) que teve grande repercussão e a comunidade tem falado só sobre isso ultimamente. E isso não poderia ter acontecido em melhor hora, pois eu estou exatamente preparando um treinamento de TDD e BDD, então estou com muita informação para debater o assunto.

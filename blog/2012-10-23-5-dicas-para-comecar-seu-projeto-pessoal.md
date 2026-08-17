@@ -2,7 +2,7 @@
 slug: 5-dicas-para-comecar-seu-projeto-pessoal
 title: 5 dicas para começar seu projeto pessoal
 description: 5 dicas para começar seu projeto pessoal
-tags: [entrepreneurship, project-management]
+tags: [management]
 ---
 
 Muito dos profissionais de TI possuem o costume de trabalhar em projetos em casa no seu tempo livre, só que alguns ficam só na vontade e outros tentam e não conseguem dar continuidade.
@@ -15,7 +15,7 @@ Neste artigo apresento 5 dicas importantes que irão lhe ajudar a começar seu p
 
 Há uma grande diferença entre planejar e ficar viajando nas ideias. Se você está pensando sem um lápis ou teclado na mão, fica difícil chegar a algum lugar. Toda grande obra se começa através de um rascunho, de um esboço, nunca sai pronto da cabeça para a produção final.
 
-<img src="/img/ideas.gif" align="right" /> Primeiro, escolha seu material de rascunho. Para alguns projetos eu gosto de usar papel e caneta, para outros me agrada o computador, faça onde lhe deixar mais confortável. Em seguida comece a jogar as ideias, sejam elas boas ou ruins, e continue até sair algo que você goste. Não se preocupe em fazer algo limpo, faça setas, desenhos, rabiscos, qualquer coisa que precisar para transcrever o que está pensando, seja em desenho, texto ou diagramas.
+<img src="/img/content/ideas.gif" align="right" /> Primeiro, escolha seu material de rascunho. Para alguns projetos eu gosto de usar papel e caneta, para outros me agrada o computador, faça onde lhe deixar mais confortável. Em seguida comece a jogar as ideias, sejam elas boas ou ruins, e continue até sair algo que você goste. Não se preocupe em fazer algo limpo, faça setas, desenhos, rabiscos, qualquer coisa que precisar para transcrever o que está pensando, seja em desenho, texto ou diagramas.
 
 Esse exercício vai lhe ajudar a documentar a ideia e ira liberar o bloqueio criativo que venha a ter. Essa técnica foi muito usada por escritores conceituados e tem funcionado para todas as áreas quem vem sido aplicada.
 
@@ -44,7 +44,7 @@ Depois de fazer todo o brainstorming, como sugerido na dica 1, gaste um tempo em
 Um projeto bem planejado é uma ótima forma de se ganhar produtividade. Se você conhece os pré-requisitos, as premissas, o escopo, os prazos, assim como as outras informações de apoio, você sabe o que fazer, como fazer e quando fazer, quer algo mais produtivo que isso?
 
 <center>
-    <img src="/img/then_miracle_occurs.jpg" />
+    <img src="/img/content/then_miracle_occurs.jpg" />
 </center>
 
 ## 5. Devagar e sempre, mas pra hoje!

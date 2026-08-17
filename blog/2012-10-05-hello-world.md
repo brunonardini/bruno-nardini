@@ -1,7 +1,7 @@
 ---
 slug: hello-world
 title: Hello Blog
-tags: [news]
+tags: [notes]
 ---
 
 Olá Visitante!

@@ -24,7 +24,7 @@ A integração do código nativo com o código em Java é feita do mesmo jeito q
 **Performance**. O código nativo possui esse nome pois é o código programado nas linguagens do próprio sistema operacional, por isso o nome nativo, eles falam a mesma língua. Com isso, sua performance é bem maior que em outras linguagens. No caso do Android, o código nativo possui mais um fator que lhe permite ser mais rápido, pois o Java é uma linguagem que precisa ser interpretada em tempo de execução pela JVM, já o código nativo é inteiramente compilado.
 
 <center>
-    <img src="/img/fast-android.jpg" />
+    <img src="/img/content/fast-android.jpg" />
 </center>
 
 **Reutilização de código**. Como as outras plataformas também oferece suporte para desenvolvimento de código C e C++, se for bem estruturado o código, o mesmo código pode ser usado para outras plataformas, sendo necessário mudar somente a parte do código que utiliza as APIs nativas. Vários aplicativos e jogos que estão disponíveis para Android e iOS utilizam grande parte do mesmo código através do código nativo. Não só códigos para dispositivos móveis, mas também podendo reutilizar o mesmo código para plataforma desktop e web.
