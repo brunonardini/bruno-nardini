@@ -1,6 +1,7 @@
 import { ArticleBody } from '@/components/article-body';
-import { FilterChip } from '@/components/filter-chip';
+import { ArticleShare } from '@/components/article-share';
 import { CopyLinkButton } from '@/components/copy-link-button';
+import { FilterChip } from '@/components/filter-chip';
 import { getArticle, getArticles } from '@/lib/blog';
 import { getTagLabel } from '@/lib/tags';
 import type { Metadata } from 'next';
@@ -127,6 +128,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         <div className="mx-auto mt-10 max-w-2xl px-4 md:mt-12">
           <ArticleBody content={article.content} />
+          <div className="mt-12">
+            <ArticleShare
+              url={`https://brunonardini.com.br${path}`}
+              title={article.title}
+            />
+          </div>
         </div>
       </article>
     </main>

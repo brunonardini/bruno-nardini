@@ -479,6 +479,11 @@
   );
 }
 
+.md-tonal-button-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
 .md-text-button {
   display: inline-flex;
   align-items: center;
