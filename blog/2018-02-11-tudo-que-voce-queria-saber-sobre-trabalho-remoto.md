@@ -2,7 +2,7 @@
 slug: tudo-que-voce-queria-saber-sobre-trabalho-remoto
 title: Tudo que você queria saber sobre Trabalho Remoto
 description: Tudo que você queria saber sobre Trabalho Remoto
-tags: [talks, career]
+tags: [notes, career]
 image: /img/features/trabalho_remoto.jpg
 ---
 
