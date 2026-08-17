@@ -57,6 +57,11 @@ const TOPIC_LINKS = [
   { label: 'WEB', href: '/blog?tag=web' },
 ] as const;
 
+const RESOURCE_LINKS = [
+  { label: 'Feed RSS', href: '/feed.xml' },
+  { label: 'Mapa do site', href: '/sitemap.xml' },
+] as const;
+
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
@@ -95,7 +100,7 @@ export function Footer() {
   return (
     <footer className="md-site-footer">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="md-typescale-title-large text-on-surface">
               Bruno Nardini
@@ -131,6 +136,7 @@ export function Footer() {
 
           <FooterNav title="Navegar" links={NAV_LINKS} />
           <FooterNav title="Assuntos" links={TOPIC_LINKS} />
+          <FooterNav title="Recursos" links={RESOURCE_LINKS} />
         </div>
 
         <p className="md-typescale-body-small mt-10 border-t border-outline-variant pt-6 text-on-surface-variant">

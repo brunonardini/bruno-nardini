@@ -17,6 +17,7 @@ export type ArticleListItem = ArticleBase & {
   summary: string;
   external: boolean;
   url?: string;
+  publishedAt: string;
 };
 
 export type LocalArticle = ArticleBase & {
@@ -49,6 +50,7 @@ export async function getArticles(): Promise<ArticleListItem[]> {
     summary: toPlainText(article.external ? article.summary : article.excerpt),
     external: article.external,
     url: article.external ? article.url : undefined,
+    publishedAt: article.publishedAt,
   }));
 }
 

@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     'Artigos, experiências e aprendizados sobre engenharia de software, arquitetura, IA, DevOps, carreira e liderança técnica.',
   alternates: {
     canonical: `${SITE_URL}/`,
+    types: {
+      'application/rss+xml': `${SITE_URL}/feed.xml`,
+    },
   },
   openGraph: {
     type: 'website',
