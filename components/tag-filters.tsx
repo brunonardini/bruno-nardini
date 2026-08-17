@@ -34,6 +34,7 @@ export function TagFilters({
               href={tagHref(tag.slug)}
               selected={activeTag === tag.slug}
               scrollToTop={scrollToTop}
+              title={tag.description}
             >
               {tag.label}
             </FilterChip>
