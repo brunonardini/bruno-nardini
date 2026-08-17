@@ -36,26 +36,40 @@ export default async function Home({ searchParams }: HomePageProps) {
     <main>
       <Hero latest={latest} articles={more.slice(0, 3)} />
       <Intro />
-      <section aria-label="Artigos" className="bg-surface text-on-surface">
+      <section
+        aria-labelledby="artigos-title"
+        className="bg-surface text-on-surface"
+      >
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:py-16">
-          <div
-            id="artigos"
-            className="scroll-target flex flex-col gap-4 md:flex-row md:items-start md:justify-between md:gap-6"
-          >
-            <div className="min-w-0 flex-1">
-              <TagFilters
-                activeTag={activeTag}
-                allHref={buildHomeHref({ source: activeSource })}
-                tagHref={(slug) =>
-                  buildHomeHref({ tag: slug, source: activeSource })
-                }
-              />
+          <div id="artigos" className="scroll-target flex flex-col gap-8">
+            <div>
+              <h2
+                id="artigos-title"
+                className="md-typescale-display-small text-pretty text-on-surface"
+              >
+                Explore os artigos
+              </h2>
+              <p className="md-typescale-body-large mt-4 text-pretty text-on-surface">
+                Ideias, experiências e aprendizados sobre engenharia de
+                software, tecnologia e carreira.
+              </p>
             </div>
-            <div className="w-full shrink-0 md:w-72">
-              <SourceFilter
-                activeSource={activeSource}
-                href={(source) => buildHomeHref({ tag: activeTag, source })}
-              />
+            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between md:gap-6">
+              <div className="min-w-0 flex-1">
+                <TagFilters
+                  activeTag={activeTag}
+                  allHref={buildHomeHref({ source: activeSource })}
+                  tagHref={(slug) =>
+                    buildHomeHref({ tag: slug, source: activeSource })
+                  }
+                />
+              </div>
+              <div className="w-full shrink-0 md:w-72">
+                <SourceFilter
+                  activeSource={activeSource}
+                  href={(source) => buildHomeHref({ tag: activeTag, source })}
+                />
+              </div>
             </div>
           </div>
           <ArticleList
