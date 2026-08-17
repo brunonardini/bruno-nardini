@@ -42,16 +42,22 @@ export type Article = LocalArticle | ExternalArticle;
 export async function getArticles(): Promise<ArticleListItem[]> {
   const articles = await loadAllArticles();
 
-  return articles.map((article) => ({
-    slug: article.slug,
-    title: article.title,
-    tags: article.tags,
-    image: article.image,
-    summary: toPlainText(article.external ? article.summary : article.excerpt),
-    external: article.external,
-    url: article.external ? article.url : undefined,
-    publishedAt: article.publishedAt,
-  }));
+  return articles.map(toArticleListItem);
+}
+
+export async function searchArticles(
+  query: string,
+): Promise<ArticleListItem[]> {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) {
+    return [];
+  }
+
+  const articles = await loadAllArticles();
+
+  return articles
+    .filter((article) => matchesSearchQuery(article, normalizedQuery))
+    .map(toArticleListItem);
 }
 
 export function getArticleHref(article: ArticleListItem): string {
@@ -123,6 +129,32 @@ function loadExternalArticles(): ExternalArticle[] {
     url: post.link,
     summary: post.summary,
   }));
+}
+
+function toArticleListItem(article: Article): ArticleListItem {
+  return {
+    slug: article.slug,
+    title: article.title,
+    tags: article.tags,
+    image: article.image,
+    summary: toPlainText(article.external ? article.summary : article.excerpt),
+    external: article.external,
+    url: article.external ? article.url : undefined,
+    publishedAt: article.publishedAt,
+  };
+}
+
+function matchesSearchQuery(article: Article, query: string): boolean {
+  const title = normalizeSearchText(article.title);
+  const content = article.external
+    ? normalizeSearchText(article.summary)
+    : normalizeSearchText(toPlainText(article.content));
+
+  return title.includes(query) || content.includes(query);
+}
+
+function normalizeSearchText(value: string): string {
+  return value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().trim();
 }
 
 function toPlainText(value: string): string {

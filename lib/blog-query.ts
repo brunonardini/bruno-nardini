@@ -7,6 +7,12 @@ export type BlogQuery = {
 
 const ARTICLE_SOURCES = new Set<ArticleSource>(['internal', 'external']);
 
+export function readSearchQuery(searchParams: {
+  q?: string | string[];
+}): string {
+  return typeof searchParams.q === 'string' ? searchParams.q.trim() : '';
+}
+
 export function readSourceParam(searchParams: {
   source?: string | string[];
 }): ArticleSource | undefined {
