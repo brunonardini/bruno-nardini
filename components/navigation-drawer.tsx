@@ -22,7 +22,7 @@ const NAV_ITEMS = [
     ),
   },
   {
-    label: 'Sobre mim',
+    label: 'Apresentação',
     href: '/#intro',
     match: () => false,
     icon: (

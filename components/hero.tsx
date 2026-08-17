@@ -62,7 +62,7 @@ export function Hero({ latest, articles }: HeroProps) {
                 aria-label="Continuar na página"
                 className="hidden shrink-0 grid-cols-2 gap-3 md:grid"
               >
-                <ScrollToButton targetId="intro">Sobre mim</ScrollToButton>
+                <ScrollToButton targetId="intro">Apresentação</ScrollToButton>
                 <ScrollToButton targetId="artigos">Mais artigos</ScrollToButton>
               </nav>
             </div>

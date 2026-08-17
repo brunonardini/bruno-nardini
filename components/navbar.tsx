@@ -93,7 +93,7 @@ export function Navbar() {
           <Link
             href="/blog"
             aria-current={isBlog ? 'page' : undefined}
-            className="md-typescale-label-large inline-flex h-10 shrink-0 items-center rounded-sm px-3 text-on-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface"
+            className="md-text-button md-typescale-label-large shrink-0 text-on-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-surface"
           >
             Artigos
           </Link>

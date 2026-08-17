@@ -46,9 +46,9 @@ const SOCIAL_LINKS = [
 
 const NAV_LINKS = [
   { label: 'Início', href: '/' },
+  { label: 'Apresentação', href: '/#intro' },
   { label: 'Artigos', href: '/blog' },
   { label: 'Busca', href: '/busca' },
-  { label: 'Sobre mim', href: '/#intro' },
 ] as const;
 
 const TOPIC_LINKS = [
