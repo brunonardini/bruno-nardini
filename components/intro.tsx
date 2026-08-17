@@ -5,7 +5,7 @@ export function Intro() {
     <section
       id="intro"
       aria-labelledby="intro-title"
-      className="scroll-target flex min-h-dvh items-center bg-surface text-on-surface"
+      className="flex min-h-dvh items-center bg-surface text-on-surface"
     >
       <div className="mx-auto w-full max-w-6xl px-4 py-10 md:py-16">
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
