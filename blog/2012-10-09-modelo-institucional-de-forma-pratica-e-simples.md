@@ -5,7 +5,7 @@ description: Resumo do modelo institucional de forma prática e simples
 tags: [management]
 ---
 
-![Modelo institucional](/img/modelo_institucional.jpg)
+![Modelo institucional](/img/content/modelo_institucional.jpg)
 
 **Empresa** é o navio onde os navegantes estão.
 
