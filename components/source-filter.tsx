@@ -2,7 +2,7 @@ import {
   SegmentedButton,
   SegmentedButtonGroup,
 } from '@/components/segmented-button';
-import { buildBlogHref, type ArticleSource } from '@/lib/blog-query';
+import type { ArticleSource } from '@/lib/blog-query';
 
 const SOURCE_OPTIONS: { source?: ArticleSource; label: string }[] = [
   { label: 'Ambos' },
@@ -12,17 +12,23 @@ const SOURCE_OPTIONS: { source?: ArticleSource; label: string }[] = [
 
 type SourceFilterProps = {
   activeSource?: ArticleSource;
-  activeTag?: string;
+  href: (source?: ArticleSource) => string;
+  scrollToTop?: boolean;
 };
 
-export function SourceFilter({ activeSource, activeTag }: SourceFilterProps) {
+export function SourceFilter({
+  activeSource,
+  href,
+  scrollToTop = false,
+}: SourceFilterProps) {
   return (
     <SegmentedButtonGroup label="Origem dos artigos">
       {SOURCE_OPTIONS.map((option) => (
         <SegmentedButton
           key={option.label}
-          href={buildBlogHref({ tag: activeTag, source: option.source })}
+          href={href(option.source)}
           selected={activeSource === option.source}
+          scrollToTop={scrollToTop}
         >
           {option.label}
         </SegmentedButton>

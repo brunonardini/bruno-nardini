@@ -23,7 +23,11 @@ export function BlogSidebar({ activeTag, activeSource }: BlogSidebarProps) {
             Publicações
           </h2>
           <div className="mt-3">
-            <SourceFilter activeSource={activeSource} activeTag={activeTag} />
+            <SourceFilter
+              activeSource={activeSource}
+              href={(source) => buildBlogHref({ tag: activeTag, source })}
+              scrollToTop
+            />
           </div>
         </section>
         <section>

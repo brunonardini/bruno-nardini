@@ -30,6 +30,7 @@
   --md-sys-opacity-hero-veil-start: 0.16;
   --md-sys-opacity-hero-veil-end: 0.3;
   --md-sys-size-top-app-bar: 4rem;
+  --md-sys-size-top-app-bar-gap: 0.5rem;
   --md-sys-motion-duration-short1: 50ms;
   --md-sys-motion-duration-short3: 150ms;
   --md-sys-motion-duration-short4: 200ms;
@@ -631,7 +632,9 @@
 }
 
 .scroll-target {
-  scroll-margin-top: var(--md-sys-size-top-app-bar);
+  scroll-margin-top: calc(
+    var(--md-sys-size-top-app-bar) + var(--md-sys-size-top-app-bar-gap)
+  );
 }
 
 @media (prefers-reduced-motion: no-preference) {
