@@ -30,11 +30,36 @@ export async function generateMetadata({
   const description = article.external
     ? article.summary
     : (article.description ?? article.excerpt);
+  const url = `/blog/${article.slug}`;
+  const images = article.image
+    ? [
+        {
+          url: article.image,
+          alt: article.title,
+        },
+      ]
+    : undefined;
 
   return {
-    title: `${article.title} | Bruno Nardini Blog`,
+    title: {
+      absolute: article.title,
+    },
     description,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
+      title: article.title,
+      description,
+      url,
+      type: 'article',
+      locale: 'pt_BR',
+      siteName: 'Bruno Nardini',
+      publishedTime: `${article.publishedAt}T00:00:00.000Z`,
+      images,
+    },
+    twitter: {
+      card: images ? 'summary_large_image' : 'summary',
       title: article.title,
       description,
       images: article.image ? [article.image] : undefined,

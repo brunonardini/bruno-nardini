@@ -7,8 +7,7 @@ import {
   matchesBlogQuery,
   readSourceParam,
 } from '@/lib/blog-query';
-import { getTagLabel, readTagParam } from '@/lib/tags';
-import type { Metadata } from 'next';
+import { readTagParam } from '@/lib/tags';
 
 type BlogPageProps = {
   searchParams: Promise<{
@@ -16,30 +15,6 @@ type BlogPageProps = {
     source?: string | string[];
   }>;
 };
-
-const SOURCE_LABELS = {
-  internal: 'No Blog',
-  external: 'Externo',
-} as const;
-
-export async function generateMetadata({
-  searchParams,
-}: BlogPageProps): Promise<Metadata> {
-  const params = await searchParams;
-  const tag = readTagParam(params);
-  const source = readSourceParam(params);
-  const parts = [
-    tag ? getTagLabel(tag) : undefined,
-    source ? SOURCE_LABELS[source] : undefined,
-  ].filter(Boolean);
-
-  return {
-    title: parts.length
-      ? `${parts.join(' · ')} | Bruno Nardini Blog`
-      : 'Artigos | Bruno Nardini Blog',
-    description: 'Todos os artigos sobre desenvolvimento web e tecnologia',
-  };
-}
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   const params = await searchParams;
