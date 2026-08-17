@@ -74,9 +74,7 @@ export default async function Home({ searchParams }: HomePageProps) {
           </div>
           <ArticleList
             articles={visibleArticles}
-            tagHref={(tag) =>
-              buildHomeHref({ tag, source: activeSource })
-            }
+            tagHref={(tag) => buildHomeHref({ tag, source: activeSource })}
           />
           <div className="flex justify-center">
             <OutlinedButton
