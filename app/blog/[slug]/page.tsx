@@ -58,13 +58,13 @@ export async function generateMetadata({
       locale: 'pt_BR',
       siteName: 'Bruno Nardini',
       publishedTime: `${article.publishedAt}T00:00:00.000Z`,
-      images,
+      ...(images ? { images } : {}),
     },
     twitter: {
       card: images ? 'summary_large_image' : 'summary',
       title: article.title,
       description,
-      images: article.image ? [article.image] : undefined,
+      ...(images ? { images } : {}),
     },
   };
 }
