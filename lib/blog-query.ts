@@ -47,6 +47,11 @@ export function buildHomeHref(query: BlogQuery = {}): string {
   return buildHref('/', query);
 }
 
+export function buildSearchHref(query = ''): string {
+  const trimmed = query.trim();
+  return trimmed ? `/busca?q=${encodeURIComponent(trimmed)}` : '/busca';
+}
+
 export function matchesBlogQuery(
   article: { tags: string[]; external: boolean },
   { tag, source }: BlogQuery,

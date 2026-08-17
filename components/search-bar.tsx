@@ -1,19 +1,24 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { buildSearchHref } from '@/lib/blog-query';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, type FormEvent } from 'react';
 
 type SearchBarProps = {
   query?: string;
+  variant?: 'page' | 'app-bar';
+  onSubmitted?: () => void;
 };
 
-export function SearchBar({ query = '' }: SearchBarProps) {
+export function SearchBar({
+  query = '',
+  variant = 'page',
+  onSubmitted,
+}: SearchBarProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+  const isAppBar = variant === 'app-bar';
 
   useEffect(() => {
     const input = inputRef.current;
@@ -31,19 +36,24 @@ export function SearchBar({ query = '' }: SearchBarProps) {
 
     const formData = new FormData(event.currentTarget);
     const nextQuery = String(formData.get('q') ?? '').trim();
-    const href = nextQuery
-      ? `/busca?q=${encodeURIComponent(nextQuery)}`
-      : '/busca';
+    const href = buildSearchHref(nextQuery);
+    const isSearchPage = pathname.startsWith('/busca');
 
-    router.push(href, { scroll: false });
-    inputRef.current?.focus();
+    onSubmitted?.();
+    router.push(href, { scroll: !isSearchPage });
+
+    if (isAppBar) {
+      inputRef.current?.blur();
+    }
   }
 
   return (
     <form
       role="search"
       aria-label="Buscar artigos"
-      className="md-search"
+      action="/busca"
+      method="get"
+      className={isAppBar ? 'md-search md-search-app-bar' : 'md-search'}
       onSubmit={handleSubmit}
     >
       <label className="md-search-field">
@@ -59,19 +69,22 @@ export function SearchBar({ query = '' }: SearchBarProps) {
           type="search"
           name="q"
           defaultValue={query}
-          placeholder="Buscar artigos"
+          placeholder={isAppBar ? 'Buscar' : 'Buscar artigos'}
           autoComplete="off"
-          autoFocus
           enterKeyHint="search"
-          className="md-search-input md-typescale-body-large"
+          className={`md-search-input ${
+            isAppBar ? 'md-typescale-body-medium' : 'md-typescale-body-large'
+          }`}
         />
       </label>
-      <button
-        type="submit"
-        className="md-filled-button md-search-submit md-typescale-label-large focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-primary-container"
-      >
-        Buscar
-      </button>
+      {isAppBar ? null : (
+        <button
+          type="submit"
+          className="md-filled-button md-search-submit md-typescale-label-large focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-on-primary-container"
+        >
+          Buscar
+        </button>
+      )}
     </form>
   );
 }
