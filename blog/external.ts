@@ -10,6 +10,16 @@ export type ExternalBlogPost = {
 
 export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
   {
+    title: 'Quando escrever código deixa de ser a parte difícil',
+    imageUrl: '/img/medium/gargalo-code-review.png',
+    link: 'https://medium.com/totvsdevelopers/quando-escrever-c%C3%B3digo-deixa-de-ser-a-parte-dif%C3%ADcil-8fc3e1ae2f5e',
+    published_at: '2026-08-18',
+    external: true,
+    summary:
+      'IA, coding agents e o desafio de escalar o desenvolvimento de software sem escalar a supervisão.',
+    tags: ['engineering'],
+  },
+  {
     title:
       'Atomic Design na prática com React em um projeto real da RD Station',
     imageUrl: '/img/medium/rdstation-marketing-dashboard.png',
@@ -18,6 +28,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Um caso real onde utilizamos o modelo mental do Atomic Design para construir componentes React.',
+    tags: ['web'],
   },
   {
     title:
@@ -28,6 +39,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Como podemos utilizar o Atomic Design para administrar a complexidade, favorecendo a legibilidade, escalabilidade e flexibilidade do código.',
+    tags: ['web', 'architecture'],
   },
   {
     title:
@@ -38,6 +50,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Na minha última publicação sobre como fizemos a descoberta dos domínios (DDD) do RD Station Marketing através do EventStorming, eu mencionei como a decisão de utilizar Outcomes foi crucial para dividir o negócio em domínios.',
+    tags: ['management', 'engineering'],
   },
   {
     title:
@@ -48,6 +61,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Em meados de 2020, quando a RD Station ainda se chamava Resultados Digitais, a área de engenharia e produto já possuía aproximadamente 40 times distintos, resultado de um crescimento acelerado.',
+    tags: ['management', 'engineering'],
   },
   {
     title:
@@ -58,6 +72,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Com a introdução dos Hooks na versão 16.8 do React, surgiu uma nova forma de utilizar suas funcionalidades usando apenas funções, com conceitos e regras diferentes dos que já conhecíamos usando classes.',
+    tags: ['web'],
   },
   {
     title: 'O que podemos esperar das novas versões do JavaScript',
@@ -67,6 +82,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Para você se preparar e ficar atualizado, eu preparei uma lista com as novidades do JavaScript que terá um grande impacto na forma em que escrevemos o código.',
+    tags: ['web'],
   },
   {
     title: 'Como o Open Source mudou minha carreira e me fez entrar na Matrix',
@@ -76,6 +92,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Recentemente o Open Source teve um impacto enorme na minha mudança de emprego, mas agora que eu parei para refletir sobre isso, eu vejo que ele vem transformando minha carreira desde o começo.',
+    tags: ['career', 'notes'],
   },
   {
     title: 'Refatorando código legado em projetos React — Parte V',
@@ -85,6 +102,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Para fechar com chave de ouro, esta série termina com algumas conclusões sobre qualidade de software, com alguns mitos e verdades que precisam ser esclarecidos para evitar a criação de novos projetos legados.',
+    tags: ['web', 'architecture'],
   },
   {
     title: 'Refatorando código legado em projetos React — Parte IV',
@@ -94,6 +112,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'O Redux é um contêiner de estado previsível e ajuda a manter a consistência do comportamento de uma aplicação. Sua utilização em projetos junto ao React se tornou tão popular que os desenvolvedores iniciantes em React passaram a usá-lo por obrigação, ignorando seu custo e efeitos colaterais.',
+    tags: ['web', 'architecture'],
   },
   {
     title: 'Refatorando código legado em projetos React — Parte III',
@@ -103,6 +122,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'No mundo real é bem mais complexo, como diria qualquer desenvolvedor ao ler um tutorial na internet. Para adentrar a complexidade de um projeto real, este artigo abordará uma alteração com um grande impacto no projeto de exemplo.',
+    tags: ['web', 'architecture'],
   },
   {
     title: 'Refatorando código legado em projetos React — Parte II',
@@ -112,6 +132,7 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Neste artigo é introduzido a definição de refatoração, teste de unidade e teste de regressão, na prática é feito novos testes e a implementação de uma nova funcionalidade em um componente React.',
+    tags: ['web', 'architecture'],
   },
   {
     title: 'Refatorando código legado em projetos React — Parte I',
@@ -121,5 +142,6 @@ export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
     external: true,
     summary:
       'Código legado é uma dor que atinge em cheio o coração de qualquer programador. Com a evolução do desenvolvimento WEB, tecnologias emergentes trouxeram grande robustez para o que hoje chamamos de front-end, com isso vieram novos desafios de como escrever um código limpo. Nesta série de artigos mostrarei algumas dicas de como trabalhar em um projeto React com código legado.',
+    tags: ['web', 'architecture'],
   },
 ];

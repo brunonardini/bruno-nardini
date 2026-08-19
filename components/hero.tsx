@@ -4,19 +4,11 @@ import { FilledCard } from '@/components/filled-card';
 import { MatrixRain } from '@/components/matrix-rain';
 import { ScrollToButton } from '@/components/scroll-to-button';
 import { getArticleHref, type ArticleListItem } from '@/lib/blog';
-import { getTagLabel } from '@/lib/tags';
 
 type HeroProps = {
   latest?: ArticleListItem;
   articles: ArticleListItem[];
 };
-
-function toArticleTags(tags: string[]) {
-  return tags.map((tag) => ({
-    href: `/blog?tag=${tag}`,
-    label: getTagLabel(tag),
-  }));
-}
 
 export function Hero({ latest, articles }: HeroProps) {
   return (
@@ -33,7 +25,6 @@ export function Hero({ latest, articles }: HeroProps) {
                 href={getArticleHref(latest)}
                 external={latest.external}
                 image={latest.image}
-                tags={toArticleTags(latest.tags)}
                 flushMedia
               >
                 <h1 className="md-typescale-headline-large md-typescale-title-large-sm text-pretty text-on-surface">
