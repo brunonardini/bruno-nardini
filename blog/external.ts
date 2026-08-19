@@ -10,6 +10,15 @@ export type ExternalBlogPost = {
 
 export const EXTERNAL_BLOG_POSTS: ExternalBlogPost[] = [
   {
+    title: 'Quando escrever código deixa de ser a parte difícil',
+    imageUrl: '/img/medium/gargalo-code-review.png',
+    link: 'https://medium.com/totvsdevelopers/quando-escrever-c%C3%B3digo-deixa-de-ser-a-parte-dif%C3%ADcil-8fc3e1ae2f5e',
+    published_at: '2026-08-18',
+    external: true,
+    summary: 'IA, coding agents e o desafio de escalar o desenvolvimento de software sem escalar a supervisão.',
+    tags: ['engineering'],
+  },
+  {
     title:
       'Atomic Design na prática com React em um projeto real da RD Station',
     imageUrl: '/img/medium/rdstation-marketing-dashboard.png',
