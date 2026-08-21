@@ -18,17 +18,28 @@ type ArticleBodyProps = {
 const markdownComponents: Components = {
   a({ href, children, title }) {
     const resolved = resolveArticleHref(href);
+    const linkTitle = title ?? 'Abre em uma nova aba';
 
     if (resolved?.startsWith('/')) {
       return (
-        <Link href={resolved} title={title}>
+        <Link
+          href={resolved}
+          title={linkTitle}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {children}
         </Link>
       );
     }
 
     return (
-      <a href={resolved} title={title}>
+      <a
+        href={resolved}
+        title={linkTitle}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {children}
       </a>
     );
