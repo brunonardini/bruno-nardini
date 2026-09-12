@@ -2,7 +2,7 @@
 slug: tdd-esta-morto-versao-ia
 title: TDD está morto? (Versão IA)
 description: O que muda quando a IA escreve tanto o código quanto os testes de unidade
-image: /img/features/hadouken.jpg
+image: /img/features/tdd-is-dead-ia-version.png
 tags: [engineering, architecture]
 ---
 
