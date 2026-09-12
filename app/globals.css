@@ -1120,24 +1120,26 @@ pre {
 }
 
 .article-body a {
-  color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-tertiary);
   text-decoration: underline;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--md-sys-color-tertiary) 64%,
+    transparent
+  );
   text-underline-offset: 0.15em;
 }
 
 .article-body a:hover {
-  color: color-mix(
-    in srgb,
-    var(--md-sys-color-on-surface) 24%,
-    var(--md-sys-color-primary)
-  );
+  color: var(--md-sys-color-on-tertiary-container);
+  text-decoration-color: var(--md-sys-color-on-tertiary-container);
 }
 
 .article-body a:active {
   color: color-mix(
     in srgb,
-    var(--md-sys-color-on-surface) 32%,
-    var(--md-sys-color-primary)
+    var(--md-sys-color-on-surface) 24%,
+    var(--md-sys-color-tertiary)
   );
 }
 
