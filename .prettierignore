@@ -1,2 +1,5 @@
 .next
 build
+
+# Public files
+public/

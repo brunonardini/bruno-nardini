@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Engenharia de Software na prática · UBM · 19.10.2026</title>
+  <link rel="preload" href="fonts/Inter-ExtraBold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="img/HPIM1018-2.jpg" as="image" />
+  <link rel="preload" href="img/HPIM1071.jpg" as="image" />
+  <link rel="preload" href="img/bruno-nardini-ilp-2025.jpeg" as="image" />
+  <link rel="preload" href="img/nardini-with-ia-center.png" as="image" />
+  <link rel="preload" href="img/nardini-with-ia-left.png" as="image" />
+  <link rel="preload" href="img/nardini-with-ia-right.png" as="image" />
+  <link rel="stylesheet" href="assets/deck.css" />
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-angry" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><path d="M7.5 8 10 9"/><path d="m14 9 2.5-1"/><path d="M9 10h.01"/><path d="M15 10h.01"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-pawn" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><path d="M9 11h6"/><path d="M10 11c0 2.8-.8 5-2.5 7"/><path d="M14 11c0 2.8.8 5 2.5 7"/><rect x="5" y="18" width="14" height="3" rx="1"/></symbol>
+    <symbol id="i-rook" viewBox="0 0 24 24"><path d="M6 3h2.5v2h2V3h3v2h2V3H18v5l-2 2H8L6 8z"/><path d="M8 10l-1 8"/><path d="M16 10l1 8"/><rect x="5" y="18" width="14" height="3" rx="1"/></symbol>
+    <symbol id="i-bishop" viewBox="0 0 24 24"><circle cx="12" cy="2.8" r="0.8"/><path d="M12 4.5c-2.8 2.5-4 4.8-4 6.8a4 4 0 0 0 8 0c0-2-1.2-4.3-4-6.8z"/><path d="m13.8 7.5-2.6 2.6"/><path d="M10 15.2 8.5 18"/><path d="M14 15.2l1.5 2.8"/><rect x="5" y="18" width="14" height="3" rx="1"/></symbol>
+    <symbol id="i-knight" viewBox="0 0 24 24"><path d="M8 18c0-2.5 1.2-4.4 3.5-6.2-1.8-.3-3.3.3-4.5 1.4L5.2 11.4C6 8.2 8.2 5.3 11 4.3L12 2.5l1 2.1c3.3 1 5 4.2 5 8.4V18"/><path d="M11 7.5h.01"/><rect x="5" y="18" width="14" height="3" rx="1"/></symbol>
+    <symbol id="i-queen" viewBox="0 0 24 24"><circle cx="12" cy="3.5" r="1.2"/><circle cx="4.5" cy="6.5" r="1.2"/><circle cx="19.5" cy="6.5" r="1.2"/><path d="M5 8l2.5 8h9L19 8l-4 3.5-3-6-3 6z"/><path d="M7.5 16 7 18"/><path d="M16.5 16l.5 2"/><rect x="5" y="18" width="14" height="3" rx="1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  </defs>
+</svg>
+
+<div id="viewport">
+<div id="stage">
+
+  <div class="bg">
+    <div class="grid"></div>
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="scan"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- ============================== ACT 0 · COLD OPEN ============================== -->
+
+  <section class="slide s-title" data-act="00" data-label="Abertura">
+    <div class="kicker in">UBM · Engenharia de Software · 19.10.2026</div>
+    <h1 class="h1 in" style="--d:1">Engenharia de Software <span class="grad">na prática</span></h1>
+    <p class="subtitle in" style="--d:2">da formação acadêmica aos desafios e oportunidades do mercado de tecnologia</p>
+    <div class="speaker in" style="--d:3">
+      <strong>www.Bruno<b>Nardini</b>.com.br</strong>
+    </div>
+    <div class="horizon"></div>
+    <div class="floor"></div>
+  </section>
+
+  <section class="slide s-alumni" data-act="00" data-label="Eu já estive aí">
+    <div class="row">
+      <div class="copy">
+        <div class="kicker in">git log --reverse</div>
+        <h2 class="h2 in" style="--d:1">Eu comecei <span class="grad">aqui.</span></h2>
+        <p class="lead in" style="--d:2">Ex-aluno de <b class="fg">Ciência da Computação</b> da UBM.</p>
+        <p class="mono dim in" style="--d:3;font-size:24px;letter-spacing:.08em;margin-top:40px">mesma cadeira · outro ano</p>
+      </div>
+      <div class="prints">
+        <figure class="print p1 in" style="--d:4">
+          <img src="img/HPIM1018-2.jpg" alt="Turma de Ciência da Computação da UBM reunida em frente a um restaurante" />
+        </figure>
+        <figure class="print p2 in" style="--d:12">
+          <img src="img/HPIM1071.jpg" alt="Formatura de Ciência da Computação da UBM" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ACT 1 · WHERE I AM ============================== -->
+
+  <section class="slide s-whoami" data-act="01" data-label="Onde eu estou">
+    <div class="kicker in">whoami</div>
+    <div class="row">
+      <div class="term in" style="--d:1">
+        <div class="term-bar"><i></i><i></i><i></i><span>nardini@ubm: ~</span></div>
+        <div class="term-body">
+          <p class="in" style="--d:3"><span class="prompt">$</span>whoami</p>
+          <p class="out in" style="--d:5">Principal Engineer</p>
+          <p class="in" style="--d:8"><span class="prompt">$</span>cat empresa.txt</p>
+          <p class="out acc in" style="--d:10">TOTVS</p>
+        </div>
+      </div>
+      <figure class="photo in" style="--d:18">
+        <img src="img/bruno-nardini-ilp-2025.jpeg" alt="Bruno Nardini com o troféu ILP 2025 · Destaque do Ano" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="slide" data-act="01" data-label="Onde eu estou">
+    <div class="kicker in">mercado de tecnologia</div>
+    <h2 class="h2 in" style="--d:1">As melhores empresas de <span class="grad">tecnologia</span> do Brasil</h2>
+    <div class="companies">
+      <div class="card company hot in" style="--d:3">
+        <div>
+          <div class="word">TOTVS</div>
+          <div class="cat">software de gestão</div>
+        </div>
+        <div class="foot">
+          <span class="tag acc">#1 · 90,6 pts</span>
+        </div>
+      </div>
+      <div class="card company in" style="--d:4"><div><div class="word">Vivo</div><div class="cat">telecom</div></div><span class="tag">#2 · 90,5 pts</span></div>
+      <div class="card company in" style="--d:5"><div><div class="word">TIM</div><div class="cat">telecom</div></div><span class="tag">#3 · 90,4 pts</span></div>
+      <div class="card company in" style="--d:6"><div><div class="word">Senior</div><div class="cat">software de gestão</div></div><span class="tag">#4 · 90,2 pts</span></div>
+      <div class="card company in" style="--d:7"><div><div class="word" style="font-size:44px">Telmex<br />do Brasil</div><div class="cat">telecom</div></div><span class="tag">#5 · 89,6 pts</span></div>
+    </div>
+    <p class="criterion in" style="--d:9"><a href="https://exame.com/revista-exame/contra-a-mare-3/" target="_blank" rel="noopener">Exame Melhores e Maiores 2026</a> · Tecnologia e Telecom · nota: rentabilidade, liquidez, crescimento e ESG</p>
+  </section>
+
+  <section class="slide s-market" data-act="01" data-label="Conheça o mercado">
+    <div class="row">
+      <div>
+        <div class="kicker in">dica</div>
+        <div class="tip-num in" style="--d:1">01</div>
+        <h2 class="h3 in" style="--d:2">Conheça o mercado de trabalho.</h2>
+        <p class="body in mt-s" style="--d:3">Mercado de TI não é um lugar só.</p>
+      </div>
+      <div class="market">
+        <div class="quad">
+          <div class="card f hot">
+            <span class="here">estou aqui</span>
+            <span class="num">01</span>
+            <div class="h5">Produto</div>
+            <p class="small">Cria o software e vende para muitos clientes. Hoje, quase sempre como SaaS.</p>
+            <p class="take">→ sistema que dura, cliente real, legado</p>
+            <p class="ex">TOTVS, Senior, VTEX, Conta Azul</p>
+          </div>
+          <div class="card f">
+            <span class="num">02</span>
+            <div class="h5">Serviço</div>
+            <p class="small">Consultoria, fábrica de software, outsourcing. O problema é de outra empresa.</p>
+            <p class="take">→ variedade, prazo, stack que muda</p>
+            <p class="ex">CI&amp;T, Stefanini, Accenture, IBM, Capgemini</p>
+          </div>
+          <div class="card f">
+            <span class="num">03</span>
+            <div class="h5">Infraestrutura</div>
+            <p class="small">Conectividade e nuvem (IaaS/PaaS). A base onde o software dos outros roda.</p>
+            <p class="take">→ escala, disponibilidade, operação 24/7</p>
+            <p class="ex">Vivo, TIM, Claro, AWS, Google Cloud, Azure</p>
+          </div>
+          <div class="card f">
+            <span class="num">04</span>
+            <div class="h5">Dentro de outro negócio</div>
+            <p class="small">Banco, indústria, varejo, hospital, governo. O software serve ao negócio principal.</p>
+            <p class="take">→ a regra do setor, e fica perto daqui</p>
+            <p class="ex">Itaú, Magalu, Ambev, Petrobras, CSN</p>
+          </div>
+        </div>
+        <div class="sizes f">
+          <p class="lbl">E cada um existe em qualquer tamanho:</p>
+          <div class="size"><b>startup</b><span>→ escopo largo, aprende rápido, é aposta</span></div>
+          <div class="size"><b>média</b><span>→ meio-termo entre autonomia e estrutura</span></div>
+          <div class="size"><b>grande</b><span>→ processo, especialização, estabilidade</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ACT 2 · CAREER ============================== -->
+
+  <section class="slide" data-act="02" data-label="Plano de carreira">
+    <div class="kicker in">o tronco comum de quase toda empresa</div>
+    <div class="stairs">
+      <div class="card step in" style="--d:1">
+        <span class="num">01</span>
+        <div class="h3">Júnior</div>
+        <p class="quip f" data-step="2"><svg class="icon ic"><use href="#i-target"/></svg>Todo mundo fica bravo com ele.</p>
+      </div>
+      <div class="card step in" style="--d:2">
+        <span class="num">02</span>
+        <div class="h3">Pleno</div>
+        <p class="quip f" data-step="3"><svg class="icon ic"><use href="#i-crown"/></svg>Acha que é sênior. Ganha como júnior.</p>
+      </div>
+      <div class="card step in" style="--d:3">
+        <span class="num">03</span>
+        <div class="h3">Sênior</div>
+        <p class="quip f" data-step="1"><svg class="icon ic"><use href="#i-angry"/></svg>Fica bravo com todo mundo.</p>
+      </div>
+    </div>
+    <p class="joke f" data-step="4"><b>É brincadeira.</b></p>
+  </section>
+
+  <section class="slide" data-act="02" data-label="A ilusão da hard skill">
+    <div class="kicker in">a ilusão da hard skill</div>
+    <h2 class="h2 in" style="--d:1">Saber programar é o ingresso.<br /><span class="grad">Não é a diferença.</span></h2>
+    <div class="levels">
+      <div class="bars">
+        <div class="lv">
+          <div class="stack"><div class="seg top fx" data-step="2" style="--h:60px"></div><div class="seg base fx" data-step="1"></div></div>
+          <div class="h5 in" style="--d:2">Júnior</div>
+        </div>
+        <div class="lv">
+          <div class="stack"><div class="seg top fx" data-step="2" style="--h:150px"></div><div class="seg base fx" data-step="1"></div></div>
+          <div class="h5 in" style="--d:3">Pleno</div>
+        </div>
+        <div class="lv">
+          <div class="stack"><div class="seg top fx" data-step="2" style="--h:250px"></div><div class="seg base fx" data-step="1"></div></div>
+          <div class="h5 in" style="--d:4">Sênior</div>
+        </div>
+      </div>
+      <div class="key">
+        <p class="k top f" data-step="2"><i></i>experiência + soft skills</p>
+        <p class="k base f" data-step="1"><i></i>hard skills</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-act="02" data-label="Experiência vira confiança">
+    <div class="kicker in">experiência vira confiança</div>
+    <h2 class="h2 in" style="--d:1">O sênior já viu dar certo.<br /><span class="grad">E já viu dar errado.</span></h2>
+    <p class="lead in mt-m" style="--d:2">Experiência vem de passar por vários projetos e desafios diferentes, e ver na prática as consequências das escolhas. <span class="fg">Suas e do time.</span></p>
+    <p class="quote bar-quote f mt-l">Senioridade é <span class="acc">confiança.</span></p>
+  </section>
+
+  <section class="slide" data-act="02" data-label="O que promove">
+    <div class="kicker in">o que a escada recompensa</div>
+    <h2 class="h2 in" style="--d:1">Não é só escolher <span class="grad">a melhor solução.</span></h2>
+    <div class="pro">
+      <div class="no">
+        <div class="ph warn in" style="--d:2">não promove sozinho</div>
+        <ul>
+          <li class="in" style="--d:3"><span class="mk">×</span>Tempo de casa</li>
+          <li class="in" style="--d:4"><span class="mk">×</span>Stack da moda</li>
+          <li class="in" style="--d:5"><span class="mk">×</span>Hora extra como identidade</li>
+          <li class="in" style="--d:6"><span class="mk">×</span>"Eu termino tudo sozinho"</li>
+          <li class="in" style="--d:7"><span class="mk">×</span>Título que você se deu no LinkedIn</li>
+        </ul>
+      </div>
+      <div class="yes">
+        <div class="ph acc f" data-step="1">promove</div>
+        <ul>
+          <li class="f" data-step="1"><span class="mk">✓</span>Comunicar com o próprio time</li>
+          <li class="f" data-step="2"><span class="mk">✓</span>Defender uma ideia</li>
+          <li class="f" data-step="3"><span class="mk">✓</span>Ouvir as pessoas</li>
+          <li class="f" data-step="4"><span class="mk">✓</span>Destravar impedimentos</li>
+          <li class="f" data-step="5"><span class="mk">✓</span>Alinhar com quem está fora do time</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide s-fork" data-act="02" data-label="Depois do sênior">
+    <div class="kicker in">depois do sênior, o caminho abre</div>
+    <div class="branches">
+      <div class="branch auto f" data-step="1">
+        <div class="bh">Especialista</div>
+        <span class="chip">Staff</span>
+        <span class="chip">Senior Staff</span>
+        <span class="chip">Principal</span>
+        <span class="chip">Distinguished / Fellow</span>
+      </div>
+      <div class="branch f" data-step="2">
+        <div class="bh">Gestão</div>
+        <span class="chip">Engineering Manager</span>
+        <span class="chip">Diretor</span>
+        <span class="chip">VP</span>
+        <span class="chip">CTO</span>
+      </div>
+      <div class="branch f" data-step="3">
+        <div class="bh">Produto</div>
+        <span class="chip">Product Manager</span>
+        <span class="chip">Group PM</span>
+        <span class="chip">Diretor de Produto</span>
+        <span class="chip">CPO</span>
+      </div>
+    </div>
+    <svg class="fork-svg" viewBox="0 0 1640 80" preserveAspectRatio="none" aria-hidden="true">
+      <path class="auto fx" data-step="1" d="M820 80 C820 25 260 55 260 0" />
+      <path class="fx" data-step="2" d="M820 80 L820 0" />
+      <path class="fx" data-step="3" d="M820 80 C820 25 1380 55 1380 0" />
+    </svg>
+    <div class="trunk">
+      <div class="board in" style="--d:1"></div>
+      <div class="rank in" style="--d:2"><span>última fileira</span></div>
+      <span class="chip big in" style="--d:4">Sênior</span>
+      <span class="up in" style="--d:3">↑</span>
+      <span class="chip in" style="--d:3">Pleno</span>
+      <span class="up in" style="--d:2">↑</span>
+      <span class="chip in" style="--d:2">Júnior</span>
+      <div class="pawn-wrap in" style="--d:5"><svg class="icon pawn fx" data-step="1"><use href="#i-pawn"/></svg></div>
+      <div class="pieces">
+        <svg class="icon fx" data-step="1"><use href="#i-queen"/></svg>
+        <svg class="icon fx" data-step="1"><use href="#i-rook"/></svg>
+        <svg class="icon fx" data-step="1"><use href="#i-bishop"/></svg>
+        <svg class="icon fx" data-step="1"><use href="#i-knight"/></svg>
+      </div>
+    </div>
+    <p class="fork-foot"><span class="f" data-step="4">No fim do tabuleiro, o peão pode virar <span class="acc">qualquer peça.</span></span> <span class="f" data-step="5">E quem conhece todas sabe <span class="acc2">jogar junto com elas.</span></span></p>
+  </section>
+
+  <section class="slide" data-act="02" data-label="Plano vs carreira">
+    <div class="kicker in">o paralelo</div>
+    <h2 class="h2 in" style="--d:1">O tabuleiro é da empresa.<br /><span class="grad">A partida é sua.</span></h2>
+    <div class="vs solo">
+      <div class="col left">
+        <div class="ch dim in" style="--d:2">como a empresa organiza</div>
+        <div class="card dashed cell f" data-step="1">Cargos, níveis e colunas pensados para o trabalho dela. Os nomes e o tamanho de cada degrau mudam de uma empresa para outra.</div>
+      </div>
+      <div class="col right">
+        <div class="ch acc in" style="--d:2">como você constrói</div>
+        <div class="card hot cell f" data-step="2">Uma carreira que atravessa várias empresas. O cargo fica para trás quando você sai; o que você aprendeu vai junto.</div>
+      </div>
+    </div>
+    <p class="quote bar-quote f mt-l" data-step="3" style="font-size:50px">Alinhe as oportunidades com a <span class="acc">carreira que você quer para você.</span></p>
+  </section>
+
+  <section class="slide s-cat" data-act="02" data-label="Uma direção">
+    <div class="cheshire" aria-hidden="true">
+      <svg viewBox="0 0 420 260" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+        <path d="M70 70 Q110 30 150 70 Q110 100 70 70Z" />
+        <path d="M270 70 Q310 30 350 70 Q310 100 270 70Z" />
+        <path d="M110 52 L110 88" stroke-width="8" />
+        <path d="M310 52 L310 88" stroke-width="8" />
+        <path d="M30 150 Q210 290 390 150" />
+        <path d="M30 150 Q210 225 390 150" />
+        <path d="M90 180 L96 202 M130 196 L134 222 M170 204 L172 232 M210 206 L210 236 M250 204 L248 232 M290 196 L286 222 M330 180 L324 202" stroke-width="3" />
+      </svg>
+    </div>
+    <p class="quote in" style="--d:2">Se você não sabe para onde ir,<br /><span class="grad">qualquer caminho serve.</span></p>
+  </section>
+
+  <section class="slide" data-act="02" data-label="Uma direção">
+    <div class="kicker in">um plano que respira</div>
+    <h2 class="h2 in" style="--d:1">Recalculando <span class="grad">rota.</span></h2>
+    <div class="route-map">
+      <div class="toast tag acc2 fx" data-step="2"><svg class="icon"><use href="#i-nav"/></svg>recalculando rota…</div>
+      <svg viewBox="0 0 1640 440" aria-hidden="true">
+        <g class="streets in" style="--d:2">
+          <path d="M60 380H1580M60 270H1580M200 160H1580M60 60H1400" />
+          <path d="M200 20V380M470 160V420M760 20V420M1050 20V380M1320 60V420M1500 20V270" />
+          <path d="M60 200 200 160M470 160 620 60M1050 380 1180 440M1500 270 1580 330" />
+        </g>
+        <g class="old-route fx" data-step="3"><path class="route fx" data-step="1" pathLength="1" d="M200 380H760V160H1500V60" /></g>
+        <g class="stale fx" data-step="4"><path class="route new-tail fx" data-step="3" pathLength="1" d="M1320 160H1500V60" /></g>
+        <path class="route new-route fx" data-step="3" pathLength="1" d="M200 380H760V270H1320V160" />
+        <path class="route final-tail fx" data-step="4" pathLength="1" d="M1320 160V60" />
+        <g class="block fx" data-step="2">
+          <circle cx="1180" cy="160" r="20" />
+          <path d="m1172 152 16 16m0-16-16 16" />
+          <text x="1180" y="120" text-anchor="middle">o mercado mudou</text>
+        </g>
+        <g class="in" style="--d:3">
+          <circle class="me-halo" cx="200" cy="380" r="20" />
+          <circle class="me" cx="200" cy="380" r="10" />
+          <text x="200" y="424" text-anchor="middle">você</text>
+        </g>
+        <g class="in" style="--d:4">
+          <g class="pin fx" data-step="4">
+            <use href="#i-pin" x="1472" y="6" width="56" height="56" />
+            <text x="1540" y="40">destino</text>
+          </g>
+        </g>
+        <text class="found fx" data-step="4" x="1284" y="40" text-anchor="end">descobri o que eu gosto</text>
+      </svg>
+    </div>
+    <p class="quote bar-quote f mt-m" data-step="5">Ninguém desliga o GPS <span class="acc">porque a rota mudou.</span></p>
+  </section>
+
+  <section class="slide s-waves" data-act="02" data-label="Ondas">
+    <div class="kicker in">e às vezes, quem muda é o mapa</div>
+    <h2 class="h2 in" style="--d:1">A mudança vem em <span class="grad">ondas de transformação.</span></h2>
+    <div class="waves">
+      <svg class="waves-svg" viewBox="0 0 1640 238" aria-hidden="true">
+        <defs>
+          <linearGradient id="wave-grad" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#3de0ff" /><stop offset="0.55" stop-color="#a98bff" /><stop offset="1" stop-color="#ff3df0" />
+          </linearGradient>
+        </defs>
+        <path class="sea in" style="--d:2" d="M0 232H1640" />
+        <path class="wave fx" data-step="1" pathLength="1" d="M-2 232C52 232 76 162 116 162C146 162 160 196 136 200" />
+        <path class="wave fx" data-step="2" pathLength="1" d="M214 232C266 232 290 152 330 152C362 152 374 190 350 195" />
+        <path class="wave fx" data-step="3" pathLength="1" d="M428 232C482 232 506 142 546 142C576 142 590 185 566 191" />
+        <path class="wave fx" data-step="4" pathLength="1" d="M644 232C696 232 720 132 760 132C792 132 804 180 780 186" />
+        <path class="wave fx" data-step="5" pathLength="1" d="M858 232C912 232 936 122 976 122C1006 122 1020 175 996 181" />
+        <path class="wave fx" data-step="6" pathLength="1" d="M1074 232C1126 232 1150 112 1190 112C1222 112 1234 170 1210 177" />
+        <path class="wave next fx" data-step="7" pathLength="1" d="M1180 232C1318 232 1380 10 1484 10C1565 10 1599 117 1536 130" />
+      </svg>
+      <div class="wcols">
+        <div class="wcol f" data-step="1">
+          <span class="num">anos 90</span>
+          <div class="h4">Internet e Web</div>
+          <p class="what">O software sai da máquina do usuário e vai para o navegador.</p>
+        </div>
+        <div class="wcol f" data-step="2">
+          <span class="num">anos 2000</span>
+          <div class="h4">Web 2.0 e SaaS</div>
+          <p class="what">O usuário passa a criar conteúdo, e o software vira assinatura que atualiza o tempo todo.</p>
+        </div>
+        <div class="wcol f" data-step="3">
+          <span class="num">anos 2000–2010</span>
+          <div class="h4">Virtualização e Cloud</div>
+          <p class="what">O servidor deixa de ser uma máquina e vira um serviço.</p>
+        </div>
+        <div class="wcol f" data-step="4">
+          <span class="num">2007–2010+</span>
+          <div class="h4">Smartphones e Mobile</div>
+          <p class="what">O usuário passa a estar no bolso, sempre conectado.</p>
+        </div>
+        <div class="wcol f" data-step="5">
+          <span class="num">anos 2010</span>
+          <div class="h4">Containers, DevOps e Cloud Native</div>
+          <p class="what">Quem constrói também opera, e o deploy vira rotina.</p>
+        </div>
+        <div class="wcol f" data-step="6">
+          <span class="num">anos 2010</span>
+          <div class="h4">Big Data e Machine Learning</div>
+          <p class="what">O dado vira produto, e os sistemas começam a aprender com o uso.</p>
+        </div>
+        <div class="wnext">
+          <span class="ask grad2 f" data-step="7">?</span>
+          <p class="quote f" data-step="8">Qual é a <span class="grad2">próxima onda?</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ACT 3 · AI ============================== -->
+
+  <section class="slide s-ia" data-act="03" data-label="IA · de dentro">
+    <div class="glitch in" data-text="IA">IA</div>
+    <p class="sub in" style="--d:3">o mercado · o hype · a visão de dentro</p>
+  </section>
+
+  <section class="slide s-noise" data-act="03" data-label="Barulho ou onda">
+    <div class="kicker in">a pergunta de um milhão de tokens</div>
+    <h2 class="h1 in" style="--d:2">A IA é só barulho, ou é a próxima <span class="grad">onda de transformação?</span></h2>
+    <p class="city-note in" style="--d:36">A visão de quem está dentro das empresas.</p>
+    <svg class="city-svg" viewBox="0 0 1640 280" aria-hidden="true">
+      <path class="sea" pathLength="1" d="M0 256H1640" />
+        <path class="bld" style="--i:0" pathLength="1" d="M10 256V186H100V256" />
+        <path class="bld" style="--i:1" pathLength="1" d="M110 256V156H180V256" />
+        <path class="bld" style="--i:2" pathLength="1" d="M190 256V171H300V256" />
+        <path class="bld" style="--i:3" pathLength="1" d="M310 256V106H390V256" />
+        <path class="bld" style="--i:4" pathLength="1" d="M400 256V61H520V256M460 61V35" />
+        <path class="bld" style="--i:5" pathLength="1" d="M530 256V126H600V256" />
+        <path class="bld" style="--i:6" pathLength="1" d="M610 256V44H624V20H696V44H710V256" />
+        <path class="bld" style="--i:7" pathLength="1" d="M720 256V86H810V256" />
+        <path class="bld" style="--i:8" pathLength="1" d="M820 256V51H950V256M885 51V25" />
+        <path class="bld" style="--i:9" pathLength="1" d="M960 256V136H1040V256" />
+        <path class="bld" style="--i:10" pathLength="1" d="M1050 256V90H1064V66H1146V90H1160V256" />
+        <path class="bld" style="--i:11" pathLength="1" d="M1170 256V106H1240V256" />
+        <path class="bld" style="--i:12" pathLength="1" d="M1250 256V30H1370V256" />
+        <path class="bld" style="--i:13" pathLength="1" d="M1380 256V140H1394V116H1456V140H1470V256" />
+        <path class="bld" style="--i:14" pathLength="1" d="M1480 256V76H1550V256M1515 76V50" />
+        <path class="bld" style="--i:15" pathLength="1" d="M1560 256V161H1635V256" />
+        <g class="win" style="--i:1"><rect x="128" y="180" width="12" height="16" /><rect x="150" y="180" width="12" height="16" /></g>
+        <g class="win" style="--i:3"><rect x="333" y="130" width="12" height="16" /><rect x="355" y="130" width="12" height="16" /><rect x="333" y="160" width="12" height="16" /><rect x="355" y="160" width="12" height="16" /><rect x="333" y="190" width="12" height="16" /></g>
+        <g class="win" style="--i:4"><rect x="421" y="85" width="12" height="16" /><rect x="443" y="85" width="12" height="16" /><rect x="465" y="85" width="12" height="16" /><rect x="487" y="85" width="12" height="16" /><rect x="443" y="115" width="12" height="16" /><rect x="465" y="115" width="12" height="16" /><rect x="487" y="115" width="12" height="16" /><rect x="421" y="145" width="12" height="16" /><rect x="443" y="145" width="12" height="16" /><rect x="465" y="145" width="12" height="16" /><rect x="487" y="145" width="12" height="16" /><rect x="421" y="175" width="12" height="16" /><rect x="443" y="175" width="12" height="16" /><rect x="465" y="175" width="12" height="16" /><rect x="487" y="175" width="12" height="16" /><rect x="421" y="205" width="12" height="16" /><rect x="443" y="205" width="12" height="16" /><rect x="465" y="205" width="12" height="16" /><rect x="487" y="205" width="12" height="16" /></g>
+        <g class="win" style="--i:5"><rect x="548" y="150" width="12" height="16" /><rect x="570" y="150" width="12" height="16" /><rect x="548" y="180" width="12" height="16" /><rect x="570" y="180" width="12" height="16" /></g>
+        <g class="win" style="--i:6"><rect x="632" y="60" width="12" height="16" /><rect x="654" y="60" width="12" height="16" /><rect x="676" y="60" width="12" height="16" /><rect x="632" y="90" width="12" height="16" /><rect x="654" y="90" width="12" height="16" /><rect x="676" y="90" width="12" height="16" /><rect x="632" y="120" width="12" height="16" /><rect x="654" y="120" width="12" height="16" /><rect x="676" y="120" width="12" height="16" /><rect x="632" y="150" width="12" height="16" /><rect x="676" y="150" width="12" height="16" /><rect x="632" y="180" width="12" height="16" /><rect x="654" y="180" width="12" height="16" /><rect x="676" y="180" width="12" height="16" /></g>
+        <g class="win" style="--i:7"><rect x="737" y="110" width="12" height="16" /><rect x="759" y="110" width="12" height="16" /><rect x="781" y="110" width="12" height="16" /><rect x="737" y="140" width="12" height="16" /><rect x="759" y="140" width="12" height="16" /><rect x="781" y="140" width="12" height="16" /><rect x="737" y="170" width="12" height="16" /><rect x="759" y="170" width="12" height="16" /><rect x="781" y="170" width="12" height="16" /><rect x="737" y="200" width="12" height="16" /><rect x="759" y="200" width="12" height="16" /><rect x="781" y="200" width="12" height="16" /></g>
+        <g class="win" style="--i:8"><rect x="846" y="75" width="12" height="16" /><rect x="868" y="75" width="12" height="16" /><rect x="890" y="75" width="12" height="16" /><rect x="912" y="75" width="12" height="16" /><rect x="846" y="105" width="12" height="16" /><rect x="868" y="105" width="12" height="16" /><rect x="890" y="105" width="12" height="16" /><rect x="912" y="105" width="12" height="16" /><rect x="846" y="135" width="12" height="16" /><rect x="868" y="135" width="12" height="16" /><rect x="912" y="135" width="12" height="16" /><rect x="846" y="165" width="12" height="16" /><rect x="868" y="165" width="12" height="16" /><rect x="890" y="165" width="12" height="16" /><rect x="912" y="165" width="12" height="16" /><rect x="846" y="195" width="12" height="16" /><rect x="868" y="195" width="12" height="16" /><rect x="890" y="195" width="12" height="16" /><rect x="912" y="195" width="12" height="16" /></g>
+        <g class="win" style="--i:9"><rect x="983" y="160" width="12" height="16" /><rect x="1005" y="160" width="12" height="16" /><rect x="983" y="190" width="12" height="16" /><rect x="1005" y="190" width="12" height="16" /></g>
+        <g class="win" style="--i:10"><rect x="1077" y="106" width="12" height="16" /><rect x="1099" y="106" width="12" height="16" /><rect x="1121" y="106" width="12" height="16" /><rect x="1077" y="136" width="12" height="16" /><rect x="1099" y="136" width="12" height="16" /><rect x="1121" y="136" width="12" height="16" /><rect x="1077" y="166" width="12" height="16" /><rect x="1099" y="166" width="12" height="16" /><rect x="1121" y="166" width="12" height="16" /><rect x="1077" y="196" width="12" height="16" /><rect x="1099" y="196" width="12" height="16" /><rect x="1121" y="196" width="12" height="16" /></g>
+        <g class="win" style="--i:11"><rect x="1188" y="130" width="12" height="16" /><rect x="1210" y="130" width="12" height="16" /><rect x="1188" y="160" width="12" height="16" /><rect x="1210" y="160" width="12" height="16" /><rect x="1188" y="190" width="12" height="16" /><rect x="1210" y="190" width="12" height="16" /></g>
+        <g class="win" style="--i:12"><rect x="1271" y="54" width="12" height="16" /><rect x="1293" y="54" width="12" height="16" /><rect x="1315" y="54" width="12" height="16" /><rect x="1337" y="54" width="12" height="16" /><rect x="1271" y="84" width="12" height="16" /><rect x="1315" y="84" width="12" height="16" /><rect x="1337" y="84" width="12" height="16" /><rect x="1271" y="114" width="12" height="16" /><rect x="1293" y="114" width="12" height="16" /><rect x="1315" y="114" width="12" height="16" /><rect x="1337" y="114" width="12" height="16" /><rect x="1271" y="144" width="12" height="16" /><rect x="1293" y="144" width="12" height="16" /><rect x="1315" y="144" width="12" height="16" /><rect x="1337" y="144" width="12" height="16" /><rect x="1271" y="174" width="12" height="16" /><rect x="1293" y="174" width="12" height="16" /><rect x="1315" y="174" width="12" height="16" /><rect x="1337" y="174" width="12" height="16" /><rect x="1271" y="204" width="12" height="16" /><rect x="1293" y="204" width="12" height="16" /><rect x="1315" y="204" width="12" height="16" /><rect x="1337" y="204" width="12" height="16" /></g>
+        <g class="win" style="--i:13"><rect x="1397" y="156" width="12" height="16" /><rect x="1419" y="156" width="12" height="16" /><rect x="1441" y="156" width="12" height="16" /><rect x="1397" y="186" width="12" height="16" /><rect x="1419" y="186" width="12" height="16" /><rect x="1441" y="186" width="12" height="16" /></g>
+        <g class="win" style="--i:14"><rect x="1498" y="100" width="12" height="16" /><rect x="1520" y="100" width="12" height="16" /><rect x="1498" y="130" width="12" height="16" /><rect x="1520" y="130" width="12" height="16" /><rect x="1520" y="160" width="12" height="16" /><rect x="1498" y="190" width="12" height="16" /><rect x="1520" y="190" width="12" height="16" /></g>
+        <rect class="lit c0" style="--k:0" x="355" y="190" width="12" height="16" />
+        <rect class="lit c1" style="--k:1" x="421" y="115" width="12" height="16" />
+        <rect class="lit c2" style="--k:2" x="654" y="150" width="12" height="16" />
+        <rect class="lit c0" style="--k:3" x="890" y="135" width="12" height="16" />
+        <rect class="lit c1" style="--k:4" x="1293" y="84" width="12" height="16" />
+        <rect class="lit c2" style="--k:5" x="1498" y="160" width="12" height="16" />
+    </svg>
+  </section>
+
+  <section class="slide s-rhyme" data-act="03" data-label="A história rima">
+    <div class="kicker in">~2010 · a cloud</div>
+    <h2 class="h2 in" style="--d:1">A história não se repete, <span class="grad">mas ela rima.</span></h2>
+    <div class="rhyme">
+      <div class="rh cloud in" style="--d:2">~2010 · cloud</div>
+      <span></span>
+      <div class="rh ai f" data-step="7"><span class="grad2">agora · IA</span></div>
+      <div class="it cloud f" data-step="1"><p>Todo mundo migrando</p></div>
+      <span class="mk grad2 f" data-step="7" style="--r:0">↔</span>
+      <div class="it ai f" data-step="7" style="--r:0"><p>Todo produto ganhando IA</p></div>
+      <div class="it cloud f" data-step="2"><p>Empresas criadas já com o negócio na nuvem</p></div>
+      <span class="mk grad2 f" data-step="7" style="--r:1">↔</span>
+      <div class="it ai f" data-step="7" style="--r:1"><p>Empresas criadas já com o negócio em IA</p></div>
+      <div class="it cloud f" data-step="3"><p>Empresas nascendo para completar o ecossistema</p></div>
+      <span class="mk grad2 f" data-step="7" style="--r:2">↔</span>
+      <div class="it ai f" data-step="7" style="--r:2"><p>Empresas nascendo para completar o ecossistema</p></div>
+      <div class="it cloud f" data-step="4"><p>Corrida por certificação</p></div>
+      <span class="mk grad2 f" data-step="7" style="--r:3">↔</span>
+      <div class="it ai f" data-step="7" style="--r:3"><p>Corrida por cursos de IA</p></div>
+      <div class="it cloud f" data-step="5"><p>Papéis novos</p><div class="tags"><span class="tag">SRE</span><span class="tag">Platform Engineer</span><span class="tag">Cloud Security Engineer</span></div></div>
+      <span class="mk grad2 f" data-step="7" style="--r:4">↔</span>
+      <div class="it ai f" data-step="7" style="--r:4"><p>Papéis novos</p><div class="tags"><span class="tag ai">AI Platform Engineer</span><span class="tag ai">AI Evaluation Engineer</span><span class="tag ai">AI Safety Engineer</span></div></div>
+      <div class="it cloud f" data-step="6"><p>Times reorganizados com a cultura DevOps</p></div>
+      <span class="mk grad2 f" data-step="7" style="--r:5">↔</span>
+      <div class="it ai f" data-step="7" style="--r:5"><p>Cada empresa testando um jeito novo de se organizar</p></div>
+    </div>
+  </section>
+
+  <section class="slide s-bill" data-act="03" data-label="A conta chegou">
+    <div class="kicker in">pague só pelo que usar</div>
+    <h2 class="h2 in" style="--d:1">A conta <span class="grad">chegou.</span></h2>
+    <div class="bills">
+      <div class="bill cloud in" style="--d:2">
+        <div class="bh">fatura · cloud</div>
+        <div class="grid">
+          <span class="ch">item</span><span class="ch">estimativa</span><span class="ch">real</span>
+          <span class="item">execuções das funções</span>
+          <div class="est" style="--r:0"><span class="strike fx" data-step="1">4 milhões</span><span class="strike fx" data-step="1">US$ 0,80</span></div>
+          <div class="real fx" data-step="1" style="--r:0"><span>2,4 bilhões</span><span class="cost">US$ 480,00</span></div>
+          <span class="item">tempo × memória</span>
+          <div class="est" style="--r:1"><span class="strike fx" data-step="1">0,2 s × 128 MB</span><span class="strike fx" data-step="1">US$ 1,67</span></div>
+          <div class="real fx" data-step="1" style="--r:1"><span>1 s × 1,5 GB</span><span class="cost">US$ 60.000,12</span></div>
+          <span class="item">requisições de API</span>
+          <div class="est" style="--r:2"><span class="strike fx" data-step="1">2 milhões</span><span class="strike fx" data-step="1">US$ 7,00</span></div>
+          <div class="real fx" data-step="1" style="--r:2"><span>1,1 bilhão</span><span class="cost">US$ 3.271,10</span></div>
+          <span class="item">transferência de dados</span>
+          <div class="est" style="--r:3"><span class="strike fx" data-step="1">300 GB</span><span class="strike fx" data-step="1">US$ 27,00</span></div>
+          <div class="real fx" data-step="1" style="--r:3"><span>38 TB</span><span class="cost">US$ 3.358,72</span></div>
+        </div>
+        <div class="tot">
+          <div class="tl"><span>total</span><span class="strike fx" data-step="1" style="--r:4">US$ 36,47</span></div>
+          <span class="count fx" data-step="2" data-count="67109.94"></span>
+        </div>
+      </div>
+      <div class="bill ia f" data-step="3">
+        <div class="bh"><span class="grad2">fatura · IA</span></div>
+        <div class="grid">
+          <span class="ch">item</span><span class="ch">estimativa</span><span class="ch">real</span>
+          <span class="item">tokens de entrada</span>
+          <div class="est" style="--r:0"><span class="strike fx" data-step="4">1,5 milhão</span><span class="strike fx" data-step="4">US$ 15,00</span></div>
+          <div class="real fx" data-step="4" style="--r:0"><span>1,84 bilhão</span><span class="cost">US$ 18.400,00</span></div>
+          <span class="item">tokens de saída</span>
+          <div class="est" style="--r:1"><span class="strike fx" data-step="4">300 mil</span><span class="strike fx" data-step="4">US$ 15,00</span></div>
+          <div class="real fx" data-step="4" style="--r:1"><span>656 milhões</span><span class="cost">US$ 32.800,00</span></div>
+          <span class="item">agentes rodando</span>
+          <div class="est" style="--r:2"><span class="strike fx" data-step="4">1 agente</span><span class="strike fx" data-step="4">1 hora</span></div>
+          <div class="real fx" data-step="4" style="--r:2"><span>10 agentes</span><span class="qty2">14 horas</span></div>
+        </div>
+        <div class="tot">
+          <div class="tl"><span>total</span><span class="strike fx" data-step="4" style="--r:3">US$ 30,00</span></div>
+          <span class="count fx" data-step="5" data-count="51200"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide s-prophets" data-act="03" data-label="Os profetas">
+    <div class="kicker in">certeza é de graça</div>
+    <h2 class="h2 in" style="--d:1">Apareceram os <span class="grad">profetas.</span></h2>
+    <div class="feed">
+      <div class="post f" data-step="1">
+        <div class="pb">
+          <div class="who"><span class="av">AS</span><span class="name">Arquiteto de Soluções · Thought Leader</span><span class="date">2013</span></div>
+          <p class="txt">Serverless é o fim do backend como a gente conhece. Ponto.</p>
+          <p class="meta">3.214 reações · 512 comentários</p>
+        </div>
+        <div class="stamp fx" data-step="2" style="--rot:-7deg"><small>o tempo respondeu</small>o backend continua aí</div>
+      </div>
+      <div class="post f" data-step="3">
+        <div class="pb">
+          <div class="who"><span class="av">CE</span><span class="name">Cloud Evangelist · NoOps Advocate</span><span class="date">2012</span></div>
+          <p class="txt">Com a nuvem, ninguém mais precisa de time de infraestrutura. O futuro é NoOps. 🚀</p>
+          <p class="meta">4.812 reações · 937 comentários</p>
+        </div>
+        <div class="stamp fx" data-step="4" style="--rot:-5.5deg"><small>o tempo respondeu</small>virou SRE e plataforma</div>
+      </div>
+      <div class="post f" data-step="5">
+        <div class="pb">
+          <div class="who"><span class="av">TI</span><span class="name">Tech Influencer · Keynote Speaker</span><span class="date">2014</span></div>
+          <p class="txt">Monolito é coisa do passado. Daqui a pouco, tudo vai ser microsserviço.</p>
+          <p class="meta">2.907 reações · 688 comentários</p>
+        </div>
+        <div class="stamp fx" data-step="6" style="--rot:-5deg"><small>o tempo respondeu</small>muita gente voltou pro monolito</div>
+      </div>
+      <div class="post f" data-step="7">
+        <div class="pb">
+          <div class="who"><span class="av">CI</span><span class="name">CIO · 30 anos de mercado</span><span class="date">2011</span></div>
+          <p class="txt">Banco nunca vai colocar dado na nuvem. Não é seguro. Anotem.</p>
+          <p class="meta">1.530 reações · 1.204 comentários</p>
+        </div>
+        <div class="stamp fx" data-step="8" style="--rot:-6.5deg"><small>o tempo respondeu</small>hoje bancos rodam na nuvem</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide s-skeptics s-ai-group" data-act="03" data-label="IA · os céticos">
+    <div class="kicker in">as profecias de agora · 1 de 3</div>
+    <h2 class="h2 in" style="--d:1">Os <span class="grad2">céticos.</span></h2>
+    <div class="feed">
+      <div class="post now f" data-step="1">
+        <div class="pb">
+          <div class="who"><span class="av">DS</span><span class="name">Dev Sênior · 25 anos de código</span><span class="date">2025</span></div>
+          <p class="txt">IA é só um autocomplete glorificado. Para código sério, não serve.</p>
+          <p class="meta">2.311 reações · 846 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="2" style="--rot:-6deg"><small>o que eu vejo de dentro</small><span class="grad2">o agente implementa. a gente revisa.</span></div>
+      </div>
+      <div class="post now f" data-step="3">
+        <div class="pb">
+          <div class="who"><span class="av">AM</span><span class="name">Analista de Mercado · Investidor-anjo</span><span class="date">2025</span></div>
+          <p class="txt">É bolha. Vai estourar igual ao metaverso. Anotem.</p>
+          <p class="meta">5.927 reações · 1.488 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="4" style="--rot:-4.5deg"><small>o que eu vejo de dentro</small><span class="grad2">virou valor da empresa: IH + IA</span></div>
+      </div>
+      <div class="post now f" data-step="5">
+        <div class="pb">
+          <div class="who"><span class="av">CT</span><span class="name">CTO · Old school</span><span class="date">2026</span></div>
+          <p class="txt">Nenhuma empresa séria vai deixar IA mexer no código de produção.</p>
+          <p class="meta">1.874 reações · 1.102 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="6" style="--rot:-5.5deg"><small>o que eu vejo de dentro</small><span class="grad2">todo código em produção já passou pela IA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide s-code s-ai-group" data-act="03" data-label="IA · o código">
+    <div class="kicker in">as profecias de agora · 2 de 3</div>
+    <h2 class="h2 in" style="--d:1">O <span class="grad2">código.</span></h2>
+    <div class="feed">
+      <div class="post now f" data-step="1">
+        <div class="pb">
+          <div class="who"><span class="av">FV</span><span class="name">Founder · Vibe Coder · Building in public</span><span class="date">2026</span></div>
+          <p class="txt">Ninguém mais vai precisar ler código. Quem lê código em 2026 está perdendo tempo.</p>
+          <p class="meta">6.402 reações · 1.931 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="2" style="--rot:-5.5deg"><small>o que eu vejo de dentro</small><span class="grad2">a revisão continua. agora em camadas.</span><span class="tags"><span class="tag">IA</span><span class="tag">testes</span><span class="tag">lint</span><span class="tag">CI/CD</span><span class="tag">rollout</span></span></div>
+      </div>
+      <div class="post now f" data-step="3">
+        <div class="pb">
+          <div class="who"><span class="av">MC</span><span class="name">Mentor de Carreira · Ex-dev</span><span class="date">2025</span></div>
+          <p class="txt">Não precisa mais aprender a programar. É só descrever o que você quer.</p>
+          <p class="meta">8.115 reações · 2.240 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="4" style="--rot:-4.5deg"><small>o que eu vejo de dentro</small><span class="grad2">descrever bem virou engenharia</span></div>
+      </div>
+      <div class="post now f" data-step="5">
+        <div class="pb">
+          <div class="who"><span class="av">GH</span><span class="name">Growth Hacker · No&#8209;code → AI&#8209;code</span><span class="date">2026</span></div>
+          <p class="txt">Código virou descartável. Quebrou? Pede para a IA gerar de novo.</p>
+          <p class="meta">3.778 reações · 905 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="6" style="--rot:-6deg"><small>o que eu vejo de dentro</small><span class="grad2">mais IA, mais guardrails</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide s-magic" data-act="03" data-label="IA · não é mágica">
+    <div class="kicker in">o código · além do prompt</div>
+    <h2 class="h2 in" style="--d:1">Não é mágica. <span class="grad2">É engenharia.</span></h2>
+    <div class="expect in" style="--d:2"><span class="x-line fx" data-step="1">pedido <i>→</i> <svg class="icon"><use href="#i-sparkles"/></svg> <i>→</i> software pronto</span></div>
+    <div class="onboard">
+      <div class="ob-row ob-head in" style="--d:3"><span>pessoa nova no time</span><span>agente</span><span>prática</span></div>
+      <div class="ob-row f" data-step="2"><span class="who">Uma tarefa bem explicada</span><span class="agent">Especificação</span><span class="tags"><span class="tag">SDD</span><span class="tag">Speckit</span></span></div>
+      <div class="ob-row f" data-step="3"><span class="who">Entender como o sistema funciona</span><span class="agent">Contexto do código</span><span class="tags"><span class="tag">grafo</span><span class="tag">Graphify</span></span></div>
+      <div class="ob-row f" data-step="4"><span class="who">Acesso às ferramentas</span><span class="agent">Conexão com sistemas e dados</span><span class="tags"><span class="tag">MCP</span></span></div>
+      <div class="ob-row f" data-step="5"><span class="who">Aprender o jeito do time</span><span class="agent">Instruções reutilizáveis</span><span class="tags"><span class="tag">skills</span></span></div>
+      <div class="ob-row f" data-step="6"><span class="who">Revisão do que ela fez</span><span class="agent">Verificação</span><span class="tags"><span class="tag">guardrails</span><span class="tag">testes</span><span class="tag">CI</span><span class="seen">já vimos</span></span></div>
+    </div>
+  </section>
+
+  <section class="slide s-sdd" data-act="03" data-label="IA · SDD">
+    <div class="kicker in">o código · spec driven development</div>
+    <h2 class="h2 in" style="--d:1">A especificação manda.<br /><span class="grad2">O contexto sustenta.</span></h2>
+    <div class="sdd-flow">
+      <div class="card sdd-step f" data-step="1"><span class="num">01</span><div class="nm">especificar</div></div>
+      <svg class="sdd-arrow" viewBox="0 0 48 24" aria-hidden="true"><path class="fx" data-step="1" pathLength="1" style="--i:0" d="M3 12H44M36 5l8 7-8 7" /></svg>
+      <div class="card sdd-step hot f" data-step="1"><span class="num">02</span><div class="nm"><span class="grad2">refinar</span></div><p class="note">a IA ajuda a validar a spec</p></div>
+      <svg class="sdd-arrow" viewBox="0 0 48 24" aria-hidden="true"><path class="fx" data-step="1" pathLength="1" style="--i:1" d="M3 12H44M36 5l8 7-8 7" /></svg>
+      <div class="card sdd-step f" data-step="1"><span class="num">03</span><div class="nm">planejar</div></div>
+      <svg class="sdd-arrow" viewBox="0 0 48 24" aria-hidden="true"><path class="fx" data-step="1" pathLength="1" style="--i:2" d="M3 12H44M36 5l8 7-8 7" /></svg>
+      <div class="card sdd-step f" data-step="1"><span class="num">04</span><div class="nm">quebrar em tarefas</div></div>
+      <svg class="sdd-arrow" viewBox="0 0 48 24" aria-hidden="true"><path class="fx" data-step="1" pathLength="1" style="--i:3" d="M3 12H44M36 5l8 7-8 7" /></svg>
+      <div class="card sdd-step f" data-step="1"><span class="num">05</span><div class="nm">implementar</div></div>
+    </div>
+    <div class="sdd-base">
+      <div class="sdd-ground"></div>
+      <div class="sdd-blocks">
+        <div class="card blk f" data-step="2"><span class="num">contexto</span><div class="h4">grafo do código</div><p>O agente entende como as partes do sistema se ligam antes de mexer.</p></div>
+        <div class="card blk f" data-step="3"><span class="num">ferramentas</span><div class="h4">MCP</div><p>O agente consulta o ticket, a documentação e os sistemas de que precisa.</p></div>
+        <div class="card blk f" data-step="4"><span class="num">jeito do time</span><div class="h4">skills</div><p>O agente segue os padrões do time, do teste ao pull request.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide s-career-ai s-ai-group" data-act="03" data-label="IA · a profissão">
+    <div class="kicker in">as profecias de agora · 3 de 3</div>
+    <h2 class="h2 in" style="--d:1">A <span class="grad2">profissão.</span></h2>
+    <div class="feed">
+      <div class="post now f" data-step="1">
+        <div class="pb">
+          <div class="who"><span class="av">AE</span><span class="name">AI Evangelist · Founder · Ex-dev</span><span class="date">2026</span></div>
+          <p class="txt">Em 2 anos, ninguém mais vai programar. 🤖</p>
+          <p class="meta">9.341 reações · 2.876 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="2" style="--rot:-5deg"><small>o que eu vejo de dentro</small><span class="grad2">o trabalho mudou de lugar: especificar, revisar, decidir</span></div>
+      </div>
+      <div class="post now f" data-step="3">
+        <div class="pb">
+          <div class="who"><span class="av">RT</span><span class="name">Recrutador Tech · Talent Hunter</span><span class="date">2025</span></div>
+          <p class="txt">Acabou a vaga de júnior. Nenhuma empresa vai contratar iniciante.</p>
+          <p class="meta">7.208 reações · 3.115 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="4" style="--rot:-4.5deg"><small>o que eu vejo de dentro</small><span class="grad2">não acabou. o mercado está em transição.</span></div>
+      </div>
+      <div class="post now f" data-step="5">
+        <div class="pb">
+          <div class="who"><span class="av">CC</span><span class="name">Coach de Carreira · Autodidata</span><span class="date">2026</span></div>
+          <p class="txt">Faculdade de computação não serve mais para nada.</p>
+          <p class="meta">11.502 reações · 4.390 comentários</p>
+        </div>
+        <div class="stamp inside fx" data-step="6" style="--rot:-6deg"><small>o que eu vejo de dentro</small><span class="grad2">a IA não te dá a base. a faculdade dá.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide s-cycle" data-act="03" data-label="IA · o ciclo é antigo">
+    <div class="kicker in">oferta e procura</div>
+    <h2 class="h2 in" style="--d:1">O ciclo é antigo. <span class="grad2">A IA é o gatilho da vez.</span></h2>
+    <div class="cycle-chart">
+      <svg viewBox="0 0 1640 260" aria-hidden="true">
+        <defs>
+          <linearGradient id="cycle-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#3de0ff" /><stop offset="0.55" stop-color="#a98bff" /><stop offset="1" stop-color="#ff3df0" />
+          </linearGradient>
+        </defs>
+        <g class="axes in" style="--d:2"><path d="M20 0V250H1640" /><text x="38" y="16">procura por devs</text></g>
+        <path class="seg fx" data-step="1" pathLength="1" d="M70 200C140 200 160 110 200 110C240 110 280 225 330 225" />
+        <path class="seg fx" data-step="2" pathLength="1" d="M330 225C480 225 650 140 800 130" />
+        <path class="seg fx" data-step="3" pathLength="1" d="M800 130C880 125 950 20 990 20" />
+        <path class="seg fx" data-step="4" pathLength="1" d="M990 20C1030 20 1100 165 1200 165" />
+        <path class="seg now fx" data-step="5" pathLength="1" d="M1200 165C1260 165 1280 140 1330 140C1380 140 1400 175 1450 175C1500 175 1510 150 1540 150" />
+        <circle class="dot fx" data-step="5" cx="1540" cy="150" r="9" />
+      </svg>
+      <span class="here f" data-step="5">você está aqui</span>
+      <div class="cl-row">
+        <div class="cl f" data-step="1" style="left:200px"><span class="num">anos 2000</span><p>a bolha da internet</p></div>
+        <div class="cl f" data-step="2" style="left:565px"><span class="num">anos 2010</span><p>mobile e cloud</p></div>
+        <div class="cl f" data-step="3" style="left:895px"><span class="num">2020–2021</span><p>todo mundo contratando</p></div>
+        <div class="cl f low" data-step="4" style="left:1100px"><span class="num">2022–2023</span><p>contratação com critério</p></div>
+        <div class="cl f" data-step="5" style="left:1370px"><span class="num">agora</span><p><span class="grad2">IA</span></p></div>
+      </div>
+    </div>
+    <p class="quote bar-quote f mt-m" data-step="6">Toda profissão amadurece. Ainda tem quem ganhe muito bem. <span class="acc">Agora, o que conta é a qualidade.</span></p>
+  </section>
+
+  <section class="slide s-amp" data-act="03" data-label="IA · amplificador">
+    <div class="kicker in">a IA é um amplificador</div>
+    <h2 class="h2 in" style="--d:1">A IA potencializa você. <span class="grad2">Para qual lado?</span></h2>
+    <div class="horizon"></div>
+    <div class="floor"></div>
+    <div class="amp-glow bad fx" data-step="1"></div>
+    <div class="amp-glow me in" style="--d:3"></div>
+    <div class="amp-glow good fx" data-step="2"></div>
+    <svg class="amp-arrows" viewBox="0 0 1920 1080" aria-hidden="true">
+      <g class="bad fx" data-step="1"><path pathLength="1" d="M836 600C770 556 700 556 634 600M634 600l8-34M634 600l34 4" /><text x="735" y="540" text-anchor="middle">sem direção</text></g>
+      <g class="good fx" data-step="2"><path pathLength="1" d="M1084 600C1150 556 1220 556 1286 600M1286 600l-8-34M1286 600l-34 4" /><text x="1185" y="540" text-anchor="middle">com direção</text></g>
+    </svg>
+    <figure class="amp-fig left fx" data-step="1"><img src="img/nardini-with-ia-left.png" alt="Nardini mirando com um arco de madeira acoplado a uma metralhadora" /><figcaption>potência no lugar errado</figcaption></figure>
+    <figure class="amp-fig center in" style="--d:3"><img src="img/nardini-with-ia-center.png" alt="Nardini de braços cruzados" /><figcaption><span class="here">você</span></figcaption></figure>
+    <figure class="amp-fig right fx" data-step="2"><img src="img/nardini-with-ia-right.png" alt="Nardini pilotando um robô gigante com painéis de código e dados" /><figcaption>potência no lugar certo</figcaption></figure>
+  </section>
+
+  <section class="slide s-sailor" data-act="03" data-label="O marinheiro">
+    <div class="kicker in">como atravessar</div>
+    <h2 class="h2 in" style="--d:1">Mar calmo nunca fez <span class="grad">bom marinheiro.</span></h2>
+    <div class="sailor-scene">
+      <svg class="sea in" style="--d:2" viewBox="0 0 1640 500" aria-hidden="true">
+        <defs>
+          <linearGradient id="deep" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3de0ff" stop-opacity="0.07" /><stop offset="1" stop-color="#000" stop-opacity="0.35" />
+          </linearGradient>
+        </defs>
+        <path class="depth" d="M0 200 q41 -24 82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 L1640 500L0 500Z" />
+        <path class="waterline" d="M0 200 q41 -24 82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0 t82 0" />
+        <path class="chop" d="M470 200q30 -38 60 0t60 0M1060 202C1090 196 1110 166 1146 160C1176 156 1192 176 1178 192C1170 200 1158 196 1160 188" />
+        <g class="spray"><circle cx="1146" cy="150" r="4" /><circle cx="1168" cy="142" r="3" /><path d="M1128 150q8 -14 18 -16" /><circle cx="1184" cy="158" r="3" /><path d="M1176 136q10 -8 20 -6" /></g>
+      </svg>
+      <svg class="net" viewBox="0 0 1640 500" aria-hidden="true">
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:0.5s" d="M820 302L330 345" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:0.7s" d="M820 302L700 345" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:0.9s" d="M820 302L940 345" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:1.1s" d="M820 302L1340 345" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:1.3s" d="M300 396L380 437" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:1.5s" d="M1360 396L1300 437" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:2.0s" d="M780 370L913 370" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:2.1s" d="M560 396L520 437" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:2.2s" d="M1060 396L1100 437" />
+        <path class="link fx" data-step="2" pathLength="1" style="--delay:2.3s" d="M560 462L1040 462" />
+      </svg>
+      <span class="node fx" data-step="2" style="left:240px;top:370px;--delay:0.9s">lógica e algoritmos</span>
+      <span class="node fx" data-step="2" style="left:640px;top:370px;--delay:1.1s">estruturas de dados</span>
+      <span class="node fx" data-step="2" style="left:1000px;top:370px;--delay:1.3s">arquitetura</span>
+      <span class="node fx" data-step="2" style="left:1400px;top:370px;--delay:1.5s">segurança</span>
+      <span class="node fx" data-step="2" style="left:440px;top:462px;--delay:1.7s">redes e sistemas</span>
+      <span class="node fx" data-step="2" style="left:1200px;top:462px;--delay:1.9s">engenharia de software</span>
+      <div class="boat in" style="--d:2">
+        <svg class="ship" viewBox="0 0 1640 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c6ff3d" /><stop offset="1" stop-color="#3de0ff" /></linearGradient>
+            <clipPath id="sail-clip"><path d="M715 22H925C945 70 945 110 930 150H710C695 110 695 70 715 22Z" /></clipPath>
+          </defs>
+          <g class="tilt">
+            <path class="oars" d="M707 196L633 266M762 196L688 266M817 196L743 266M872 196L798 266M927 196L853 266" />
+            <path class="mast" d="M820 182V6" />
+            <g class="stripes" clip-path="url(#sail-clip)"><rect x="700" y="10" width="34" height="150" /><rect x="768" y="10" width="34" height="150" /><rect x="836" y="10" width="34" height="150" /><rect x="904" y="10" width="34" height="150" /></g>
+            <path class="sail" d="M715 22H925C945 70 945 110 930 150H710C695 110 695 70 715 22Z" />
+            <path class="mast" d="M698 22H942" />
+            <path class="hull" d="M630 176C700 188 940 188 1010 176C1040 170 1060 140 1066 110C1062 150 1045 200 1000 222C930 240 710 240 640 222C600 205 585 160 590 132C595 152 610 170 630 176Z" />
+            <path class="plank" d="M640 198C720 212 920 212 1000 198M664 216C744 228 896 228 976 216" />
+            <path class="tail" d="M590 132C588 108 610 98 624 110C636 121 622 136 610 128C603 123 607 113 614 115" />
+            <path class="dragon head" d="M1066 110C1068 92 1078 78 1094 75L1126 81L1112 91L1124 98L1098 101C1084 102 1074 106 1066 110Z" />
+            <path class="dragon" d="M1090 76L1080 56L1100 73" />
+            <circle class="eye" cx="1101" cy="84" r="3.5" />
+            <g class="shield s0"><circle cx="680" cy="184" r="15" /><circle cx="680" cy="184" r="5" /></g><g class="shield s1"><circle cx="735" cy="184" r="15" /><circle cx="735" cy="184" r="5" /></g><g class="shield s0"><circle cx="790" cy="184" r="15" /><circle cx="790" cy="184" r="5" /></g><g class="shield s1"><circle cx="845" cy="184" r="15" /><circle cx="845" cy="184" r="5" /></g><g class="shield s0"><circle cx="900" cy="184" r="15" /><circle cx="900" cy="184" r="5" /></g><g class="shield s1"><circle cx="955" cy="184" r="15" /><circle cx="955" cy="184" r="5" /></g>
+          </g>
+        </svg>
+        <svg viewBox="0 0 1640 500" aria-hidden="true">
+          <path class="keel fx" data-step="2" pathLength="1" d="M820 236V302" />
+        </svg>
+        <div class="above">
+        <span class="tag f" data-step="1" style="left:560px;top:45px;--k:0">a IA da vez</span>
+        <span class="tag f" data-step="1" style="left:1210px;top:40px;--k:1">agentes</span>
+        <span class="tag f" data-step="1" style="left:430px;top:150px;--k:2">o framework da moda</span>
+        <span class="tag f" data-step="1" style="left:1300px;top:105px;--k:3">a ferramenta nova</span>
+        </div>
+      </div>
+    </div>
+    <p class="quote bar-quote f" data-step="3">A ferramenta muda a cada onda. <span class="acc">A base atravessa todas.</span></p>
+  </section>
+
+  <section class="slide s-advice" data-act="06" data-label="Code review">
+    <div class="kicker in">pull request · sua-carreira → main</div>
+    <h2 class="h2 in" style="--d:1">Antes do merge, <span class="grad">um code review.</span></h2>
+    <div class="pr-bar in" style="--d:2">
+      <span class="pr-ref">#2026 · sua-carreira → main</span>
+      <span class="pr-status"><span class="pill pr-review">em revisão</span><span class="pill pr-approved fx" data-step="5"><svg class="icon"><use href="#i-check"/></svg>aprovado</span></span>
+    </div>
+    <div class="review">
+        <div class="card rv f" data-step="1"><div class="rv-who"><span class="rv-av">BN</span><span class="rv-name">nardini</span><span class="tag issue">issue (bloqueante)</span></div><div class="h4">Construam a base.</div><p class="body">A ferramenta muda a cada onda; o que vocês aprendem aqui atravessa todas.</p></div>
+        <div class="card rv f" data-step="2"><div class="rv-who"><span class="rv-av">BN</span><span class="rv-name">nardini</span><span class="tag suggestion">suggestion</span></div><div class="h4">Usem a IA como meio, não como fim.</div><p class="body">Usem para estudar, explorar e produzir mais, sem terceirizar o raciocínio.</p></div>
+        <div class="card rv f" data-step="3"><div class="rv-who"><span class="rv-av">BN</span><span class="rv-name">nardini</span><span class="tag suggestion">suggestion</span></div><div class="h4">Vão além do código.</div><p class="body">Entendam o negócio, organizem processos, comuniquem, liderem. É isso que transforma conhecimento em impacto.</p></div>
+        <div class="card rv f" data-step="4"><div class="rv-who"><span class="rv-av">BN</span><span class="rv-name">nardini</span><span class="tag thought">thought</span></div><div class="h4">Tenham um norte, e recalculem sem medo.</div><p class="body">O tabuleiro é da empresa. A partida é de vocês.</p></div>
+    </div>
+  </section>
+
+  <section class="slide s-quote" data-act="06" data-label="Seja tão bom">
+    <div class="kicker in" style="--d:4">be so good they can't ignore you</div>
+    <p class="big"><span class="w in" style="--d:7">Seja</span> <span class="w in" style="--d:9">tão</span> <span class="w in" style="--d:11">bom</span><br /><span class="gl" style="--gw:1495px"><span class="w g in" style="--d:13;--x:0px">que</span> <span class="w g in" style="--d:15;--x:200px">eles</span> <span class="w g glow in" style="--d:17;--x:416px">não</span> <span class="w g glow in" style="--d:19;--x:613px">possam</span> <span class="w g glow in" style="--d:21;--x:1014px">te</span> <span class="w g glow in" style="--d:23;--x:1125px">ignorar.</span></span></p>
+    <p class="quote-credit in" style="--d:37">Steve Martin</p>
+    <div class="horizon"></div>
+    <div class="floor"></div>
+  </section>
+
+  <section class="slide s-ama" data-act="06" data-label="Perguntas">
+    <div class="kicker in">ask me anything</div>
+    <h2 class="h2 in" style="--d:1">Agora, quem responde é <span class="grad">um humano.</span></h2>
+    <div class="ama-box in" style="--d:3">
+      <p class="ama-text"><span class="ama-fixed">Pergunte sobre </span><span class="ama-topic"></span><span class="ama-caret"></span></p>
+      <span class="ama-send"><svg class="icon"><use href="#i-arrow-up"/></svg></span>
+    </div>
+    <p class="ama-note in" style="--d:6">Aqui não existe prompt ruim.</p>
+  </section>
+
+  <section class="slide s-thanks" data-act="06" data-label="Obrigado">
+    <div class="thanks-row">
+      <div class="thanks-left">
+        <h2 class="thanks-title in" style="--d:1">Obrigado<span class="grad">!</span></h2>
+        <p class="thanks-name in" style="--d:3">Bruno Nardini · Principal Engineer</p>
+        <p class="thanks-site in" style="--d:5">www.Bruno<b>Nardini</b>.com.br</p>
+        <p class="thanks-note in" style="--d:6">os slides estão no site</p>
+      </div>
+      <div class="thanks-right">
+        <figure class="thanks-qr in" style="--d:4"><svg viewBox="0 0 37 37" shape-rendering="crispEdges" role="img" aria-label="QR code para www.brunonardini.com.br"><rect width="37" height="37" fill="#fff" /><path fill="#05060a" d="M4 4h7v1h-7zM19 4h6v1h-6zM26 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM13 5h2v1h-2zM16 5h1v1h-1zM21 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h3v1h-3zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM26 6h1v1h-1zM28 6h3v1h-3zM32 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h1v1h-1zM14 7h1v1h-1zM20 7h2v1h-2zM23 7h1v1h-1zM26 7h1v1h-1zM28 7h3v1h-3zM32 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h2v1h-2zM17 8h3v1h-3zM21 8h4v1h-4zM26 8h1v1h-1zM28 8h3v1h-3zM32 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h2v1h-2zM17 9h4v1h-4zM22 9h1v1h-1zM26 9h1v1h-1zM32 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h7v1h-7zM12 11h2v1h-2zM15 11h3v1h-3zM19 11h1v1h-1zM24 11h1v1h-1zM4 12h1v1h-1zM6 12h5v1h-5zM15 12h1v1h-1zM18 12h2v1h-2zM21 12h2v1h-2zM26 12h5v1h-5zM5 13h2v1h-2zM8 13h2v1h-2zM13 13h1v1h-1zM15 13h1v1h-1zM19 13h10v1h-10zM32 13h1v1h-1zM4 14h1v1h-1zM7 14h2v1h-2zM10 14h1v1h-1zM13 14h2v1h-2zM16 14h1v1h-1zM21 14h1v1h-1zM25 14h1v1h-1zM4 15h1v1h-1zM7 15h1v1h-1zM12 15h1v1h-1zM16 15h1v1h-1zM18 15h1v1h-1zM20 15h1v1h-1zM22 15h2v1h-2zM25 15h3v1h-3zM29 15h1v1h-1zM31 15h1v1h-1zM4 16h1v1h-1zM8 16h3v1h-3zM12 16h5v1h-5zM20 16h2v1h-2zM24 16h1v1h-1zM29 16h2v1h-2zM4 17h2v1h-2zM11 17h1v1h-1zM14 17h1v1h-1zM16 17h4v1h-4zM22 17h3v1h-3zM26 17h1v1h-1zM28 17h1v1h-1zM32 17h1v1h-1zM5 18h1v1h-1zM7 18h4v1h-4zM12 18h2v1h-2zM15 18h8v1h-8zM24 18h2v1h-2zM27 18h1v1h-1zM29 18h2v1h-2zM4 19h2v1h-2zM7 19h3v1h-3zM11 19h1v1h-1zM14 19h1v1h-1zM16 19h2v1h-2zM19 19h1v1h-1zM25 19h4v1h-4zM31 19h1v1h-1zM5 20h1v1h-1zM7 20h4v1h-4zM12 20h1v1h-1zM14 20h1v1h-1zM16 20h1v1h-1zM18 20h2v1h-2zM21 20h1v1h-1zM27 20h1v1h-1zM29 20h2v1h-2zM4 21h1v1h-1zM6 21h1v1h-1zM8 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM15 21h2v1h-2zM19 21h6v1h-6zM26 21h3v1h-3zM30 21h1v1h-1zM32 21h1v1h-1zM4 22h1v1h-1zM6 22h6v1h-6zM13 22h4v1h-4zM21 22h1v1h-1zM27 22h1v1h-1zM30 22h1v1h-1zM4 23h1v1h-1zM8 23h2v1h-2zM12 23h3v1h-3zM18 23h1v1h-1zM20 23h1v1h-1zM23 23h2v1h-2zM27 23h2v1h-2zM31 23h1v1h-1zM4 24h1v1h-1zM6 24h3v1h-3zM10 24h1v1h-1zM12 24h2v1h-2zM16 24h1v1h-1zM21 24h1v1h-1zM23 24h6v1h-6zM30 24h3v1h-3zM12 25h3v1h-3zM17 25h3v1h-3zM21 25h2v1h-2zM24 25h1v1h-1zM28 25h5v1h-5zM4 26h7v1h-7zM13 26h1v1h-1zM15 26h5v1h-5zM23 26h2v1h-2zM26 26h1v1h-1zM28 26h3v1h-3zM4 27h1v1h-1zM10 27h1v1h-1zM12 27h1v1h-1zM16 27h2v1h-2zM23 27h2v1h-2zM28 27h1v1h-1zM32 27h1v1h-1zM4 28h1v1h-1zM6 28h3v1h-3zM10 28h1v1h-1zM12 28h1v1h-1zM14 28h2v1h-2zM18 28h5v1h-5zM24 28h5v1h-5zM30 28h1v1h-1zM32 28h1v1h-1zM4 29h1v1h-1zM6 29h3v1h-3zM10 29h1v1h-1zM12 29h6v1h-6zM20 29h5v1h-5zM27 29h1v1h-1zM29 29h2v1h-2zM4 30h1v1h-1zM6 30h3v1h-3zM10 30h1v1h-1zM12 30h2v1h-2zM16 30h2v1h-2zM19 30h1v1h-1zM21 30h1v1h-1zM23 30h9v1h-9zM4 31h1v1h-1zM10 31h1v1h-1zM14 31h5v1h-5zM22 31h1v1h-1zM24 31h1v1h-1zM26 31h2v1h-2zM29 31h1v1h-1zM31 31h1v1h-1zM4 32h7v1h-7zM12 32h1v1h-1zM15 32h2v1h-2zM18 32h2v1h-2zM21 32h1v1h-1zM23 32h1v1h-1zM25 32h6v1h-6z" /></svg></figure>
+        <p class="thanks-hint in" style="--d:7">aponte a câmera</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="hud">
+    <div class="hud-top"><div>UBM · 2026</div></div>
+    <div class="hud-bottom"><div>nardini · engenharia de software na prática</div><div class="hud-count"></div></div>
+    <div class="progress"></div>
+  </div>
+
+</div>
+</div>
+
+<div id="blackout"></div>
+<div id="help">
+  <div class="box">
+    <h3>Atalhos</h3>
+    <dl>
+      <dt>→ espaço PgDn</dt><dd>próximo passo</dd>
+      <dt>← PgUp</dt><dd>passo anterior</dd>
+      <dt>shift + ← →</dt><dd>pula slide inteiro</dd>
+      <dt>número + enter</dt><dd>vai para o slide</dd>
+      <dt>p</dt><dd>abre o modo apresentador (timer, próximo)</dd>
+      <dt>f</dt><dd>tela cheia</dd>
+      <dt>b ou .</dt><dd>tela preta</dd>
+      <dt>esc</dt><dd>fecha sobreposições</dd>
+    </dl>
+  </div>
+</div>
+<div id="presenter"></div>
+
+<script src="assets/deck.js"></script>
+<script src="assets/count.js"></script>
+<script src="assets/ama.js"></script>
+</body>
+</html>
