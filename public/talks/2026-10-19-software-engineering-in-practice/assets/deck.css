@@ -578,27 +578,6 @@ body.idle { cursor: none; }
 .blk .num { color: var(--acc3); }
 .blk p { font-size: 22px; line-height: 1.4; color: var(--muted); }
 
-/* ---------- o ciclo é antigo ---------- */
-
-.s-cycle .h2 { font-size: 72px; }
-.cycle-chart { position: relative; margin-top: 40px; }
-.cycle-chart svg { display: block; width: 100%; height: 260px; overflow: visible; }
-.cycle-chart path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.cycle-chart .axes path { stroke: var(--line2); stroke-width: 2; }
-.cycle-chart .axes text { font-family: var(--mono); font-size: 18px; letter-spacing: 0.08em; fill: var(--dim); }
-.cycle-chart .seg { stroke: var(--acc2); stroke-width: 4; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s var(--ease); }
-.cycle-chart .seg.on { stroke-dashoffset: 0; }
-.cycle-chart .seg.now { stroke: url(#cycle-grad); stroke-width: 5; filter: drop-shadow(0 0 12px color-mix(in srgb, var(--acc3) 70%, transparent)); }
-.cycle-chart .dot { fill: var(--hot); opacity: 0; transition: opacity 0.4s ease; filter: drop-shadow(0 0 10px var(--hot)); }
-.cycle-chart .dot.on { opacity: 1; transition-delay: 0.9s; animation: pulse 1.4s ease-in-out 1.3s infinite; }
-.cycle-chart .here { position: absolute; right: 0; top: 70px; transition-delay: 0.9s; }
-.cycle-chart .here.on { transition-delay: 0.9s; }
-.cl-row { position: relative; height: 144px; margin-top: 14px; }
-.cl { position: absolute; top: 0; width: 300px; translate: -50% 0; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
-.cl.low { top: 80px; }
-.cl .num { font-size: 18px; }
-.cl p { font-size: 24px; line-height: 1.25; color: var(--muted); }
-
 /* ---------- amplificador ---------- */
 
 .s-amp { justify-content: flex-start; align-items: center; text-align: center; padding-top: 112px; }
@@ -800,8 +779,6 @@ body.presenter #presenter { display: grid; grid-template-rows: auto 1fr auto; he
   .x-line::after { transition: none !important; }
   .sdd-arrow path { transition: none !important; }
   .ob-row.f, .blk.f { transform: none !important; }
-  .cycle-chart .seg { transition: none !important; }
-  .cycle-chart .dot.on { animation: none !important; }
   .amp-fig.fx { transform: none !important; }
   .amp-arrows path { transition: none !important; }
   .slide.active .boat.in { animation: rise 0.01ms forwards !important; }
