@@ -9,22 +9,30 @@
 
   function start(el) {
     cancelAnimationFrame(el._raf);
+    clearTimeout(el._timer);
     const target = Number(el.dataset.count);
     if (instant()) {
       el.textContent = label(target);
       return;
     }
-    const t0 = performance.now();
-    const tick = (now) => {
-      const t = Math.min(1, (now - t0) / DURATION);
-      el.textContent = label(target * easeOutCubic(t));
-      if (t < 1) el._raf = requestAnimationFrame(tick);
+    const run = () => {
+      const t0 = performance.now();
+      const tick = (now) => {
+        const t = Math.min(1, (now - t0) / DURATION);
+        el.textContent = label(target * easeOutCubic(t));
+        if (t < 1) el._raf = requestAnimationFrame(tick);
+      };
+      el._raf = requestAnimationFrame(tick);
     };
-    el._raf = requestAnimationFrame(tick);
+    // data-count-delay: ms to wait (e.g. for the step's other transitions) before counting
+    const delay = Number(el.dataset.countDelay) || 0;
+    if (delay) el._timer = setTimeout(run, delay);
+    else run();
   }
 
   function stop(el) {
     cancelAnimationFrame(el._raf);
+    clearTimeout(el._timer);
     el.textContent = "";
   }
 
