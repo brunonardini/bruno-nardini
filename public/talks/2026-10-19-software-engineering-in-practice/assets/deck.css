@@ -176,6 +176,7 @@ body.idle { cursor: none; }
 .bar-quote { border-left: 6px solid var(--acc); padding: 6px 0 6px 40px; }
 .joke { margin-top: 44px; font-size: 30px; color: var(--muted); }
 .joke b { color: var(--fg); font-weight: 600; }
+.joke.f.on { transition-delay: 1.5s; } /* 0.7s do quip do pleno + 2s */
 
 .icon { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 
