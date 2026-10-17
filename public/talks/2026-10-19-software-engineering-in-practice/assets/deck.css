@@ -686,7 +686,7 @@ body.idle { cursor: none; }
 .s-quote .kicker { justify-content: center; }
 .s-quote .big { font-size: 104px; font-weight: 800; line-height: 1.04; letter-spacing: -0.04em; max-width: 1640px; white-space: nowrap; }
 .s-quote .w { display: inline-block; }
-.s-quote .w.g { background: linear-gradient(100deg, var(--acc) 0%, var(--acc2) 100%) calc(-1 * var(--x)) 0 / var(--gw, 100%) 100% no-repeat; -webkit-background-clip: text; background-clip: text; color: transparent; }
+.s-quote .w.g { background: linear-gradient(100deg, var(--acc) 0%, var(--acc2) 100%) calc(-1 * var(--x)) 0 / var(--gw, 100%) 100% no-repeat; -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: 0.14em; margin-bottom: -0.14em; } /* room for descenders (g) inside background-clip */
 .slide.active.s-quote .w.glow { animation: rise 0.9s var(--ease) forwards calc(var(--d) * 110ms + 180ms), qglow 0.8s ease 3.6s forwards, qpulse 4s ease-in-out 4.4s infinite; }
 @keyframes qglow { to { filter: drop-shadow(0 0 20px color-mix(in srgb, var(--acc2) 50%, transparent)); } }
 @keyframes qpulse { 0%, 100% { filter: drop-shadow(0 0 20px color-mix(in srgb, var(--acc2) 50%, transparent)); } 50% { filter: drop-shadow(0 0 32px color-mix(in srgb, var(--acc2) 75%, transparent)); } }
