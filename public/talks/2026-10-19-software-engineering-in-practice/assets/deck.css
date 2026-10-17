@@ -331,6 +331,58 @@ body.idle { cursor: none; }
 .pieces .icon:nth-child(4).on { transition-delay: 1.24s; }
 .fork-foot { margin-top: 24px; text-align: center; font-size: 29px; font-weight: 600; }
 
+/* ---------- 07b · tamanho importa ---------- */
+
+.s-size { padding-top: 120px; padding-bottom: 110px; }
+.badges { display: flex; justify-content: center; gap: 96px; margin-top: 80px; }
+.badge {
+  position: relative; width: 360px; height: 512px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 40px 30px 28px; text-align: center;
+  border: 1px solid var(--line2); border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+  transform-origin: 50% -64px; /* topo da fita: o crachá balança pendurado nela */
+}
+.badge::before { content: ""; position: absolute; top: 16px; left: 50%; translate: -50% 0; width: 64px; height: 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line2); }
+.badge .lanyard { position: absolute; left: 50%; top: -66px; width: 160px; height: 84px; translate: -50% 0; overflow: visible; }
+.badge .lanyard path { fill: none; stroke: var(--line2); stroke-width: 3; stroke-linecap: round; }
+.badge .lanyard rect { fill: #151a22; stroke: var(--line2); stroke-width: 2; }
+.badge .ph { position: relative; width: 190px; height: 190px; margin-bottom: 6px; }
+.badge .ph img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; border: 1px solid var(--line2); }
+.badge .who { font-family: var(--mono); font-size: 20px; letter-spacing: 0.04em; color: var(--dim); }
+.badge .role { font-size: 48px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--fg); }
+.badge .tag { font-size: 18px; margin-top: 4px; }
+.badge .tag.acc3 { color: var(--acc3); border-color: color-mix(in srgb, var(--acc3) 40%, transparent); background: color-mix(in srgb, var(--acc3) 8%, transparent); }
+.badge .what { margin-top: 4px; font-size: 22px; line-height: 1.35; color: var(--muted); }
+.s-size .bar-quote { margin-top: 40px; font-size: 48px; }
+
+/* acessórios sobre a foto (posição em % da foto 600×600 gerada por tools/make-badges.py) */
+.acc-svg { position: absolute; overflow: visible; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45)); }
+.acc-svg * { vector-effect: non-scaling-stroke; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.acc-svg.cap { left: 24%; top: 0; width: 52%; }
+.cap .dome, .cap .brim { fill: #10151b; stroke: var(--acc); }
+.cap .seam, .cap .strap { fill: none; stroke: color-mix(in srgb, var(--acc) 55%, transparent); stroke-width: 2; }
+.cap .btn { fill: var(--acc); stroke: none; }
+.acc-svg.glasses { left: 30%; top: 25%; width: 40%; }
+.glasses .lens { fill: color-mix(in srgb, var(--acc2) 16%, transparent); stroke: var(--acc2); stroke-width: 4; }
+.glasses .bridge, .glasses .temple { fill: none; stroke: var(--acc2); stroke-width: 4; }
+.acc-svg.tie { left: 41%; top: 63%; width: 18%; }
+.tie .blade, .tie .knot { fill: #14101f; stroke: var(--acc3); }
+.tie .wing { fill: color-mix(in srgb, var(--fg) 85%, transparent); stroke: var(--acc3); stroke-width: 2; }
+.tie .stripe { fill: none; stroke: color-mix(in srgb, var(--acc3) 55%, transparent); stroke-width: 2; clip-path: inset(0); }
+
+.slide.active .badge.in { animation: badge-hang 1.3s forwards; animation-delay: calc(var(--d, 0) * 110ms + 180ms); }
+/* desce pela fita (~0.4s) e balança como pêndulo, amortecendo até parar (~0.9s) */
+@keyframes badge-hang {
+  0% { opacity: 0; transform: translateY(-160px); animation-timing-function: cubic-bezier(0.5, 0, 1, 1); }
+  30% { opacity: 1; transform: rotate(4deg); animation-timing-function: ease-in-out; }
+  50% { transform: rotate(-3deg); animation-timing-function: ease-in-out; }
+  68% { transform: rotate(1.8deg); animation-timing-function: ease-in-out; }
+  84% { transform: rotate(-0.8deg); animation-timing-function: ease-in-out; }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes badge-fade { from { opacity: 0; transform: none; } to { opacity: 1; transform: none; } }
+
 /* ---------- 08 · plan vs career ---------- */
 
 .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 50px; }
@@ -789,6 +841,7 @@ body.presenter #presenter { display: grid; grid-template-rows: auto 1fr auto; he
   .slide.active .sailor-scene .spray > * { animation: none !important; opacity: 0.6; }
   .rv.f { transform: none !important; }
   .s-quote .in { animation-delay: 0s !important; }
+  .slide.active .badge.in { animation: badge-fade 0.6s ease forwards !important; animation-delay: calc(var(--d, 0) * 110ms + 180ms) !important; }
   .slide.active .ama-caret { animation: none !important; }
   .slide.active.s-quote .w.glow { animation: rise 0.01ms forwards !important; filter: drop-shadow(0 0 20px color-mix(in srgb, var(--acc2) 50%, transparent)); }
 }
