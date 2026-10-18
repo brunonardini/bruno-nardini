@@ -155,7 +155,6 @@ body.idle { cursor: none; }
   background: linear-gradient(180deg, color-mix(in srgb, var(--acc) 10%, transparent), rgba(255, 255, 255, 0.015));
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--acc) 25%, transparent), 0 40px 140px -40px color-mix(in srgb, var(--acc) 60%, transparent);
 }
-.card.dashed { background: transparent; border-style: dashed; border-color: rgba(255, 255, 255, 0.16); }
 
 .tag { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 20px; padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line2); color: var(--muted); letter-spacing: 0.03em; white-space: nowrap; }
 .tag.acc { color: var(--acc); border-color: color-mix(in srgb, var(--acc) 40%, transparent); background: color-mix(in srgb, var(--acc) 8%, transparent); }
@@ -383,16 +382,49 @@ body.idle { cursor: none; }
 }
 @keyframes badge-fade { from { opacity: 0; transform: none; } to { opacity: 1; transform: none; } }
 
-/* ---------- 08 · plan vs career ---------- */
+/* ---------- o tabuleiro é da empresa ---------- */
 
-.vs { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 50px; }
-.vs .col { display: flex; flex-direction: column; gap: 18px; }
-.vs .ch { font-family: var(--mono); font-size: 22px; letter-spacing: 0.16em; text-transform: uppercase; padding: 0 6px 10px; }
-.vs .cell { font-size: 30px; line-height: 1.35; padding: 30px 36px; min-height: 130px; display: flex; align-items: center; }
-.vs .left .cell { color: var(--muted); }
-.vs .right .cell { color: var(--fg); font-weight: 500; }
-.vs.solo { margin-top: 40px; }
-.vs.solo .cell { font-size: 32px; min-height: 200px; align-items: flex-start; }
+/* centros dos tabuleiros (x) e altura do pé do peão sobre o centro de cada um (y, a partir da base):
+   empresa 1: 338px / 52px · empresa 2: 798px / 96px · empresa 3: 1280px / 74px */
+.boards { position: relative; height: 404px; margin-top: 24px; }
+.cboard { position: absolute; bottom: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.cboard svg { display: block; }
+.cboard .l { fill: color-mix(in srgb, var(--c) 16%, transparent); }
+.cboard .d { fill: color-mix(in srgb, var(--c) 5%, transparent); }
+.cboard .edge { fill: none; stroke: var(--line2); stroke-width: 1; }
+.cboard.b1 { --c: var(--acc); }
+.cboard.b2 { --c: var(--acc2); }
+.cboard.b3 { --c: var(--acc3); }
+.cboard .bl { height: 22px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.12em; color: var(--dim); }
+
+/* estado final por padrão (vale para .leaving/.past); o slide ativo anima desde o tabuleiro 1 */
+.pawn-group { position: absolute; left: 0; bottom: 34px; translate: -50% 0; transform: translateX(1280px); z-index: 2; }
+.pawn-hop { display: flex; flex-direction: column-reverse; align-items: center; gap: 8px; transform: translateY(-74px); }
+.pawn-ic { font-size: 72px; color: var(--fg); filter: drop-shadow(0 0 10px color-mix(in srgb, var(--acc) 55%, transparent)) drop-shadow(0 0 22px color-mix(in srgb, var(--acc2) 45%, transparent)); }
+.pawn-group .tag { font-size: 18px; color: var(--fg); border-color: var(--acc); background: color-mix(in srgb, var(--bg) 80%, transparent); }
+
+.slide.active .pawn-group { animation: pawn-x 4.5s 1.4s both; }
+.slide.active .pawn-hop { animation: pawn-y 4.5s 1.4s both; }
+.slide.active .pawn-group .t1 { animation: tag-pop 0.35s var(--ease) 2.8s both; }
+.slide.active .pawn-group .t2 { animation: tag-pop 0.35s var(--ease) 4.2s both; }
+.slide.active .pawn-group .t3 { animation: tag-pop 0.35s var(--ease) 4.8s both; }
+@keyframes pawn-x {
+  0%, 31% { transform: translateX(338px); animation-timing-function: ease-in-out; }
+  44%, 62% { transform: translateX(798px); animation-timing-function: ease-in-out; }
+  76%, 100% { transform: translateX(1280px); }
+}
+@keyframes pawn-y {
+  0% { opacity: 0; transform: translateY(-52px) scale(0.8); }
+  9% { opacity: 1; transform: translateY(-52px); }
+  31% { transform: translateY(-52px); animation-timing-function: ease-out; }
+  37.8% { transform: translateY(-170px); animation-timing-function: ease-in; }
+  44% { transform: translateY(-96px); }
+  62% { transform: translateY(-96px); animation-timing-function: ease-out; }
+  69% { transform: translateY(-170px); animation-timing-function: ease-in; }
+  76%, 100% { opacity: 1; transform: translateY(-74px); }
+}
+@keyframes tag-pop { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: none; } }
+.s-plan .bar-quote { margin-top: 36px; }
 
 /* ---------- 09 · promote ---------- */
 
@@ -842,6 +874,7 @@ body.presenter #presenter { display: grid; grid-template-rows: auto 1fr auto; he
   .rv.f { transform: none !important; }
   .s-quote .in { animation-delay: 0s !important; }
   .slide.active .badge.in { animation: badge-fade 0.6s ease forwards !important; animation-delay: calc(var(--d, 0) * 110ms + 180ms) !important; }
+  .slide.active .pawn-group, .slide.active .pawn-hop, .slide.active .pawn-group .tag { animation: none !important; }
   .slide.active .ama-caret { animation: none !important; }
   .slide.active.s-quote .w.glow { animation: rise 0.01ms forwards !important; filter: drop-shadow(0 0 20px color-mix(in srgb, var(--acc2) 50%, transparent)); }
 }
