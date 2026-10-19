@@ -328,7 +328,6 @@ body.idle { cursor: none; }
 .pieces .icon:nth-child(2).on { transition-delay: 1.08s; }
 .pieces .icon:nth-child(3).on { transition-delay: 1.16s; }
 .pieces .icon:nth-child(4).on { transition-delay: 1.24s; }
-.fork-foot { margin-top: 24px; text-align: center; font-size: 29px; font-weight: 600; }
 
 /* ---------- 07b · tamanho importa ---------- */
 
