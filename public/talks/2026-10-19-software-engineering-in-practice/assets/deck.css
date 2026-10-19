@@ -799,6 +799,7 @@ body.idle { cursor: none; }
 .node { position: absolute; translate: -50% -50%; padding: 10px 22px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--acc) 30%, transparent); background: var(--bg); font-size: 24px; font-weight: 600; color: var(--fg); white-space: nowrap; opacity: 0; scale: 0.85; transition: opacity 0.3s ease, scale 0.4s var(--ease), box-shadow 0.4s ease; }
 .node.on { opacity: 1; scale: 1; border-color: var(--acc); box-shadow: 0 0 26px -6px var(--acc); transition-delay: var(--delay); }
 .s-sailor .quote { margin-top: 26px; font-size: 52px; }
+.s-sailor .quote.f.on { transition-delay: 2.7s; } /* logo depois da última ligação da rede (2.3s + 0.4s) */
 
 /* ---------- recados ---------- */
 
@@ -925,7 +926,7 @@ body.presenter #presenter { display: grid; grid-template-rows: auto 1fr auto; he
   .amp-fig.fx { transform: none !important; }
   .amp-arrows path { transition: none !important; }
   .slide.active .boat.in { animation: rise 0.01ms forwards !important; }
-  .above .tag.on, .net .link.on, .node.on { transition-delay: 0s !important; }
+  .above .tag.on, .net .link.on, .node.on, .s-sailor .quote.f.on { transition-delay: 0s !important; }
   .boat .keel, .net .link { transition: none !important; }
   .node { scale: 1 !important; }
   .slide.active .sailor-scene .spray > * { animation: none !important; opacity: 0.6; }
