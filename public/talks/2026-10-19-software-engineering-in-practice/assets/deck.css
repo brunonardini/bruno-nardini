@@ -247,7 +247,6 @@ body.idle { cursor: none; }
 /* ---------- 05 · market ---------- */
 
 .s-market .row { display: grid; grid-template-columns: 520px 1fr; gap: 64px; align-items: center; }
-.tip-num { font-size: 260px; font-weight: 800; line-height: 0.8; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 2px color-mix(in srgb, var(--acc) 80%, transparent); margin-bottom: 30px; }
 .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 .quad .card { padding: 26px 32px 28px; display: flex; flex-direction: column; gap: 10px; }
 .quad .card .small { font-size: 20px; line-height: 1.4; }
