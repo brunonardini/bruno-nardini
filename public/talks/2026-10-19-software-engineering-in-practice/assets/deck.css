@@ -638,7 +638,7 @@ body.idle { cursor: none; }
 .ob-head { padding-top: 0; font-family: var(--mono); font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); }
 .ob-row .who { font-size: 28px; color: var(--muted); }
 .ob-row .agent { font-size: 28px; color: var(--fg); font-weight: 600; }
-.ob-row .tags { align-items: center; gap: 10px; }
+.ob-row .tags { align-self: start; align-items: center; flex-wrap: wrap; gap: 10px; }
 .ob-row .tag { font-size: 18px; padding: 6px 14px; }
 /* prática (o conceito): preenchida e em destaque · ferramenta (o exemplo): só contorno, apagada */
 .ob-row .tag.practice { font-family: var(--sans); font-size: 20px; font-weight: 700; letter-spacing: 0.01em; color: var(--fg); border-color: var(--acc3); background: color-mix(in srgb, var(--acc3) 18%, transparent); box-shadow: 0 0 18px -6px var(--acc3); }
