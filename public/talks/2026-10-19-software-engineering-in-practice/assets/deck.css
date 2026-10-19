@@ -642,7 +642,7 @@ body.idle { cursor: none; }
 .ob-row .tag { font-size: 18px; padding: 6px 14px; }
 /* prática (o conceito): preenchida e em destaque · ferramenta (o exemplo): só contorno, apagada */
 .ob-row .tag.practice { font-family: var(--sans); font-size: 20px; font-weight: 700; letter-spacing: 0.01em; color: var(--fg); border-color: var(--acc3); background: color-mix(in srgb, var(--acc3) 18%, transparent); box-shadow: 0 0 18px -6px var(--acc3); }
-.ob-row .tag.tool { font-weight: 400; color: var(--muted); border: 1px dashed var(--line2); background: transparent; }
+.ob-row .tag.tool, .s-sdd .tag.tool { font-weight: 400; color: var(--muted); border: 1px dashed var(--line2); background: transparent; }
 .ob-head .lg.practice { color: var(--acc3); }
 .ob-head .lg.tool { color: var(--muted); }
 
@@ -652,6 +652,8 @@ body.idle { cursor: none; }
 .sdd-step { flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 26px 26px 24px; border-radius: 20px; }
 .sdd-step .nm { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; color: var(--fg); }
 .sdd-step .note { font-size: 18px; line-height: 1.35; color: var(--muted); }
+/* artefato da etapa: empurrado para a base do card, alinhado nos cinco */
+.sdd-step .file { align-self: flex-start; margin-top: auto; font-size: 18px; padding: 6px 14px; }
 .sdd-step.hot { border-color: var(--acc3); box-shadow: 0 0 40px -10px var(--acc3), 0 0 70px -30px var(--hot); }
 .sdd-arrow { flex: none; align-self: center; width: 48px; height: 24px; overflow: visible; }
 .sdd-arrow path { fill: none; stroke: var(--line2); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.5s var(--ease), stroke 0.4s ease; }
@@ -664,6 +666,7 @@ body.idle { cursor: none; }
 .blk::before { content: ""; position: absolute; left: 50%; top: -35px; width: 2px; height: 34px; background: var(--line2); transition: background 0.5s ease, box-shadow 0.5s ease; }
 .blk.on::before { background: var(--acc3); box-shadow: 0 0 12px var(--acc3); }
 .blk .num { color: var(--acc3); }
+.blk .h4 { font-size: 38px; white-space: nowrap; } /* "instruções como código" numa linha só, igual nos três blocos */
 .blk p { font-size: 22px; line-height: 1.4; color: var(--muted); }
 
 /* ---------- amplificador ---------- */
