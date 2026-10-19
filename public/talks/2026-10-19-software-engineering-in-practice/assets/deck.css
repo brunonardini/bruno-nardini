@@ -812,6 +812,8 @@ body.idle { cursor: none; }
 .pr-status .pr-approved { color: var(--acc); border: 1px solid var(--acc); box-shadow: 0 0 22px -6px var(--acc); opacity: 0; }
 .pr-status .pr-approved.on { opacity: 1; }
 .s-advice:has(.pr-approved.on) .pr-review { opacity: 0; }
+/* aprovado sozinho 2s depois que o último comentário termina de entrar (.f: 0.7s) */
+.pr-status .pr-approved.on, .s-advice:has(.pr-approved.on) .pr-review { transition-delay: 3.2s; }
 .review { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
 .rv { display: flex; flex-direction: column; gap: 10px; padding: 22px 30px 24px; }
 .rv-who { display: flex; align-items: center; gap: 12px; }
@@ -920,6 +922,7 @@ body.presenter #presenter { display: grid; grid-template-rows: auto 1fr auto; he
   .bill .real { transform: none !important; transition-delay: 0s !important; }
   .stamp { transform: rotate(var(--rot)) !important; }
   .post:has(.stamp.on) .txt { transition-delay: 0s !important; }
+  .pr-status .pr-approved.on, .s-advice:has(.pr-approved.on) .pr-review { transition-delay: 0s !important; }
   .x-line::after { transition: none !important; }
   .sdd-arrow path { transition: none !important; }
   .ob-row.f, .blk.f { transform: none !important; }
