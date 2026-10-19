@@ -669,6 +669,58 @@ body.idle { cursor: none; }
 .blk .h4 { font-size: 38px; white-space: nowrap; } /* "instruções como código" numa linha só, igual nos três blocos */
 .blk p { font-size: 22px; line-height: 1.4; color: var(--muted); }
 
+/* ---------- do spec à produção ---------- */
+
+/* trilho em y 170 · pontas em x 0 e 1640 · trechos a partir de x 150, 130px por portão (4 · 4 · 2) */
+.pipeline { position: relative; height: 300px; margin-top: 60px; }
+.pipeline .mk { display: none; }
+.pipeline .rail { position: absolute; left: 0; right: 0; top: 169px; height: 2px; background: var(--line2); }
+.pipeline .end { position: absolute; top: 1px; }
+.pipeline .end.start { left: 0; }
+.pipeline .end.goal { right: 0; }
+.pipeline .end b { position: absolute; top: -8px; left: -8px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--line2); transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease; }
+.pipeline .end.goal b { left: auto; right: -8px; }
+.pipeline .end em { position: absolute; top: 20px; font-style: normal; font-family: var(--mono); font-size: 18px; letter-spacing: 0.06em; color: var(--dim); white-space: nowrap; transition: color 0.5s ease; }
+.pipeline .end.start em { left: 0; }
+.pipeline .end.goal em { right: 0; }
+
+.pipeline .seg { position: absolute; top: 0; height: 300px; }
+.pipeline .seg.ci { --c: var(--acc2); }
+.pipeline .seg.cd { --c: var(--acc3); }
+.pipeline .seg.rel { --c: var(--acc); }
+.pipeline .seg + .seg::before { content: ""; position: absolute; left: -11px; top: 158px; width: 2px; height: 24px; border-radius: 1px; background: var(--line2); }
+.pipeline .sh { text-align: center; font-family: var(--mono); font-size: 18px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--c); white-space: nowrap; }
+.pipeline .cr { position: absolute; left: 0; right: 0; bottom: 0; text-align: center; font-family: var(--mono); font-size: 16px; letter-spacing: 0.04em; color: var(--dim); white-space: nowrap; }
+.pipeline .gates { position: absolute; left: 0; right: 0; top: 70px; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; }
+.pipeline .gate { position: relative; display: flex; flex-direction: column; align-items: center; }
+.pipeline .gate .arch { display: block; width: 84px; height: 100px; overflow: visible; }
+.pipeline .gate .arch path { fill: none; stroke: var(--line2); stroke-width: 2; stroke-linecap: round; transition: stroke 0.4s ease, filter 0.4s ease; }
+.pipeline .gate .tag { margin-top: 16px; max-width: 124px; padding: 6px 10px; justify-content: center; text-align: center; white-space: normal; line-height: 1.15; font-family: var(--sans); font-size: 16px; font-weight: 700; color: var(--dim); border-color: color-mix(in srgb, var(--c) 22%, transparent); background: color-mix(in srgb, var(--c) 4%, transparent); transition: color 0.4s ease, border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease; }
+.pipeline .gate.human .arch path { stroke-width: 3.5; }
+.pipeline .gate.human .tag { border-width: 2px; }
+.pipeline .gate .hl { position: absolute; top: -26px; font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; color: var(--muted); white-space: nowrap; }
+
+/* portões acesos: o trecho fica aceso enquanto o seu marcador estiver .on; cada portão espera o pacote passar (--t) */
+.pipeline:has(.mk1.on) .seg.ci .gate :is(.arch path, .tag),
+.pipeline:has(.mk2.on) .seg.cd .gate :is(.arch path, .tag),
+.pipeline:has(.mk3.on) .seg.rel .gate :is(.arch path, .tag) { transition-delay: var(--t); }
+.pipeline:has(.mk1.on) .seg.ci .gate .arch path,
+.pipeline:has(.mk2.on) .seg.cd .gate .arch path,
+.pipeline:has(.mk3.on) .seg.rel .gate .arch path { stroke: var(--c); filter: drop-shadow(0 0 8px var(--c)); }
+.pipeline:has(.mk1.on) .seg.ci .gate .tag,
+.pipeline:has(.mk2.on) .seg.cd .gate .tag,
+.pipeline:has(.mk3.on) .seg.rel .gate .tag { color: var(--fg); border-color: var(--c); background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: 0 0 18px -6px var(--c); }
+.pipeline:has(.mk1.on) .gate.human .hl { color: var(--acc2); transition: color 0.4s ease 1.2s; }
+.pipeline:has(.mk3.on) .end.goal b { background: var(--acc); border-color: var(--acc); box-shadow: 0 0 20px var(--acc); transition-delay: 1.6s; }
+.pipeline:has(.mk3.on) .end.goal em { color: var(--acc); transition-delay: 1.6s; }
+
+/* pacote: apoiado no trilho, centro em x 0 → 670 → 1210 → 1640 */
+.pipeline .pkg-wrap { position: absolute; left: 0; top: 126px; z-index: 2; }
+.pipeline .pkg { width: 64px; height: 44px; margin-left: -32px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-family: var(--mono); font-size: 20px; font-weight: 600; color: var(--fg); border: 2px solid transparent; background: linear-gradient(var(--bg), var(--bg)) padding-box, linear-gradient(100deg, var(--acc2), var(--acc3) 55%, var(--hot)) border-box; box-shadow: 0 0 22px -4px color-mix(in srgb, var(--acc3) 70%, transparent); transition: transform 1.6s ease-in-out; }
+.pipeline:has(.mk1.on) .pkg { transform: translateX(670px); }
+.pipeline:has(.mk2.on) .pkg { transform: translateX(1210px); }
+.pipeline:has(.mk3.on) .pkg { transform: translateX(1640px); }
+
 /* ---------- amplificador ---------- */
 
 .s-amp { justify-content: flex-start; align-items: center; text-align: center; padding-top: 112px; }
@@ -881,6 +933,7 @@ body.presenter #presenter { display: grid; grid-template-rows: auto 1fr auto; he
   .s-quote .in { animation-delay: 0s !important; }
   .slide.active .badge.in { animation: badge-fade 0.6s ease forwards !important; animation-delay: calc(var(--d, 0) * 110ms + 180ms) !important; }
   .slide.active .pawn-group, .slide.active .pawn-hop, .slide.active .pawn-group .tag { animation: none !important; }
+  .pipeline .pkg, .pipeline .gate *, .pipeline .end * { transition-delay: 0s !important; }
   .slide.active .ama-caret { animation: none !important; }
   .slide.active.s-quote .w.glow { animation: rise 0.01ms forwards !important; filter: drop-shadow(0 0 20px color-mix(in srgb, var(--acc2) 50%, transparent)); }
 }
