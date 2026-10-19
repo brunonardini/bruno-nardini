@@ -639,8 +639,12 @@ body.idle { cursor: none; }
 .ob-row .who { font-size: 28px; color: var(--muted); }
 .ob-row .agent { font-size: 28px; color: var(--fg); font-weight: 600; }
 .ob-row .tags { align-items: center; gap: 10px; }
-.ob-row .tag { font-size: 18px; padding: 6px 14px; color: var(--fg); border-color: var(--acc3); background: color-mix(in srgb, var(--acc3) 10%, transparent); }
-.ob-row .seen { font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; color: var(--dim); border: 1px dashed var(--line2); border-radius: 999px; padding: 4px 10px; }
+.ob-row .tag { font-size: 18px; padding: 6px 14px; }
+/* prática (o conceito): preenchida e em destaque · ferramenta (o exemplo): só contorno, apagada */
+.ob-row .tag.practice { font-family: var(--sans); font-size: 20px; font-weight: 700; letter-spacing: 0.01em; color: var(--fg); border-color: var(--acc3); background: color-mix(in srgb, var(--acc3) 18%, transparent); box-shadow: 0 0 18px -6px var(--acc3); }
+.ob-row .tag.tool { font-weight: 400; color: var(--muted); border: 1px dashed var(--line2); background: transparent; }
+.ob-head .lg.practice { color: var(--acc3); }
+.ob-head .lg.tool { color: var(--muted); }
 
 /* ---------- sdd ---------- */
 
